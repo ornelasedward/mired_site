@@ -13,7 +13,7 @@ import { fadeInUp, staggerTextContainer } from "../variants";
 import { useRef } from "react";
 import emailjs from "emailjs-com";
 
-const Contact = ({ headerData, connectData, navData }) => {
+const Connect = ({ headerData, connectData, navData }) => {
   const form = useRef();
 
   const sendEmail = (e) => {
@@ -331,4 +331,4 @@ const Contact = ({ headerData, connectData, navData }) => {
   );
 };
 
-export default Contact;
+export default Connect;
