@@ -1,43 +1,55 @@
 // import components
-import Hero from '../components/Hero';
-import About from '../components/About';
-import How from '../components/How';
-import Faq from '../components/Faq';
-import Testimonials from '../components/Testimonials';
-import Footer from '../components/Footer';
-import Copyright from '../components/Copyright';
+import Hero from "../components/Hero";
+import About from "../components/About";
+import How from "../components/How";
+import Services from "../components/Services";
+import Gallery from "../components/Gallery";
+import Faq from "../components/Faq";
+import Contact from "../components/Contact";
+import Email from "../components/Email";
+import Footer from "../components/Footer";
 
 // import data
 import {
   headerData,
   heroData,
   navData,
-  faqData,
   aboutData,
   howData,
-  testimonialData,
+  servicesData,
+  galleryData,
+  faqData,
+  contactData,
+  emailData,
   footerData,
-} from '../data.json';
+} from "../data.json";
 
 const Home = ({
   headerData,
   heroData,
   navData,
-  faqData,
   aboutData,
   howData,
-  testimonialData,
+  servicesData,
+  galleryData,
+  faqData,
+  contactData,
+  emailData,
   footerData,
 }) => {
   return (
-    <div className='overflow-hidden max-w-[1600px] mx-auto bg-page'>
-      <Hero heroData={heroData} headerData={headerData} navData={navData} />
-      <About aboutData={aboutData} />
+    <div className="overflow-hidden mx-auto bg-[#FDFAEC]">
+      <div className="gradient_bg1">
+        <Hero heroData={heroData} headerData={headerData} navData={navData} />
+        <About aboutData={aboutData} />
+      </div>
       <How howData={howData} />
+      <Services servicesData={servicesData} />
+      <Gallery galleryData={galleryData} />
       <Faq faqData={faqData} />
-      <Testimonials testimonialData={testimonialData} />
+      <Contact contactData={contactData} />
+      <Email emailData={emailData} />
       <Footer footerData={footerData} />
-      <Copyright />
     </div>
   );
 };
@@ -49,10 +61,13 @@ export const getStaticProps = async () => {
       headerData,
       heroData,
       navData,
-      faqData,
       aboutData,
       howData,
-      testimonialData,
+      servicesData,
+      galleryData,
+      faqData,
+      contactData,
+      emailData,
       footerData,
     },
   };
