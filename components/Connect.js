@@ -1,9 +1,4 @@
-import Image from "next/image";
-import Link from "next/link";
 import Header from "./Header";
-
-// import Icons
-import { SlArrowDown } from "react-icons/sl";
 
 // import motion
 import { motion } from "framer-motion";
@@ -92,7 +87,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                       (Select all that apply)
                     </legend>
 
-                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] text-2xl bg-[#fff]">
+                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] lg:text-2xl text-lg bg-[#fff]">
                       <input
                         type="checkbox"
                         id="Website Development"
@@ -102,13 +97,13 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="Website Development"
-                        className="pr-40 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-40 py-4 cursor-pointer hover:font-semibold"
                       >
                         Website Development
                       </label>
                     </div>
 
-                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] text-2xl bg-[#fff]">
+                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] lg:text-2xl text-lg bg-[#fff]">
                       <input
                         type="checkbox"
                         id="Paid Social Media Ads"
@@ -118,13 +113,13 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="Paid Social Media Ads"
-                        className="pr-40 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-40 py-4 cursor-pointer hover:font-semibold"
                       >
                         Paid Social Media Ads
                       </label>
                     </div>
 
-                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] text-2xl bg-[#fff]">
+                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] lg:text-2xl text-lg bg-[#fff]">
                       <input
                         type="checkbox"
                         id="Google Ads"
@@ -134,13 +129,13 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="Google Ads"
-                        className="pr-60 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-60 xs:py-4 py-7 cursor-pointer hover:font-semibold"
                       >
                         Google Ads
                       </label>
                     </div>
 
-                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] text-2xl bg-[#fff]">
+                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] lg:text-2xl text-lg bg-[#fff]">
                       <input
                         type="checkbox"
                         id="Influencer Marketing"
@@ -150,13 +145,13 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="Influencer Marketing"
-                        className="pr-52 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-52 py-4 cursor-pointer hover:font-semibold"
                       >
                         Influencer Marketing
                       </label>
                     </div>
 
-                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] text-2xl bg-[#fff]">
+                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] lg:text-2xl text-lg bg-[#fff]">
                       <input
                         type="checkbox"
                         id="Social Media Management"
@@ -166,13 +161,13 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="Social Media Management"
-                        className="pr-32 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-32 py-4 cursor-pointer hover:font-semibold"
                       >
                         Social Media Management
                       </label>
                     </div>
 
-                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] text-2xl bg-[#fff]">
+                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] lg:text-2xl text-lg bg-[#fff]">
                       <input
                         type="checkbox"
                         id="Content Creation"
@@ -182,12 +177,12 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="Content Creation"
-                        className="pr-52 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-52 xs:py-4 py-7 cursor-pointer hover:font-semibold"
                       >
                         Content Creation
                       </label>
                     </div>
-                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] text-2xl bg-[#fff]">
+                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] lg:text-2xl text-lg bg-[#fff]">
                       <input
                         type="checkbox"
                         id="Email/SMS"
@@ -197,13 +192,13 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="Email/SMS"
-                        className="pr-52 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-52 py-4 cursor-pointer hover:font-semibold"
                       >
                         Email/SMS Marketing
                       </label>
                     </div>
 
-                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] text-2xl bg-[#fff]">
+                    <div className="flex gap-x-4 border-2 px-4 border-[#171616] lg:text-2xl text-lg bg-[#fff]">
                       <input
                         type="checkbox"
                         id="Something Else"
@@ -213,7 +208,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="Something Else"
-                        className="pr-60 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-60 xs:py-4 py-7 cursor-pointer hover:font-semibold"
                       >
                         Something Else
                       </label>
@@ -234,7 +229,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="$0 - $500"
-                        className="pr-40 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-40 py-3 xs:py-4 cursor-pointer hover:font-semibold"
                       >
                         $0 - $500
                       </label>
@@ -250,7 +245,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="$500 - $1,000"
-                        className="pr-40 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-40 py-3 xs:py-4 cursor-pointer hover:font-semibold"
                       >
                         $500 - $1,000
                       </label>
@@ -266,7 +261,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="$1,000 - $2,000"
-                        className="pr-60 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-60 xs:py-4 cursor-pointer hover:font-semibold"
                       >
                         $1,000 - $2,000
                       </label>
@@ -282,7 +277,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="$2,000 - $5,000"
-                        className="pr-52 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-52 xs:py-4 cursor-pointer hover:font-semibold"
                       >
                         $2,000 - $5,000
                       </label>
@@ -298,7 +293,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                       />
                       <label
                         for="$5,000 - $10,000"
-                        className="pr-32 py-4 cursor-pointer hover:font-semibold"
+                        className="lg:pr-32 xs:py-4 cursor-pointer hover:font-semibold"
                       >
                         $5,000 - $10,000
                       </label>
@@ -320,7 +315,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                       </label>
                     </div>
 
-                    <h1 className="col-span-2 font-semibold text-2xl mb-4 mt-8">
+                    <h1 className="col-span-2 font-semibold text-2xl mb-4 mt-8S">
                       The biggest thing we can help with?
                     </h1>
 
@@ -342,7 +337,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                       className="bg-[#EEEDE3] border-2 border-[#171616] text-[#171616]  resize-none text-[20px] md:text-[22px] p-[0.3rem] md:p-[1rem] font-normal col-span-2 rounded-[1.875rem]"
                     />
                   </div>
-                  <div className="text-center">
+                  <div className="text-center xl:mb-0 mb-10">
                     <button
                       type="submit"
                       className="submit btn bg-[#F2790C] text-[#] mt-2 px-16 font-medium"
