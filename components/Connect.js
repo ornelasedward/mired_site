@@ -21,7 +21,7 @@ const Connect = ({ headerData, connectData, navData }) => {
 
     emailjs.sendForm(
       "service_g4hqwd2",
-      "template_y48y9zr",
+      "template_v0o8fnv",
       form.current,
       "oF4ZHxYDt8xOidpgG"
     );
@@ -83,20 +83,21 @@ const Connect = ({ headerData, connectData, navData }) => {
                     <input
                       type="message"
                       name="paid ads"
-                      required
                       placeholder="Have you done paid ads? If yes, how long?"
                       className="lg:col-span-1 col-span-2 h-[4.5rem] bg-[#EEEDE3] border-2 border-[#171616] text-[#171616]  p-4 mb-4 text-[20px] md:text-[22px] font-normal rounded-[1.875rem]"
                     />
 
-                    <h1 className="col-span-2 font-semibold text-2xl mb-4 mt-8">
+                    <legend className="col-span-2 font-semibold text-2xl mb-4 mt-8">
                       What marketing opportunities are your biggest priority?
                       (Select all that apply)
-                    </h1>
+                    </legend>
 
                     <div className="flex gap-x-4 border-2 px-4 border-[#171616] text-2xl bg-[#fff]">
                       <input
                         type="checkbox"
                         id="Website Development"
+                        value="Website Development"
+                        name="Website Development"
                         className="cursor-pointer"
                       />
                       <label
@@ -111,6 +112,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="Paid Social Media Ads"
+                        value="Paid Social Media Ads"
+                        name="Paid Social Media Ads"
                         className="cursor-pointer"
                       />
                       <label
@@ -125,6 +128,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="Google Ads"
+                        value="Google Ads"
+                        name="Google Ads"
                         className="cursor-pointer"
                       />
                       <label
@@ -139,6 +144,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="Influencer Marketing"
+                        value="Influencer Marketing"
+                        name="Influencer Marketing"
                         className="cursor-pointer"
                       />
                       <label
@@ -153,6 +160,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="Social Media Management"
+                        value="Social Media Management"
+                        name="Social Media Management"
                         className="cursor-pointer"
                       />
                       <label
@@ -167,6 +176,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="Content Creation"
+                        value="Content Creation"
+                        name="Content Creation"
                         className="cursor-pointer"
                       />
                       <label
@@ -180,6 +191,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="Email/SMS"
+                        value="Email/SMS"
+                        name="Email/SMS"
                         className="cursor-pointer"
                       />
                       <label
@@ -194,6 +207,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="Something Else"
+                        value="Something Else"
+                        name="Something Else"
                         className="cursor-pointer"
                       />
                       <label
@@ -213,6 +228,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="$0 - $500"
+                        value="$0 - $500"
+                        name="$0 - $500"
                         className="cursor-pointer"
                       />
                       <label
@@ -227,6 +244,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="$500 - $1,000"
+                        value="$500 - $1,000"
+                        name="$500 - $1,000"
                         className="cursor-pointer"
                       />
                       <label
@@ -241,6 +260,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="$1,000 - $2,000"
+                        value="$1,000 - $2,000"
+                        name="$1,000 - $2,000"
                         className="cursor-pointer"
                       />
                       <label
@@ -255,6 +276,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="$2,000 - $5,000"
+                        value="$2,000 - $5,000"
+                        name="$2,000 - $5,000"
                         className="cursor-pointer"
                       />
                       <label
@@ -269,6 +292,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="$5,000 - $10,000"
+                        value="$5,000 - $10,000"
+                        name="$5,000 - $10,000"
                         className="cursor-pointer"
                       />
                       <label
@@ -283,6 +308,8 @@ const Connect = ({ headerData, connectData, navData }) => {
                       <input
                         type="checkbox"
                         id="$10,000+"
+                        value="$10,000+"
+                        name="$10,000+"
                         className="cursor-pointer"
                       />
                       <label
@@ -298,7 +325,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                     </h1>
 
                     <textarea
-                      name="message"
+                      name="message1"
                       rows="2"
                       required
                       className="bg-[#EEEDE3] border-2 border-[#171616] text-[#171616]  resize-none text-[20px] md:text-[22px] p-[0.3rem] md:p-[1rem] font-normal col-span-2 rounded-[1.875rem]"
@@ -309,7 +336,7 @@ const Connect = ({ headerData, connectData, navData }) => {
                     </h1>
 
                     <textarea
-                      name="message"
+                      name="message2"
                       rows="2"
                       required
                       className="bg-[#EEEDE3] border-2 border-[#171616] text-[#171616]  resize-none text-[20px] md:text-[22px] p-[0.3rem] md:p-[1rem] font-normal col-span-2 rounded-[1.875rem]"
