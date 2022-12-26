@@ -1,10 +1,11 @@
 // import components
 import Connect from "../components/Connect";
+import Footer from "../components/Footer";
 
 // import data
-import { connectData, navData, headerData } from "../data.json";
+import { connectData, navData, headerData, footerData } from "../data.json";
 
-const contactform = ({ connectData, navData, headerData }) => {
+const contactform = ({ connectData, navData, headerData, footerData }) => {
   return (
     <div className="overflow-hidden mx-auto bg-[#FDFAEC]">
       <div className="gradient_bg1">
@@ -13,6 +14,7 @@ const contactform = ({ connectData, navData, headerData }) => {
           headerData={headerData}
           navData={navData}
         />
+        <Footer footerData={footerData} />
       </div>
     </div>
   );
@@ -25,6 +27,7 @@ export const getStaticProps = async () => {
       connectData,
       navData,
       headerData,
+      footerData,
     },
   };
 };

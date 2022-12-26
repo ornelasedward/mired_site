@@ -34,7 +34,7 @@ const Connect = ({ headerData, connectData, navData }) => {
   const { title, subtitle } = connectData;
 
   return (
-    <div id="contactform" className="bg-[#FCFBEC]">
+    <div id="contactform" className="gradient_bg1">
       <Header headerData={headerData} navData={navData} />
 
       <div id="contactform" className="py-[10rem] sm:px-8 px-2">
