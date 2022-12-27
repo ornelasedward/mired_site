@@ -24,9 +24,11 @@ const Services = ({ servicesData }) => {
               </h1>
             </div>
             <div className="flex items-center justify-center">
-              <button className="btn font-medium text-center px-[6.4rem] hover:bg-[#F2790C] hover:text-[#FAFAFA]">
-                <h3>Learn More</h3>
-              </button>
+              <Link href="servicesform">
+                <button className="btn font-medium text-center px-[6.4rem] hover:bg-[#F2790C] hover:text-[#FAFAFA]">
+                  <h3>Learn More</h3>
+                </button>
+              </Link>
             </div>
             <div className="xl:max-w-[400px] xl:m-auto">
               <h3 className="font-semibold text-3xl  sm:text-4xl xl:text-2xl xl:pb-2 pb-8">

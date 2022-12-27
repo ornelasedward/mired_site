@@ -177,6 +177,11 @@
     "subtitle": "We would love to learn more about your business. If you'd like to get in touch, please use the form below."
   },
 
+  "tiersData": {
+    "title": "Our Services",
+    "subtitle": "We would love to learn more about your business. If you'd like to get in touch, please use the form below."
+  },
+
   "footerData": {
     "reachout": "/images/footer/reachout.svg"
   },
