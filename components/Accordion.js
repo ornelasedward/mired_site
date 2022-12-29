@@ -1,7 +1,7 @@
 import { useState } from "react";
 
 // import icons
-import { HiOutlinePlus, HiOutlineMinus } from "react-icons/hi";
+import { HiOutlineMinus } from "react-icons/hi";
 import { SlArrowRight } from "react-icons/sl";
 // import motion
 import { motion } from "framer-motion";

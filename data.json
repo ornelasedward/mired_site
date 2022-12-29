@@ -179,7 +179,29 @@
 
   "tiersData": {
     "title": "Our Services",
-    "subtitle": "We would love to learn more about your business. If you'd like to get in touch, please use the form below."
+    "subtitle": "We would love to learn more about your business. If you'd like to get in touch, please use the form below.",
+    "accordions": [
+      {
+        "question": "01 Market Analysis",
+        "answer": "We understand that a comprehensive market analysis is essential for the success of any website design project. That's why we always take the time to research and analyze the target market before starting the design process.",
+        "answer1": "Completing a market analysis before designing a website allows us to create a targeted and effective design that is tailored to the needs of the target market."
+      },
+      {
+        "question": "02 SEO + Copywriting",
+        "answer": "Search engine optimization (SEO) is important to drive traffic and success to your website. That's why we always prioritize front page SEO and proper copy before starting the design process for any website.",
+        "answer1": "This allows the website to be: 1. Optimized for keywords and phrases relevant to the target audience and industry. 2. Ranked higher in search engine results pages, allowing for more visibility. 3. Improve the user experience by making it easier for users to find the information they are looking for. This can lead to increased engagement and conversions for the website, ultimately helping it to achieve its goals."
+      },
+      {
+        "question": "03 Web Design",
+        "answer": "We then use the market analysis and copywriting to create web designs that deliver a great use experience and drive conversions.",
+        "answer1": "First, we conduct a market analysis to understand the needs and preferences of the target audience and identify industry trends. Next, we use copywriting to craft compelling and relevant content for the website. Finally, we use the insights gained from the market analysis and copywriting to inform the design of the website, ensuring that it is user-centered, easy to navigate, and optimized for conversions."
+      },
+      {
+        "question": "04 Web Development",
+        "answer": "Once the web design is finalized, our developers will use their expertise to bring the design to life by coding the website using a range of programming languages and frameworks. We are committed to using the latest and most effective technologies to ensure that the website is fast, reliable, and secure.",
+        "answer1": "We also provide our clients with a program that allows them to make minor alterations to the webpage in the future. This gives our clients the flexibility to make updates and changes to the website as needed, without the need for expensive and time-consuming redevelopment. Overall, our in-house coding capabilities allow us to create a unique and tailored website solution that is customized to the needs of the business and the target audience, and that can be easily maintained and updated in the future."
+      }
+    ]
   },
 
   "footerData": {
