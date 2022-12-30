@@ -18,7 +18,7 @@ const Accordion2 = ({ accordion }) => {
         onClick={() => {
           setIsOpen(!isOpen);
         }}
-        className="border-2 border-b-[#171616] cursor-pointer h-[200px] px-[35px] flex items-center transition ease-in-out"
+        className="rounded-[1.875rem] border-2 border_shadow bg-[#FCF7E8] cursor-pointer h-[200px] px-[35px] flex items-center transition ease-in-out"
       >
         <div className="w-full flex gap-4 justify-start items-center">
           {/* //*icons */}

@@ -249,4 +249,15 @@
       background-position: 00% 70%;
     }
   }
+
+  .border_shadow {
+    /*start ------------*/
+    width: [object Object]px;
+    height: [object Object]px;
+
+    border: solid #bdbdbd 1px;
+    box-shadow: 4px 26px 44px rgba(3, 37, 79, 0.1);
+    -webkit-box-shadow: 4px 26px 44px rgba(3, 37, 79, 0.1);
+    -moz-box-shadow: 4px 26px 44px rgba(3, 37, 79, 0.1);
+  }
 }
