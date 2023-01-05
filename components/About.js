@@ -88,7 +88,7 @@ const Qoute1 = ({ aboutData }) => {
                   </h1>
                   <p>
                     Whether you&apos;re looking to increase brand awareness,
-                    drive sales, or build customer loyalty, we've got you
+                    drive sales, or build customer loyalty, we&apos;ve got you
                     covered. With our paid social media advertising, email/sms
                     marketing, retargeting, and content creation strategies,
                     we&apos;ll help you reach the right audience and get them
