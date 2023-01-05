@@ -36,13 +36,11 @@ const Header = ({ headerData, navData }) => {
       {/* logo v1 */}
 
       <Link href={"/"}>
-        <a>
-          <Image
-            src={`${header ? logoImgV2 : logoImgV1}`}
-            width={header ? 100 : 110}
-            height={50}
-          />
-        </a>
+        <Image
+          src={`${header ? logoImgV2 : logoImgV1}`}
+          width={header ? 100 : 110}
+          height={50}
+        />
       </Link>
 
       {/* nav & button wrapper - initially hidden */}

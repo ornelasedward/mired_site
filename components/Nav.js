@@ -9,14 +9,13 @@ const Nav = ({ navData, header }) => {
           const { name, href } = item;
           return (
             <li key={idx}>
-              <Link href={href}>
-                <a
-                  className={`${
-                    header ? "text-black" : "text-black"
-                  } cursor-pointer hover:text-accent transition`}
-                >
-                  {name}
-                </a>
+              <Link
+                href={href}
+                className={`${
+                  header ? "text-black" : "text-black"
+                } cursor-pointer hover:text-accent transition`}
+              >
+                {name}
               </Link>
             </li>
           );
