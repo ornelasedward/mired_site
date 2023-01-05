@@ -13,6 +13,16 @@
     @apply h-[60px] rounded-[5px] max-w-[400px] outline-none px-[40px] ring-1 ring-accent/50 focus:ring-2 focus:ring-accent transition focus:drop-shadow-primary text-[18px] font-bold placeholder:text-[18px] placeholder:font-light placeholder:text-primary;
   }
 
+  h1 {
+    font-family: "Clash Display", sans-serif;
+  }
+
+  h2,
+  h3,
+  p {
+    font-family: "Montserrat", sans-serif;
+  }
+
   /* //*Photo Gallery*/
 
   .inspo-flex-item {

@@ -6,7 +6,7 @@ module.exports = {
   theme: {
     fontFamily: {
       serif: "Clash Display",
-      body: "Karla",
+      body: "Montserrat",
     },
     container: {
       padding: {

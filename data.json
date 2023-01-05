@@ -8,8 +8,10 @@
 
   "navData": [
     { "name": "Home", "href": "/" },
-    { "name": "Services", "href": "#services" },
-    { "name": "FAQ", "href": "#faq" }
+    { "name": "About", "href": "/#about" },
+    { "name": "Services", "href": "/#services" },
+    { "name": "Our Work", "href": "/#gallery" },
+    { "name": "FAQ", "href": "/#faq" }
   ],
 
   "caraData": {

@@ -41,7 +41,7 @@ const Accordion = ({ accordion }) => {
       </div>
       <div
         className={`${
-          isOpen ? "h-[700px] lg:h-[1000px] p-8 bg-[#FFF7F5]" : "max-h-0"
+          isOpen ? "h-[750px] lg:h-[1000px] p-8 bg-[#FFF7F5]" : "max-h-0"
         } h-[160px] overflow-hidden transition-all`}
       >
         <p className="lg:text-2xl sm:text-lg text-md font-medium">
