@@ -42,12 +42,13 @@ const Qoute1 = ({ aboutData }) => {
                   </h1>
                   <p>
                     in the new age of technology, your website is the first
-                    impression you make with your users. That's why we offer
-                    top-notch UX/UI design services that will make your site pop
-                    and attract customers like a magnet. With our expert team of
-                    designers, we'll help you create a sleek and user-friendly
-                    site that will make your business stand out from the
-                    competition and keep customers coming back for more.
+                    impression you make with your users. That&apos;s why we
+                    offer top-notch UX/UI design services that will make your
+                    site pop and attract customers like a magnet. With our
+                    expert team of designers, we&apos;ll help you create a sleek
+                    and user-friendly site that will make your business stand
+                    out from the competition and keep customers coming back for
+                    more.
                   </p>
                 </div>
                 {/* //*Get Started */}
@@ -86,14 +87,14 @@ const Qoute1 = ({ aboutData }) => {
                     Market your business
                   </h1>
                   <p>
-                    Whether you're looking to increase brand awareness, drive
-                    sales, or build customer loyalty, we've got you covered.
-                    With our paid social media advertising, email/sms marketing,
-                    retargeting, and content creation strategies, we'll help you
-                    reach the right audience and get them interested in your
-                    business. We'll create engaging and compelling content that
-                    will grab your customers' attention and keep them coming
-                    back for more.
+                    Whether you&apos;re looking to increase brand awareness,
+                    drive sales, or build customer loyalty, we've got you
+                    covered. With our paid social media advertising, email/sms
+                    marketing, retargeting, and content creation strategies,
+                    we&apos;ll help you reach the right audience and get them
+                    interested in your business. We&apos;ll create engaging and
+                    compelling content that will grab your customers attention
+                    and keep them coming back for more.
                   </p>
                 </div>
                 {/* //*Get Started 2*/}

@@ -180,14 +180,14 @@ const Tiers = ({ headerData, tiersData, navData }) => {
                   <br />
                   <br />
                   <b>Scheduled posting,</b> to ensure a consistent stream of
-                  content on the client's social media accounts. Trend and
+                  content on the client&apos;s social media accounts. Trend and
                   market research, to stay up-to-date on the latest best
                   practices and create relevant and effective campaigns.
                   <br />
                   <br />
                   <b>Logo design and branding services,</b> to ensure
-                  consistency across all of the client's social media accounts
-                  and develop a cohesive brand identity.
+                  consistency across all of the client&apos;s social media
+                  accounts and develop a cohesive brand identity.
                 </p>
                 <br />
 

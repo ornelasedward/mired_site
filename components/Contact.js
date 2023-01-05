@@ -1,8 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
-
-// import Icons
-import { SlArrowDown } from "react-icons/sl";
 
 // import motion
 import { motion } from "framer-motion";
@@ -94,10 +90,10 @@ const Contact = ({ contactData }) => {
                     name="services"
                     placeholder="Service you're interested in"
                     required
-                    className="lg:col-span-1 col-span-2 h-[4.5rem] bg-[#2D2D2D] p-4 mb-4 text-[20px] md:text-[22px] font-normal rounded-[1.875rem] arrow appearance-none"
+                    className="lg:col-span-1 col-span-2 h-[4.5rem] bg-[#2D2D2D] p-4 mb-4 text-[20px] md:text-[22px] font-normal rounded-[1.875rem] down_arrow appearance-none"
                   >
                     <option value="">
-                      -- Service you're interested in? --
+                      -- Service you&apos;re interested in? --
                     </option>
                     <option value="Website Development">
                       Website Development
@@ -112,7 +108,7 @@ const Contact = ({ contactData }) => {
                     name="contactform"
                     placeholder="Service you're interested in"
                     required
-                    className="lg:col-span-1 col-span-2 h-[4.5rem] bg-[#2D2D2D] p-4 mb-4 text-[20px] md:text-[22px] font-normal rounded-[1.875rem] arrow appearance-none"
+                    className="lg:col-span-1 col-span-2 h-[4.5rem] bg-[#2D2D2D] p-4 mb-4 text-[20px] md:text-[22px] font-normal rounded-[1.875rem] down_arrow appearance-none"
                   >
                     <option value="">-- Preferred method of contact? --</option>
                     <option value="Email">Email</option>

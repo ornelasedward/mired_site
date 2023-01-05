@@ -32,7 +32,7 @@ const Services = ({ servicesData }) => {
             </div>
             <div className="xl:max-w-[400px] xl:m-auto">
               <h3 className="font-semibold text-3xl  sm:text-4xl xl:text-2xl xl:pb-2 pb-8">
-                What's Included:
+                What&apos;s Included:
               </h3>
               <ul className="xl:min-w-[300px] font-semibold xl:text-lg text-2xl grid xl:gap-y-2 gap-y-4">
                 <li className="flex">
@@ -83,7 +83,7 @@ const Services = ({ servicesData }) => {
             </div>
             <div className="xl:max-w-[400px] xl:m-auto">
               <h3 className="font-semibold text-3xl  sm:text-4xl xl:text-2xl xl:pb-2 pb-8">
-                What's Included:
+                What&apos;s Included:
               </h3>
               <ul className="xl:min-w-[300px] font-semibold xl:text-lg text-2xl grid xl:gap-y-2 gap-y-4">
                 <li className="flex">
@@ -134,7 +134,7 @@ const Services = ({ servicesData }) => {
             </div>
             <div className="xl:max-w-[400px] xl:m-auto">
               <h3 className="font-semibold text-3xl  sm:text-4xl xl:text-2xl xl:pb-2 pb-8">
-                What's Included:
+                What&apos;s Included:
               </h3>
               <ul className="xl:min-w-[300px] font-semibold xl:text-lg text-2xl grid xl:gap-y-2 gap-y-4">
                 <li className="flex">
