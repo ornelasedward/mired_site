@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {
   "headerData": {
     "logoImgV1": "/images/header/logoV1.svg",
@@ -214,3 +215,221 @@
     "title": "/images/footer/reachout.svg"
   }
 }
+=======
+{
+  "headerData": {
+    "logoImgV1": "/images/header/logoV1.svg",
+    "logoImgV2": "/images/header/logoV2.svg",
+    "Dot": "/images/header/Dot.svg",
+    "btnText": "Work With Us"
+  },
+
+  "navData": [
+    { "name": "Home", "href": "/" },
+    { "name": "About", "href": "/#about" },
+    { "name": "Services", "href": "/#services" },
+    { "name": "Our Work", "href": "/#gallery" },
+    { "name": "FAQ", "href": "/#faq" }
+  ],
+
+  "caraData": {
+    "web": "web & app development",
+    "email": "email & sms",
+    "seo": "Search Engine",
+    "social": "paid social",
+    "media": "social media",
+    "ecom": "/images/carousel/Ecom.svg",
+    "mail": "/images/carousel/Mailbox.svg",
+    "funnel": "/images/carousel/Funnel.svg",
+    "speaker": "/images/carousel/Speaker.svg",
+    "globe": "/images/carousel/Globe.svg"
+  },
+
+  "heroData": {
+    "title": "A blend of creative marketing and website development to bring your company’s message to life",
+    "leftWords": "We are a small (and young) company with big ambitions. We will work with you to create a beautiful and functional site that represents your brand, business or personal interests.",
+    "rightWords": "Our Three Tiers of Digital Marketing will help you construct a successful strategy that your business needs!",
+    "sceneImg": "/images/hero/scene.svg",
+    "boyImg": "/images/hero/boy.svg",
+    "girlImg": "/images/hero/girl.svg",
+    "truckImg": "/images/hero/truck.svg",
+    "btnText": "Get Started"
+  },
+
+  "aboutData": {
+    "video1": "/images/about/1st.mp4",
+    "video2": "/images/about/marketing.mp4"
+  },
+
+  "howData": {
+    "title": "How it's Done",
+    "subtitle": "When applying for a traffic permit, there are certain requirements that you must meet that are included in the examination: requirements for professional knowledge, solid establishment, good reputation and financial resources. Important to remember is to confirm your application for a traffic permit by the company's company signer or CEO.",
+    "girlImg": "/images/how/girl.svg"
+  },
+
+  "servicesData": {
+    "img1": "/images/hero/site.svg",
+    "img2": "/images/hero/market.svg"
+  },
+
+  "faqData": {
+    "title": "FAQ's",
+    "subtitle": "We would love to be able to answer the questions for you, but we understand everybody has a busy schedule. These FAQs cover some of the basics of what we do. If you have any questions, feel free to give us a call.",
+    "accordions": [
+      {
+        "question": "What is SEO?",
+        "answer": "SEO, or Search Engine Optimization, is the process of improving the ranking of a website on search engines like Google. This is done by using various strategies and techniques to make the website more attractive to search engines, so that they will show the website higher up in the search results when someone searches for keywords that are related to the website's content. Some of the main components of SEO include keyword research, on-page optimization, and link building. The goal of SEO is to increase the quantity and quality of traffic to a website from search engines."
+      },
+      {
+        "question": "What is Digital Marketing?",
+        "answer": "Digital marketing is the use of digital technologies and channels, such as search engines, social media, email, and other websites, to connect with potential and current customers. The goal of digital marketing is to promote a business, product, or service and increase sales and revenue. Digital marketing includes a range of tactics and strategies, such as search engine optimization (SEO), content marketing, pay-per-click (PPC) advertising, and email marketing. Digital marketing can be an effective way for businesses to reach a large number of potential customers, and it allows them to target their marketing efforts more precisely than they could with traditional marketing methods."
+      },
+      {
+        "question": "What’s the different between on-page and off-page SEO?",
+        "answer": "On-page SEO and off-page SEO are two different types of search engine optimization. On-page SEO refers to the practices and techniques that are used on a website to improve its ranking on search engines. This includes optimizing the website's content and HTML source code, as well as making sure that the website is easy to navigate and has a user-friendly design. On-page SEO is important because it helps search engines understand what a website is about, and it can also improve the user experience of the website.",
+        "answer1": "Off-page SEO, on the other hand, refers to the practices and techniques that are used outside of a website to improve its ranking on search engines. This includes building links to the website from other high-quality, relevant websites, as well as promoting the website on social media and other online platforms. Off-page SEO is important because it helps search engines understand how popular and trustworthy a website is, and it can also drive more traffic to the website."
+      },
+      {
+        "question": "Do I even need a website?",
+        "answer": "Yes, a business typically needs a website in order to be competitive in today's market. A website is important for a number of reasons. First, it provides a way for customers to learn about the products or services that a business offers. Second, it gives customers a way to contact the business and make purchases or inquiries. Third, a website can help a business to build trust with its customers by providing detailed information about the business, its products, and its policies. Finally, a website can help a business to improve its search engine rankings, which can make it more visible to potential customers who are looking for the products or services that the business offers. Overall, having a website is an essential part of doing business in the modern world."
+      },
+      {
+        "question": "How long does it take to make a website?",
+        "answer": "The amount of time it takes to create a website from scratch using code can vary greatly, depending on a number of complex and time-consuming factors. First, we need to work with you to understand your specific needs and goals for the website, and to develop a plan for how the website will be structured and organized. Next, we will design the layout and visual appearance of the website, taking into account factors such as branding, user experience, and mobile compatibility.",
+        "answer1": "Once the design is approved, we will begin the development process, using high-quality, modern technologies and techniques which involves writing the code to make the website function as intended. This can include tasks such as building the website's database, integrating with third-party services, and implementing features such as e-commerce and user accounts. Finally, once the website is completed, we will test it thoroughly to ensure that it works properly and meets your expectations. Depending on these factors, this can take anywhere from a few weeks to a few months. Our team of experts are committed to ensuring your website will be completed within one month, from design to development."
+      },
+      {
+        "question": "What social media platform do I need for my business?",
+        "answer": "There is no one-size-fits-all answer to this question, as the social media platforms that are right for your business will depend on a number of factors, including the nature of your business, your target audience, and your overall marketing goals. Some of the most popular social media platforms that businesses use include Facebook, Twitter, LinkedIn, Instagram, and Pinterest. These platforms have a large user base and can be effective for reaching a wide audience. However, depending on your specific business and target audience, other platforms such as YouTube, TikTok, Reddit, or Snapchat may also be worth considering.",
+        "answer1": "Ultimately, the best way to determine which social media platforms are right for your business is to conduct some research and experimentation. You can start by identifying the platforms where your target audience is most likely to be active, and then test out different strategies to see which ones work best for your business."
+      },
+      {
+        "question": "What is your 3 tiers of marketing?",
+        "answer": "Our “three tiers of digital marketing” is an all-in-one package that allows you to experience a little bit of everything without breaking the bank. This includes website development, digital marketing, and social media management. Our ultimate goal is to provide you with 6-18 qualified leads a month, and we believe that our three tiers of service can help you to achieve this goal. > In our first tier of service, we will create a professional and user-friendly website for your business. This will include custom design, responsive layout, and search engine optimization. > In our second tier of service, we will provide ongoing social media management, including creating and sharing engaging content, to help you build a strong and active presence on popular social media platforms. > Finally, in our third tier of service, we will provide advanced digital marketing services, such as pay-per-click (PPC) advertising and retargeting, conversion rate optimization (CRO) and A/B testing, to help you maximize the return on your investment. Overall, our three tiers of digital marketing package is designed to provide you with a comprehensive and affordable solution for your online marketing needs."
+      },
+      {
+        "question": "What is lead generation?",
+        "answer": "Lead generation is the process of identifying and cultivating potential customer leads for a business. This is typically done through a variety of marketing activities, such as running ads, attending trade shows, or offering incentives like free trials or discount codes. The goal of lead generation is to generate interest in a business's products or services and to capture contact information from potential customers, so that the business can follow up with them and convert them into paying customers. Lead generation is an important part of the sales and marketing process, as it helps businesses to identify and connect with potential customers who are interested in what they have to offer."
+      },
+      {
+        "question": "How often do I need to post on social media?",
+        "answer": "A lot can go into when, how, and what you should post on social media. Figuring out the right number of posts to publish every day or week is a key part of your social media strategy, and it really depends on what your market looks like.",
+        "answer1": "Part of our social media management solutions is ensuring a total market analysis is completed. Finding the most optimal time for your posts to obtain the maximum engagement possible is crucial in growing your online presence."
+      }
+    ]
+  },
+  "testimonialData": {
+    "pretitle": "testimonials",
+    "title": "Our Awesome Clients",
+    "clients": [
+      {
+        "message": "Yes, you will need to have the land owner sign the permit application as the Permittee, and you sign the permit as the Applicant or Agent for the Permittee.",
+        "image": "/images/testimonials/avatar1.png",
+        "name": "Isak Pettersson"
+      },
+      {
+        "message": "From most barricade or traffic control companies located in the phone book. They employ certified Traffic Control Supervisors (TCS) who can generate and certify the traffic control plan.",
+        "image": "/images/testimonials/avatar2.png",
+        "name": "Simon Sandberg"
+      },
+      {
+        "message": "An A-Line, or access restriction deed is a property right that has been obtained by CDOT for the sole purpose of prohibiting direct",
+        "image": "/images/testimonials/avatar3.png",
+        "name": "Melissa Doe"
+      },
+      {
+        "message": "Yes, you will need to have the land owner sign the permit application as the Permittee, and you sign the permit as the Applicant or Agent for the Permittee.",
+        "image": "/images/testimonials/avatar1.png",
+        "name": "Isak Pettersson"
+      },
+      {
+        "message": "From most barricade or traffic control companies located in the phone book. They employ certified Traffic Control Supervisors (TCS) who can generate and certify the traffic control plan.",
+        "image": "/images/testimonials/avatar2.png",
+        "name": "Simon Sandberg"
+      },
+      {
+        "message": "An A-Line, or access restriction deed is a property right that has been obtained by CDOT for the sole purpose of prohibiting direct",
+        "image": "/images/testimonials/avatar3.png",
+        "name": "Melissa Doe"
+      }
+    ]
+  },
+
+  "galleryData": {
+    "first": "/images/gallery/1.png",
+    "second": "/images/gallery/2.png",
+    "third": "/images/gallery/3.png",
+    "fourth": "/images/gallery/4.png",
+    "fifth": "/images/gallery/5.png",
+    "sixth": "/images/gallery/6.png",
+    "seventh": "/images/gallery/7.png",
+    "eighth": "/images/gallery/8.png",
+    "mobile1": "/images/gallery/9.png",
+    "mobile2": "/images/gallery/10.png",
+    "mobile3": "/images/gallery/11.png",
+    "mobile4": "/images/gallery/12.png",
+    "mobile5": "/images/gallery/13.png",
+    "contactus": "Contact us today!"
+  },
+
+  "contactData": {
+    "reachout": "/images/footer/reachout.svg",
+    "vector": "/images/footer/vector.svg",
+    "text": "Don't be shy",
+    "text15": "DROP US A LINE",
+    "text2": "call us:",
+    "text3": "(469) 619-7722",
+    "text4": "our email:",
+    "email": "ContactMired@gmail.com",
+    "text5": "first name",
+    "text6": "last name",
+    "text7": "email",
+    "text8": "phone",
+    "text9": "message",
+    "text10": "Submit",
+    "bubble1": "/images/footer/bubble1.png",
+    "bubble2": "/images/footer/bubble2.png",
+    "bubble3": "/images/footer/bubble3.png"
+  },
+
+  "connectData": {
+    "title": "Let's get to work",
+    "subtitle": "We would love to learn more about your business. If you'd like to get in touch, please use the form below."
+  },
+
+  "tiersData": {
+    "title": "Our Services",
+    "subtitle": "We would love to learn more about your business. If you'd like to get in touch, please use the form below.",
+    "accordions": [
+      {
+        "question": "01 Market Analysis",
+        "answer": "We understand that a comprehensive market analysis is essential for the success of any website design project. That's why we always take the time to research and analyze the target market before starting the design process.",
+        "answer1": "Completing a market analysis before designing a website allows us to create a targeted and effective design that is tailored to the needs of the target market."
+      },
+      {
+        "question": "02 SEO + Copywriting",
+        "answer": "Search engine optimization (SEO) is important to drive traffic and success to your website. That's why we always prioritize front page SEO and proper copy before starting the design process for any website.",
+        "answer1": "This allows the website to be: 1. Optimized for keywords and phrases relevant to the target audience and industry. 2. Ranked higher in search engine results pages, allowing for more visibility. 3. Improve the user experience by making it easier for users to find the information they are looking for. This can lead to increased engagement and conversions for the website, ultimately helping it to achieve its goals."
+      },
+      {
+        "question": "03 Web Design",
+        "answer": "We then use the market analysis and copywriting to create web designs that deliver a great use experience and drive conversions.",
+        "answer1": "First, we conduct a market analysis to understand the needs and preferences of the target audience and identify industry trends. Next, we use copywriting to craft compelling and relevant content for the website. Finally, we use the insights gained from the market analysis and copywriting to inform the design of the website, ensuring that it is user-centered, easy to navigate, and optimized for conversions."
+      },
+      {
+        "question": "04 Web Development",
+        "answer": "Once the web design is finalized, our developers will use their expertise to bring the design to life by coding the website using a range of programming languages and frameworks. We are committed to using the latest and most effective technologies to ensure that the website is fast, reliable, and secure.",
+        "answer1": "We also provide our clients with a program that allows them to make minor alterations to the webpage in the future. This gives our clients the flexibility to make updates and changes to the website as needed, without the need for expensive and time-consuming redevelopment. Overall, our in-house coding capabilities allow us to create a unique and tailored website solution that is customized to the needs of the business and the target audience, and that can be easily maintained and updated in the future."
+      }
+    ]
+  },
+
+  "footerData": {
+    "reachout": "/images/footer/reachout.svg"
+  },
+
+  "emailData": {
+    "title": "/images/footer/reachout.svg"
+  }
+}
+>>>>>>> 5c9aaf48787467fc84772c7704f654ac322bb4c7

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import Link from "next/link";
 
 const Nav = ({ navData, header }) => {
@@ -27,3 +28,34 @@ const Nav = ({ navData, header }) => {
 };
 
 export default Nav;
+=======
+import Link from "next/link";
+
+const Nav = ({ navData, header }) => {
+  return (
+    <nav className="flex items-center">
+      <ul className="flex gap-[55px]">
+        {navData.map((item, idx) => {
+          // destructure item
+          const { name, href } = item;
+          return (
+            <li key={idx}>
+              <Link href={href}>
+                <a
+                  className={`${
+                    header ? "text-black" : "text-black"
+                  } cursor-pointer hover:text-accent transition`}
+                >
+                  {name}
+                </a>
+              </Link>
+            </li>
+          );
+        })}
+      </ul>
+    </nav>
+  );
+};
+
+export default Nav;
+>>>>>>> 5c9aaf48787467fc84772c7704f654ac322bb4c7
