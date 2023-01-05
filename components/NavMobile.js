@@ -2,7 +2,7 @@ import Link from "next/link";
 
 const NavMobile = ({ navData }) => {
   return (
-    <nav className="bg-accent h-screen w-full p-4">
+    <nav className="bg-accent h-screen w-full p-4 bg-[#fff]">
       {/* nav list */}
       <ul className="flex flex-col gap-y-20 items-center h-screen justify-center text-4xl">
         {navData.map((item, idx) => {
@@ -12,7 +12,7 @@ const NavMobile = ({ navData }) => {
             <li key={idx}>
               <Link
                 href={href}
-                className="text-black font-bold hover:text-white"
+                className="text-black font-bold hover:text-[#F2790C]"
               >
                 {" "}
                 {name}
@@ -20,6 +20,9 @@ const NavMobile = ({ navData }) => {
             </li>
           );
         })}
+        <Link href="contactform">
+          <button className="btn text-2xl">Work with us</button>
+        </Link>
       </ul>
     </nav>
   );

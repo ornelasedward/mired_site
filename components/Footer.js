@@ -13,8 +13,8 @@ const Footer = () => {
       id="footer"
       className="py-[3rem] text-center text-[0.9rem] bg-[#F2F1E5]"
     >
-      <div className="mt-20">
-        <Link href="/" className="">
+      <div className="mt-20 justify-center flex">
+        <Link href="/">
           <Image src={Logo} className="cursor-pointer" />
         </Link>
       </div>

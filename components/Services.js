@@ -25,7 +25,7 @@ const Services = ({ servicesData }) => {
             </div>
             <div className="flex items-center justify-center">
               <Link href="servicesform">
-                <button className="btn font-medium text-center px-[6.4rem] hover:bg-[#F2790C] hover:text-[#FAFAFA]">
+                <button className="btn font-medium text-center w-60 hover:bg-[#F2790C] hover:text-[#FAFAFA]">
                   <h3>Learn More</h3>
                 </button>
               </Link>
@@ -76,7 +76,7 @@ const Services = ({ servicesData }) => {
             </div>
             <div className="flex items-center justify-center">
               <Link href="servicesform#digital_marketing">
-                <button className="btn font-medium text-center px-[6.4rem] bg-[#F2790C] hover:bg-[#FAFAFA]">
+                <button className="h-[50px] px-[30px] hover:bg-[#FAFAFA] text-[#FAFAFA] border-[#161716] border-2 hover:text-[#161716] rounded-[1.875rem] transition ease-in-out font-bold text-center w-60 bg-[#F2790C]">
                   <h3>Learn More</h3>
                 </button>
               </Link>
@@ -127,7 +127,7 @@ const Services = ({ servicesData }) => {
             </div>
             <div className="flex items-center justify-center">
               <Link href="servicesform#smma">
-                <button className="btn font-medium text-center px-[6.4rem] hover:bg-[#F2790C] hover:text-[#FAFAFA]">
+                <button className="btn font-medium text-center hover:bg-[#F2790C] hover:text-[#FAFAFA] w-60">
                   <h3>Learn More</h3>
                 </button>
               </Link>

@@ -54,7 +54,7 @@ const Hero = ({ headerData, heroData, navData }) => {
               <Link href="servicesform">
                 <button
                   type="button"
-                  className="btn bg-transparent text-[#171616] hover:bg-[#161716] hover:text-[#FAFAFA] xs:px-14"
+                  className="h-[50px] px-[30px] font-bold border-[#161716] border-2 rounded-[1.875rem] transition ease-in-out bg-transparent text-[#171616] hover:bg-[#161716] hover:text-[#FAFAFA] xs:px-14"
                 >
                   Learn More
                 </button>
