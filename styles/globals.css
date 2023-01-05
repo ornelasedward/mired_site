@@ -3,16 +3,11 @@
 @tailwind utilities;
 
 @layer base {
-  .lead {
-    @apply font-body font-light text-[18px] leading-[40px];
-  }
+  /* button */
   .btn {
     @apply h-[50px] px-[30px] font-body font-black bg-[#161716] hover:bg-[#FAFAFA] text-[#FAFAFA] border-[#161716] border-2 hover:text-[#161716] rounded-[1.875rem] transition ease-in-out;
   }
-  .input {
-    @apply h-[60px] rounded-[5px] max-w-[400px] outline-none px-[40px] ring-1 ring-accent/50 focus:ring-2 focus:ring-accent transition focus:drop-shadow-primary text-[18px] font-bold placeholder:text-[18px] placeholder:font-light placeholder:text-primary;
-  }
-
+  /* font family */
   h1 {
     font-family: "Clash Display", sans-serif;
   }
@@ -23,7 +18,7 @@
     font-family: "Montserrat", sans-serif;
   }
 
-  /* //*Photo Gallery*/
+  /* Photo Gallery*/
 
   .inspo-flex-item {
     padding: 1%;
@@ -172,9 +167,7 @@
     white-space: nowrap;
   }
 
-  .inspo-flex_button:hover {
-  }
-  .inspo-flex_button-arrow {
+  .inspo-flex_button_arrow {
     width: 0.7em;
     margin-left: 0.6em;
   }
