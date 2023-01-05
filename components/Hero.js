@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 // import components
 import Header from "./Header";
@@ -45,15 +46,19 @@ const Hero = ({ headerData, heroData, navData }) => {
               successful strategy that your business needs!
             </h2>
             <div className="flex justify-center gap-5 xs:gap-10 xs:pt-8 pt-4">
-              <button type="button" className="btn xs:px-14">
-                Contact Us
-              </button>
-              <button
-                type="button"
-                className="btn bg-transparent text-[#171616] hover:bg-[#161716] hover:text-[#FAFAFA] xs:px-14"
-              >
-                Learn More
-              </button>
+              <Link href="contactform">
+                <button type="button" className="btn xs:px-14">
+                  Contact Us
+                </button>
+              </Link>
+              <Link href="servicesform">
+                <button
+                  type="button"
+                  className="btn bg-transparent text-[#171616] hover:bg-[#161716] hover:text-[#FAFAFA] xs:px-14"
+                >
+                  Learn More
+                </button>
+              </Link>
             </div>
           </div>
         </div>

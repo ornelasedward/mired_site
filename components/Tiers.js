@@ -2,7 +2,6 @@ import Header from "./Header";
 import Link from "next/link";
 import Image from "next/image";
 
-import { photo1 } from "../public/images/tiers/SocialMedia.jpg";
 // import components
 import Accordion from "./Accordion2";
 
@@ -22,7 +21,7 @@ import {
 const Tiers = ({ headerData, tiersData, navData }) => {
   // destructure footer data
 
-  const { title, subtitle, accordions } = tiersData;
+  const { title, accordions } = tiersData;
 
   return (
     <div id="tiersform" className="gradient_bg1">
@@ -35,19 +34,19 @@ const Tiers = ({ headerData, tiersData, navData }) => {
             {title}
           </h1>
           <div className="flex gap-x-8 font-semibold">
-            <Link href="/">
+            <Link href="#web_development">
               <div className="flex cursor-pointer">
                 <h2 className="pr-1">Web Development</h2>
                 <HiOutlineArrowNarrowRight className="text-2xl pt-[0.1rem] text-[#F2690C]" />
               </div>
             </Link>
-            <Link href="/">
+            <Link href="#digital_marketing">
               <div className="flex cursor-pointer">
                 <h2 className="pr-1">Digital Marketing</h2>
                 <HiOutlineArrowNarrowRight className="text-2xl pt-[0.1rem] text-[#F2690C]" />
               </div>
             </Link>
-            <Link href="/">
+            <Link href="#smma">
               <div className="flex cursor-pointer">
                 <h2 className="pr-1">Social Media Management</h2>
                 <HiOutlineArrowNarrowRight className="text-2xl pt-[0.1rem] text-[#F2690C]" />
@@ -56,7 +55,7 @@ const Tiers = ({ headerData, tiersData, navData }) => {
           </div>
 
           {/* Web development */}
-          <div className="mt-32">
+          <div id="web_development" className="web_development mt-32">
             <h1 className="text-6xl font-bold text-center">Web Development</h1>
             <motion.div
               variants={staggerTextContainer}
@@ -84,7 +83,7 @@ const Tiers = ({ headerData, tiersData, navData }) => {
       </div>
 
       {/* Digital Marketing */}
-      <div className="lg:p-8 p-4">
+      <div id="digital_marketing" className="digital_marketing lg:p-8 p-4">
         <div className="border-4 border-[#171616] rounded-[1.875rem] bg-[#171616] max-w-[1920px] m-auto">
           <div className="lg:p-16 p-4 text-[#FCF7E8]">
             <div className="mb-16">
@@ -156,7 +155,7 @@ const Tiers = ({ headerData, tiersData, navData }) => {
       </div>
 
       {/* Social Media Management */}
-      <section class="text-gray-400">
+      <section id="smma" className="smma text-gray-400">
         <div class="container px-5 py-24 mx-auto flex flex-col">
           <div class="lg:w-4/6 mx-auto">
             <div class="border-2 border-[#171616] rounded-[1.875rem]">
@@ -164,12 +163,12 @@ const Tiers = ({ headerData, tiersData, navData }) => {
                 Social Media Management
               </h1>
             </div>
-            <div class="flex flex-col sm:flex-row mt-10">
-              <div class="sm:w-1/3 text-center sm:pr-8 sm:py-8">
-                <div class="flex flex-col items-center text-center justify-center"></div>
+            <div className="flex flex-col sm:flex-row mt-10">
+              <div className="sm:w-1/3 text-center sm:pr-8 sm:py-8">
+                <div className="flex flex-col items-center text-center justify-center"></div>
               </div>
-              <div class="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-800 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
-                <p class="text-lg mb-4 text-[#171616] font-bold">
+              <div className="sm:w-2/3 sm:pl-8 sm:py-8 sm:border-l border-gray-800 sm:border-t-0 border-t mt-4 pt-4 sm:mt-0 text-center sm:text-left">
+                <p className="text-lg mb-4 text-[#171616] font-bold">
                   Our social media management services consist of several key
                   elements designed to help businesses effectively manage and
                   grow their online presence. These include:
@@ -179,15 +178,19 @@ const Tiers = ({ headerData, tiersData, navData }) => {
                   user-generated content, and short-form content like hashtags
                   and quotes.
                   <br />
+                  <br />
                   <b>Scheduled posting,</b> to ensure a consistent stream of
                   content on the client's social media accounts. Trend and
                   market research, to stay up-to-date on the latest best
                   practices and create relevant and effective campaigns.
                   <br />
+                  <br />
                   <b>Logo design and branding services,</b> to ensure
                   consistency across all of the client's social media accounts
                   and develop a cohesive brand identity.
                 </p>
+                <br />
+
                 <p className="text-lg mb-4 text-[#171616] font-normal">
                   Overall, these services are intended to help businesses build
                   and maintain a strong online presence, attract and engage an

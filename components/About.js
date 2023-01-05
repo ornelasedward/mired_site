@@ -51,11 +51,16 @@ const Qoute1 = ({ aboutData }) => {
                   </p>
                 </div>
                 {/* //*Get Started */}
+
                 <div className="border-t-2 flex justify-end mt-10 lg:mt-4 xl:mt-0">
-                  <h1 className="px-2 pt-2 lg:pt-8">Get Started</h1>
-                  <div className="pt-3 lg:pt-9 text-[#F2690C]">
-                    <SlArrowRight />
-                  </div>
+                  <Link href="contactform">
+                    <div className="cursor-pointer flex">
+                      <h1 className="px-2 pt-2 lg:pt-8">Get Started</h1>
+                      <div className="pt-3 lg:pt-9 text-[#F2690C]">
+                        <SlArrowRight />
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </div>
               {/* //*Left Component end */}
@@ -93,10 +98,14 @@ const Qoute1 = ({ aboutData }) => {
                 </div>
                 {/* //*Get Started 2*/}
                 <div className="border-t-2 flex justify-end mt-10 lg:mt-4 xl:mt-0">
-                  <h1 className="px-2 pt-2 lg:pt-8">Get Started</h1>
-                  <div className="pt-3 lg:pt-9 text-[#F2690C]">
-                    <SlArrowRight />
-                  </div>
+                  <Link href="contactform">
+                    <div className="cursor-pointer flex">
+                      <h1 className="px-2 pt-2 lg:pt-8">Get Started</h1>
+                      <div className="pt-3 lg:pt-9 text-[#F2690C]">
+                        <SlArrowRight />
+                      </div>
+                    </div>
+                  </Link>
                 </div>
               </div>
               {/* //*Right Component end */}
