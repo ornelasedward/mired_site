@@ -5,7 +5,7 @@ const Document = () => {
     <Html>
       <Head>
         {/* Title */}
-        <title>Mired </title>
+        <title>Mired</title>
         {/* google fonts */}
         <link
           href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,700,500,600,300&display=swap"

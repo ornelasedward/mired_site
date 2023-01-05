@@ -5,7 +5,7 @@
 @layer base {
   /* button */
   .btn {
-    @apply h-[50px] px-[30px] font-body font-black bg-[#161716] hover:bg-[#FAFAFA] text-[#FAFAFA] border-[#161716] border-2 hover:text-[#161716] rounded-[1.875rem] transition ease-in-out;
+    @apply h-[50px] px-[30px] font-black bg-[#161716] hover:bg-[#FAFAFA] text-[#FAFAFA] border-[#161716] border-2 hover:text-[#161716] rounded-[1.875rem] transition ease-in-out;
   }
   /* font family */
   h1 {
