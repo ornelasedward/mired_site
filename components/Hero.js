@@ -29,7 +29,7 @@ const Hero = ({ headerData, heroData, navData }) => {
         {/* header */}
         <Header headerData={headerData} navData={navData} />
 
-        <div className="pt-72">
+        <div className="xl:pt-72 pt-52">
           {/* title */}
           <div className="grid gap-y-12">
             <motion.h1
