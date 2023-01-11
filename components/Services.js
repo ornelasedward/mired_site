@@ -14,7 +14,7 @@ const Services = ({ servicesData }) => {
         </h1>
         <div className="grid grid-cols-1 xl:grid-cols-3 xl:gap-x-10 gap-y-10 max-w-[1280px] m-auto">
           {/* //*First Box */}
-          <div className="h-auto border-4 border-[#161616] bg-[#FAFAFA] text-[#161616] rounded-[1.875rem] py-10 px-2 xl:px-0 grid gap-y-5 justify-center xl:max-w-[370px]">
+          <div className="h-auto border-4 border-[#161616] bg-[#FAFAFA] text-[#161616] rounded-[1.875rem] py-10 px-4 xl:px-0 grid gap-y-5 justify-center xl:max-w-[370px]">
             <div className="block md:flex xl:block">
               <div className="text-[#F2790C] text-5xl xl:mb-6 mt-2 xl:mt-0 pr-2 xl:pr-0 md:mb-0 mb-6">
                 <GiRoundStar />
@@ -65,7 +65,7 @@ const Services = ({ servicesData }) => {
           {/*  //*end of box */}
 
           {/* //*Second Box */}
-          <div className="h-auto border-4 border-[#161616] bg-[#161616] text-[#FAFAFA] rounded-[1.875rem] py-10 xl:px-0  grid gap-y-5 justify-center xl:max-w-[370px]">
+          <div className="h-auto border-4 border-[#161616] bg-[#161616] text-[#FAFAFA] rounded-[1.875rem] py-10 px-4 xl:px-0  grid gap-y-5 justify-center xl:max-w-[370px]">
             <div className="block md:flex xl:block">
               <div className="text-[#F2790C] text-5xl xl:mb-6 mt-2 xl:mt-0 pr-2 xl:pr-0 md:mb-0 mb-6">
                 <GiRoundStar />
@@ -116,7 +116,7 @@ const Services = ({ servicesData }) => {
           {/*  //*end of box */}
 
           {/* //*First Box */}
-          <div className="h-auto border-4 border-[#161616] bg-[#FAFAFA] text-[#161616] rounded-[1.875rem] py-10 px-2 xl:px-0 grid gap-y-5 justify-center xl:max-w-[370px]">
+          <div className="h-auto border-4 border-[#161616] bg-[#FAFAFA] text-[#161616] rounded-[1.875rem] py-10 px-4 xl:px-0 grid gap-y-5 justify-center xl:max-w-[370px]">
             <div className="block md:flex xl:block">
               <div className="text-[#F2790C] text-5xl xl:mb-6 mt-2 xl:mt-0 pr-2 xl:pr-0 md:mb-0 mb-6">
                 <GiRoundStar />
