@@ -19,7 +19,7 @@ const ServicesHero = () => {
             offerings. With our all-in-one solutions your website does more than
             exist—it excels.
           </p>
-          <div className="flex gap-6 justify-center items-center">
+          {/* <div className="flex gap-6 justify-center items-center">
             <Button
               variant={"secondary"}
               className="font-poppins font-semibold rounded-none  hover:bg-transparent hover:text-black px-6 hover:border-skin-blue-800  border h-10 uppercase"
@@ -32,7 +32,18 @@ const ServicesHero = () => {
             >
               SERVICES
             </Button>
-          </div>
+          </div> */}
+          <div className="py-20 px-4">
+          <ul className="text-4xl">
+            <li>
+            <h1>Phone: (469)619-7722</h1>
+            </li>
+            <li>
+            <h1>email: contactmired@gmail.com</h1>
+            </li>
+          </ul>
+          
+        </div>
         </div>
         <div className="  xl:flex hidden  absolute left-0 right-0 top-[30%] items-center justify-between">
           <Image src={"/images/design.svg"} width={80} height={80} alt="" />

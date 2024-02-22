@@ -21,20 +21,7 @@ const ContactForm = () => {
           </p>
         </div>
 
-
-        <div className="py-20 px-4">
-          <ul className="text-4xl">
-            <li>
-            <h1>Phone: (469)619-7722</h1>
-            </li>
-            <li>
-            <h1>email: contactmired@gmail.com</h1>
-            </li>
-          </ul>
-          
-        </div>
-
-        {/* <div>
+        <div>
           <form className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-12">
             <Input
               type="text"
@@ -97,7 +84,7 @@ const ContactForm = () => {
           <div className="flex justify-center mt-12">
             <CustomButton>submit Your Consultation </CustomButton>
           </div>
-        </div> */}
+        </div>
       </div>
     </div>
   );
