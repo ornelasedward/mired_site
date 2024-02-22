@@ -23,7 +23,7 @@ const ContactForm = () => {
 
 
         <div className="py-20 px-4">
-          <ul>
+          <ul className="text-4xl">
             <li>
             <h1>Phone: (469)619-7722</h1>
             </li>
