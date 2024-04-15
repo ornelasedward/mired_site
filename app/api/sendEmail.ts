@@ -1,14 +1,15 @@
 import { Resend } from 'resend';
 
+const resend = new Resend(process.env.RESEND_EMAIL_API_KEY);
+
 export default async function handler(req: any, res: any) {
   if (req.method === 'POST') {
     const { name, email, website, phone, message } = req.body;
-    const resend = new Resend(process.env.RESEND_EMAIL_API_KEY);
 
     try {
       await resend.emails.send({
-        from: 'onboarding@resend.dev',
-        to: 'contactmired@gmail.com',   
+        from: 'contactmired@gmail.com',
+        to: 'contactmired@gmail.com',
         subject: 'New Contact Form Submission',
         html: `
           <p><strong>Name:</strong> ${name}</p>

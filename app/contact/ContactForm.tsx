@@ -111,19 +111,19 @@ const ContactForm: React.FC = () => {
         </form>
 
         {showModal && (
-          <div className="fixed inset-0 flex items-center justify-center z-50 bg-black bg-opacity-75">
-            <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
-              <h2 className="text-2xl font-bold mb-4">Thank you!</h2>
-              <p className="mb-6">We will reach out within 24-48 business hours.</p>
-              <button
-                className="bg-[#FFD200] text-black font-bold py-2 px-4 rounded focus:outline-none hover:bg-yellow-500 transition-colors duration-300 w-full"
-                onClick={closeModal}
-              >
-                Close
-              </button>
-            </div>
+        <div className="fixed inset-0 flex items-center justify-center z-50 bg-[#F6F3EC] bg-opacity-75">
+          <div className="bg-white p-8 rounded-lg shadow-lg max-w-md w-full">
+            <h2 className="text-2xl font-bold mb-4">Thank you!</h2>
+            <p className="mb-6">We will reach out within 24-48 business hours.</p>
+            <button
+              className="bg-[#F6F3EC] text-black font-bold py-2 px-4 rounded focus:outline-none hover:bg-yellow-500 transition-colors duration-300 w-full"
+              onClick={closeModal}
+            >
+              Close
+            </button>
           </div>
-        )}
+        </div>
+      )}
       </div>
     </div>
   );
