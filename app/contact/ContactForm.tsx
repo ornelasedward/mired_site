@@ -55,7 +55,7 @@ const ContactForm: React.FC = () => {
     <div className="relative z-50 py-20">
       <div className="container">
         <div className="max-w-[900px] mx-auto text-center">
-          <h2 className="heading-1">Let's Get To Work</h2>
+          <h2 className="heading-1">Let&apos;s Get To Work</h2>
           <p className="my-3 max-w-[600px] mx-auto leading-8">
             We would love to learn more about your business. If you would like
             to get in touch, please use the form below.
