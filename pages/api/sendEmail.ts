@@ -1,10 +1,12 @@
+// /pages/api/sendEmail.ts
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { Resend } from 'resend';
 
 const resend = new Resend(process.env.RESEND_EMAIL_API_KEY);
 
-export default async function handler(req: any, res: any) {
+export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const { name, email, website, phone, message } = req.body;
+    const { name, email, phone, website, message } = req.body;
 
     try {
       await resend.emails.send({
