@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Button } from "../ui/button";
+import ContactForm from "../../app/contact/ContactForm";
 
 const ServicesHero = () => {
   return (
@@ -11,14 +12,15 @@ const ServicesHero = () => {
     >
       <div className=" container h-full z-20 relative ">
         <div className="max-w-[1030px] relative z-40 space-y-6 xl:space-y-5 mx-auto text-center">
-          <h2 className="heading-1">contact</h2>
+          {/* <h2 className="heading-1">contact</h2>
           <p className="">
             We optimize your online presence, turning it into a revenue
             powerhouse that effectively markets and sells your digital{" "}
             <br className=" xl:block hidden" />
             offerings. With our all-in-one solutions your website does more than
             exist—it excels.
-          </p>
+          </p> */}
+          <ContactForm />
           {/* <div className="flex gap-6 justify-center items-center">
             <Button
               variant={"secondary"}
@@ -33,7 +35,7 @@ const ServicesHero = () => {
               SERVICES
             </Button>
           </div> */}
-          <div className="py-20 px-4">
+          {/* <div className="py-20 px-4">
           <ul className="text-4xl max-w-[300px] lg:max-w-full">
             <li>
             <h1>Phone: (469)619-7722</h1>
@@ -43,7 +45,7 @@ const ServicesHero = () => {
             </li>
           </ul>
           
-        </div>
+        </div> */}
         </div>
         <div className="  xl:flex hidden  absolute left-0 right-0 top-[30%] items-center justify-between">
           <Image src={"/images/design.svg"} width={80} height={80} alt="" />

@@ -11,7 +11,6 @@ const Contact = () => {
       <div className=" py-5">
         <Sponsars />
       </div>
-      {/* <ContactForm /> */}
       <Faqs className=" !bg-white" />
       <LetsTalk className="" />
     </div>
