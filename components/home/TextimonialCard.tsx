@@ -84,9 +84,9 @@ const TestimonialCard = () => {
             className=" text-base sm:text-lg xl:text-2xl font-manrope"
           >
             {testimonials[currentSlide].comment}
-            <span className=" font-extrabold">
+            {/* <span className=" font-extrabold">
               Can’t recommend them enough.
-            </span>
+            </span> */}
           </motion.p>
         </div>
         <div className="flex pt-6 xl:pt-0 sm:pt-8 xl:absolute bottom-10   w-full  items-start justify-between">
