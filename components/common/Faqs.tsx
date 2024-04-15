@@ -72,10 +72,10 @@ const Faqs: FC<Props> = ({ className }) => {
                 value={faq.id}
                 className="border-[1px] px-2 text-left sm:px-10 bg-white rounded-[5px] border-[#CFC9D4]"
               >
-                <AccordionTrigger className=" text-left hover:no-underline text-xs sm:text-xl font-medium font-poppins">
+                <AccordionTrigger className=" text-left hover:no-underline text-md sm:text-xl font-medium font-poppins">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className=" text-[8px] sm:text-sm lg:text-base ">
+                <AccordionContent className=" text-[8px] text-lg lg:text-base ">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
