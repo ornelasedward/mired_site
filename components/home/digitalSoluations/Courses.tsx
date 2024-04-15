@@ -17,7 +17,7 @@ const Courses = () => {
           </p>
           <div>
             <Link
-              href=""
+              href="/services"
               className=" inline-flex gap-x-2  items-center font-semibold text-black"
             >
               <p className="uppercase font-orbitron  font-semibold text-sm ">

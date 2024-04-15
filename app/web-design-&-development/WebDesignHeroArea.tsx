@@ -18,11 +18,12 @@ const WebDesignHeroArea = () => {
           </Link>
         </div>
         <h2 className=" heading-1 xl:leading-[60px]">
-          Brand Development <br className=" hidden lg:block" /> & Digital
-          Marketing
+          DESIGN & Development
         </h2>
         <div className=" pt-5">
+          <Link href="/contact">
           <CustomButton>CONTACT US</CustomButton>
+          </Link>
         </div>
 
         <div

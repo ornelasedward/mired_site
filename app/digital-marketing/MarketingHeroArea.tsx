@@ -22,7 +22,9 @@ const MarketingHeroArea = () => {
           Marketing
         </h2>
         <div className=" pt-5">
+        <Link href="/contact">
           <CustomButton>CONTACT US</CustomButton>
+          </Link>
         </div>
 
         <div

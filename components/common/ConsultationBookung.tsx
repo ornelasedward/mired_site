@@ -1,5 +1,6 @@
 import Image from "next/image";
 import CustomButton from "../ui/custom-button";
+import Link from "next/link";
 
 const ConsultationBookung = () => {
   return (
@@ -49,7 +50,9 @@ const ConsultationBookung = () => {
             </div>
           </div>
           <div className="pt-4">
+          <Link href="/contact">
             <CustomButton>Book Your Consultation Today</CustomButton>
+          </Link>
           </div>
         </div>
       </div>

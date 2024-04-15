@@ -12,7 +12,7 @@ const Contact = () => {
         <Sponsars />
       </div>
       <Faqs className=" !bg-white" />
-      <LetsTalk className="" />
+      {/* <LetsTalk className="" /> */}
     </div>
   );
 };
