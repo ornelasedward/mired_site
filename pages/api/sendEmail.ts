@@ -10,7 +10,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     try {
       await resend.emails.send({
-        from: 'contactmired@gmail.com',
+        from: 'onboarding@resend.dev',
         to: 'contactmired@gmail.com',
         subject: 'New Contact Form Submission',
         html: `
