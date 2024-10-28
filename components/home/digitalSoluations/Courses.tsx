@@ -13,7 +13,7 @@ const Courses = () => {
             to design and develop interactive online courses that empower your
             audience and generate revenue. Additionally, our skilled content
             creators craft engaging newsletters that inform, inspire, and build
-            lasting connections with your subscribers.
+            lasting connections with your subscribers!
           </p>
           <div>
             <Link
