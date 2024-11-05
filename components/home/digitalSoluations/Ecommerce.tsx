@@ -6,8 +6,8 @@ const Ecommerce = () => {
     <div className=" bg-skin-yellow-200 py-10 border-b-[2px] border-black/30">
       <div className="flex container flex-col-reverse lg:flex-row-reverse justify-between gap-8 items-center">
         <div className="w-full space-y-2  lg:max-w-[850px]">
-          <h3 className="heading-2">E-commerce Solutions</h3>
-          <p>
+          <h3 className="heading-2">SCALE</h3>
+          <p className="text-xl">
             Seamlessly sell your products or services online with our tailored
             e-commerce solutions. We create user-friendly online stores that
             offer a smooth shopping experience. From secure payment gateways to

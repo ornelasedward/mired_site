@@ -24,7 +24,8 @@ const faqData = [
   },
   {
     id: "item-3",
-    question: "How can Mired help me improve my website's user experience (UX)?",
+    question:
+      "How can Mired help me improve my website's user experience (UX)?",
     answer:
       "User experience is crucial for the success of any digital solution. Our UX experts at Mired can conduct a thorough analysis of your existing website or application to identify areas for improvement. We'll provide recommendations and implement strategies to enhance navigation, reduce friction points, and create a more intuitive and engaging user experience. By optimizing your UX, we can help increase user satisfaction, reduce bounce rates, and ultimately drive more conversions – creating more money in your pocket.",
   },
