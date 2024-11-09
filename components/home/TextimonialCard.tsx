@@ -80,7 +80,7 @@ const TestimonialCard = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className=" text-base sm:text-lg xl:text-2xl font-manrope"
+            className=" text-lg sm:text-xl xl:text-2xl font-manrope"
           >
             {testimonials[currentSlide].comment}
             {/* <span className=" font-extrabold">
@@ -95,10 +95,10 @@ const TestimonialCard = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <h4 className=" text-2xl xl:text-3xl font-manrope font-medium">
+            <h4 className=" text-2xl sm:text-3xl xl:text-3xl font-manrope font-medium">
               - {testimonials[currentSlide].userName}
             </h4>
-            <p className=" text-xs sm:text-base text-[#A9A1AF]">
+            <p className="inline-block text-blue-500 bg-blue-100 border border-blue-500 px-4 py-1.5 rounded-md text-sm font-medium">
               {testimonials[currentSlide].userTitle}
             </p>
           </motion.div>

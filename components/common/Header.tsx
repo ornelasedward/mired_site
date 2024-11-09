@@ -84,10 +84,10 @@ const Header = () => {
             {Links.map((link, index) => (
               <li
                 className={cn(
-                  "relative text-black ",
+                  "relative text-black hover:bg-[#D7E9F8] transition-colors duration-200 px-4 py-1 rounded-sm",
                   pathName === link.href
-                    ? " text-black uppercase font-medium after:left-0 after:-bottom-[8px] after:absolute after:w-full after:h-[2px] after:bg-[#D7E9F8]"
-                    : " text-black font-medium uppercase"
+                    ? "text-black uppercase font-medium bg-[#D7E9F8]"
+                    : "text-black font-medium uppercase"
                 )}
                 key={index}
               >
@@ -124,10 +124,10 @@ const Header = () => {
               <li
                 onClick={() => setNav(false)}
                 className={cn(
-                  "relative xl:hidden  text-base ",
+                  "relative xl:hidden text-base hover:bg-[#D7E9F8] transition-colors duration-200 px-4 py-1 rounded-sm w-full text-center",
                   pathName === link.href
-                    ? " text-black font-bold after:left-0 after:-bottom-[8px] after:absolute after:w-full after:h-[2px] after:bg-secondary"
-                    : " text-black font-medium"
+                    ? "text-black font-medium bg-[#D7E9F8]"
+                    : "text-black font-medium"
                 )}
                 key={index}
               >

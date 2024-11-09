@@ -16,7 +16,7 @@ const HeroArea = () => {
           <span className="inline-block text-blue-500 bg-blue-100 border border-blue-500 px-4 py-1.5 rounded-md text-sm font-medium">
             Custom Software & AI Solutions
           </span>
-          <h2 className="text-4xl sm:text-8xl font-bold normal-case">
+          <h2 className="text-5xl sm:text-8xl font-bold normal-case">
             Build Digital <br /> Solutions That Scale
             <span className="inline-block w-8" /> <br />
           </h2>
