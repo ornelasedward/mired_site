@@ -19,9 +19,8 @@ export default function Home() {
       <DigitalSoluations />
       <Testimonials />
       <Trust />
-      <BookingConsultation />
       <Faqs />
-      <LetsTalk />
+      <BookingConsultation />
     </main>
   );
 }

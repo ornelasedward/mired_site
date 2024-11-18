@@ -9,20 +9,19 @@ const TestimonialCard = () => {
     {
       id: 1,
       comment:
+        "Excellent job in helping me with my website. Since we have brought on Mired, BecauseBitcoin has 10x'd in traffic and revenue. I will continue to use them for all my website needs.",
+      userName: "Max Schwartzman",
+      userTitle: "CEO of BecauseBitcoin",
+      userProfile: "https://i.postimg.cc/Ghy8tyfs/max.png",
+    },
+    {
+      id: 2,
+      comment:
         "Miranda and Edward are absolutely wonderful at what they do. I first came to Miranda earlier this year with a business plan, but little to no idea about how to create/cultivate an online presence. Miranda and Edward have turned my “idea” into a steady, growing business that continues to perform better each month. I love their creativity, go-getter attitudes, and dedication to providing a solid product. Can’t recommend them enough.",
       userName: "Jessica kaur",
       userTitle: "Naina and Noor",
       userProfile:
         "https://images.unsplash.com/photo-1573497490790-9053816a01d4?q=80&w=3087&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    },
-    {
-      id: 2,
-      comment:
-        "Excellent job in helping me with my website. Since we have brought on Mired, BecauseBitcoin has 10x'd in traffic and revenue. I will continue to use them for all my website needs.",
-      userName: "Max Schwartzman",
-      userTitle: "CEO of BecauseBitcoin",
-      userProfile:
-        "https://i.postimg.cc/Ghy8tyfs/max.png",
     },
   ];
 
@@ -81,7 +80,7 @@ const TestimonialCard = () => {
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
-            className=" text-base sm:text-lg xl:text-2xl font-manrope"
+            className=" text-lg sm:text-xl xl:text-2xl font-manrope"
           >
             {testimonials[currentSlide].comment}
             {/* <span className=" font-extrabold">
@@ -96,10 +95,10 @@ const TestimonialCard = () => {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, ease: "easeInOut" }}
           >
-            <h4 className=" text-2xl xl:text-3xl font-manrope font-medium">
+            <h4 className=" text-2xl sm:text-3xl xl:text-3xl font-manrope font-medium">
               - {testimonials[currentSlide].userName}
             </h4>
-            <p className=" text-xs sm:text-base text-[#A9A1AF]">
+            <p className="inline-block text-blue-500 bg-blue-100 border border-blue-500 px-4 py-1.5 rounded-md text-sm font-medium">
               {testimonials[currentSlide].userTitle}
             </p>
           </motion.div>

@@ -11,16 +11,16 @@ const Sponsars = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const logos: Logos[] = [
     {
-      name: "Social Media",
+      name: "Digital products",
     },
     {
-      name: "Development",
+      name: "Custom Software",
     },
     {
-      name: "Seo",
+      name: "AI Solutions",
     },
     {
-      name: "Graphics Design",
+      name: "Growth Systems",
     },
   ];
   useEffect(() => {
@@ -48,7 +48,7 @@ const Sponsars = () => {
                   fill={index % 2 == 0 ? "#F7BE08" : "#FF92B2"}
                 />
               </svg>
-              <h2>{logo.name}</h2>
+              <h2 className="text-4xl sm:text-5xl">{logo.name}</h2>
             </div>
           ))}
         </Marquee>

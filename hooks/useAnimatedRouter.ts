@@ -5,10 +5,12 @@ export interface IFounder {
   role: string;
   id: number;
 }
-export interface ExtendedDocument extends Document {
-  startViewTransition?: any;
-}
+
 import { useRouter } from "next/navigation";
+
+export interface ExtendedDocument extends Document {
+  startViewTransition: any;
+}
 
 export default function useAnimatedRouter() {
   const router = useRouter();

@@ -12,33 +12,33 @@ import React, { FC } from "react";
 const faqData = [
   {
     id: "item-1",
-    question: "What services does Mired offer to help my brand grow?",
+    question: "What exactly is a digital growth studio?",
     answer:
-      "At Mired, we offer a comprehensive range of services to help your brand scale in revenue and traffic. Our services include web development, software solutions, content creation, and e-commerce support. We work closely with you to develop a customized brand scheme and provide a blueprint for success, ensuring that all aspects of your online presence are optimized for growth.",
+      "We're a modern tech partner that combines custom software development, AI solutions, and content systems to build revenue-generating digital platforms.",
   },
   {
     id: "item-2",
-    question: "What creative monetization strategies does Mired offer?",
+    question: "What types of businesses do you work with?",
     answer:
-      "We understand that staying competitive in today's digital landscape requires continuous innovation and modernization. Our team develops innovative monetization strategies tailored for all unique business models and target audiences. This includes using the latest technologies, design trends, and industry best practices to modernize your website, software, or application. Some of the creative strategies we specialize in include developing subscription-based premium content or features, implementing targeted advertising solutions, affiliate marketing partnerships, sponsored content opportunities, and leveraging emerging technologies like virtual reality (VR), artificial intelligence, or augmented reality (AR) to create unique and memorable experiences.",
+      "We specialize in working with digital innovators, Web3 companies, and ambitious startups looking to scale. Our solutions have helped companies go from zero to $1M+ in revenue.",
   },
   {
     id: "item-3",
-    question: "How can Mired help me improve my website's user experience (UX)?",
+    question: "What does working with your team look like?",
     answer:
-      "User experience is crucial for the success of any digital solution. Our UX experts at Mired can conduct a thorough analysis of your existing website or application to identify areas for improvement. We'll provide recommendations and implement strategies to enhance navigation, reduce friction points, and create a more intuitive and engaging user experience. By optimizing your UX, we can help increase user satisfaction, reduce bounce rates, and ultimately drive more conversions – creating more money in your pocket.",
+      "We become an extension of your team, handling everything from development to implementation. You get a dedicated team without the overhead of hiring in-house. We're a remote-first team, so we can work with you from anywhere in the world, but we're based in Frisco, TX and will be happy to travel to you.",
   },
   {
     id: "item-4",
-    question: "Can you assist with implementing AI solutions for my business?",
+    question: "How are you different from a regular digital agency?",
     answer:
-      "You betcha! We stay at the forefront of technological advancements, including artificial intelligence (AI). Our team can help you identify opportunities to leverage AI within your digital solutions to automate processes, personalize user experiences, and gain valuable insights from data. Whether you're interested in chatbots, recommendation engines, or predictive analytics, we can help you harness the power of AI to drive innovation and growth for your business.",
+      "Unlike traditional agencies, we focus on building complete digital systems that drive revenue. From custom software to content monetization, we're your all-in-one growth partner.",
   },
   {
     id: "item-5",
-    question: "How does you ensure the security of digital solutions?",
+    question: "Can you build custom software that integrates with AI?",
     answer:
-      "We understand the importance of protecting digital assets and sensitive customer information. We follow industry best practices and implements robust security measures throughout the development process. From secure coding practices and regular vulnerability assessments to SSL encryption and data backup solutions, we take a comprehensive approach to ensure the integrity and confidentiality of your digital solutions.",
+      "Yes, we can build custom software that integrates with AI. We have experience in building custom software that integrates with AI, including chatbots, recommendation engines, and predictive analytics. We also offer AI consulting services to help you integrate AI into your existing systems.",
   },
 ];
 
@@ -55,7 +55,9 @@ const Faqs: FC<Props> = ({ className }) => {
   return (
     <div className={cn(className, "py-20   bg-skin-pink-50")}>
       <div className="container">
-        <h2 className="heading-2">Frequently Asked Questions</h2>
+        <h2 className="heading-2 text-4xl md:text-5xl lg:text-6xl text-center">
+          Frequently Asked Questions
+        </h2>
 
         <div>
           <Accordion
