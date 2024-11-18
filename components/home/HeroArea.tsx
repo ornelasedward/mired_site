@@ -38,7 +38,7 @@ const HeroArea = () => {
       </div>
 
       <motion.div
-        className="absolute top-[80%] z-10 right-[22.85%]"
+        className="absolute top-[80%] z-10 md:right-[22.85%] right-[5%]"
         animate={{
           y: [0, -17, 0],
         }}
@@ -58,7 +58,7 @@ const HeroArea = () => {
         />
       </motion.div>
       <motion.div
-        className="absolute top-[58%] z-10 right-[10.25%]"
+        className="absolute top-[58%] z-10 md:right-[10.25%] right-[-10%]"
         animate={{
           y: [0, -18, 0],
         }}
