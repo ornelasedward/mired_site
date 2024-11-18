@@ -11,7 +11,7 @@ const WebDesign = () => {
             We turn ideas into digital solutions. From napkin sketches into
             full-stack applications to scaling existing platforms - we deliver
             the complete tech stack for serious growth. Custom software that
-            drives real results. That's it.
+            drives real results. That&apos;s it.
           </p>
           <div>
             <Link
