@@ -38,8 +38,8 @@ const Courses = () => {
         </div>
 
         <div className="w-full max-w-[340px] lg:w-1/3 flex justify-center lg:justify-end">
-          <Image
-            src="/images/course.svg"
+                   <Image
+            src="/images/web_design.svg"
             alt="Web design & Development"
             width={340}
             height={340}
