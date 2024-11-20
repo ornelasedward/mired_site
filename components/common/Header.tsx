@@ -63,9 +63,9 @@ const Header = () => {
     <header
       className={cn(
         header
-          ? "bg-background py-4 shadow-md  fixed"
-          : "bg-background shadow-none py-6 ",
-        "  top-0 w-full mx-auto z-[999] transition-all duration-300"
+          ? "bg-background py-4 shadow-md fixed translate-y-0"
+          : "bg-background shadow-none py-6 fixed translate-y-0",
+        "top-0 w-full mx-auto z-[999] transition-all duration-300"
       )}
     >
       <div className=" px-4 xl:container mx-auto flex flex-col xl:flex-row xl:items-center xl:justify-between">

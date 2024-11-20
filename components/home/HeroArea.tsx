@@ -6,7 +6,7 @@ import { motion } from "framer-motion";
 const HeroArea = () => {
   return (
     <div
-      className={`  bg-[#161616] bg-home-bg h-[calc(80vh-80px)] sm:h-[calc(80vh-90px)]  flex items-center justify-center relative overflow-hidden `}
+      className={`  bg-[#161616] bg-home-bg h-[calc(80vh-80px)] sm:h-[calc(80vh-90px)]  flex items-center justify-center relative overflow-hidden mt-20 md:mt-24`}
       style={{
         backgroundSize: "100% 100%",
       }}
