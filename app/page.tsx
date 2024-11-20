@@ -8,7 +8,7 @@ import HeroArea from "@/components/home/HeroArea";
 import Testimonials from "@/components/home/Testimonials";
 import Trust from "@/components/home/Trust";
 import DigitalSoluations from "@/components/home/digitalSoluations/DigitalSoluations";
-import mired_banner  from "../public/images/mired_banner.svg"
+import mired_banner  from "../public/images/mired_banner.png"
 
 type Props = {
   params: { id: string }
@@ -62,7 +62,7 @@ export async function generateMetadata(
       locale: 'en_US',
       images: [
         {
-          url: mired_banner,
+          url: mired_banner.src,
           width: 1200,
           height: 630,
           alt: seoContent.title,
@@ -78,7 +78,14 @@ export async function generateMetadata(
       description: seoContent.description,
       site: '@mired_io',
       creator: '@mired_io',
-      images: [mired_banner],
+      images: [
+        {
+          url: mired_banner.src,
+          width: 1200,
+          height: 630,
+          alt: seoContent.title,
+        },
+      ],
     },
     
     // Robots
