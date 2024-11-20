@@ -31,34 +31,15 @@ export default async function Image() {
           padding: '40px',
         }}
       >
-        <div style={{ marginBottom: '40px' }}>
-          <img
-            src="https://mired.io/logo.png"
-            alt="Mired.io Logo"
-            width="200"
-            height="auto"
-          />
-        </div>
-        <div
+        <img
+          src="/images/mired_banner.svg"
+          alt="Mired.io Banner"
+          width="100%"
+          height="auto"
           style={{
-            color: 'white',
-            fontSize: '60px',
-            fontWeight: 'bold',
-            textAlign: 'center',
-            marginBottom: '20px',
+            objectFit: 'contain',
           }}
-        >
-          {seoContent.title}
-        </div>
-        <div
-          style={{
-            color: '#94a3b8',
-            fontSize: '32px',
-            textAlign: 'center',
-          }}
-        >
-          {seoContent.description}
-        </div>
+        />
       </div>
     ),
     {
