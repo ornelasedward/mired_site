@@ -1,4 +1,5 @@
 import { ImageResponse } from 'next/og'
+import mired_banner  from "../public/images/mired_banner.svg"
  
 export const runtime = 'edge'
  
@@ -32,7 +33,7 @@ export default async function Image() {
         }}
       >
         <img
-          src="/images/mired_banner.svg"
+          src={mired_banner}
           alt="Mired.io Banner"
           width="100%"
           height="auto"

@@ -6,6 +6,7 @@ import "./globals.css";
 import Footer from "@/components/common/Footer";
 import ClashDisplay from "@/lib/fonts/ClashDisplay";
 import { cn } from "@/lib/utils";
+import mired_banner  from "../public/images/mired_banner.svg"
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--monrope" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--montserrat" });
@@ -35,7 +36,7 @@ export const metadata: Metadata = {
     url: 'https://mired.io',
     images: [
       {
-        url: 'https://mired.io/og-image.jpg', // Make sure this image exists in your public folder
+        url: mired_banner,
         width: 1200,
         height: 630,
         alt: seoContent.title,
@@ -47,7 +48,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: seoContent.title,
     description: seoContent.description,
-    images: ['https://mired.io/og-image.jpg'],
+    images: ['/images/mired_banner.svg'],
   },
   
   robots: {
