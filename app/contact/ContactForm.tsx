@@ -69,7 +69,7 @@ const ContactForm: React.FC = () => {
           </div>
           <div className="flex items-center gap-2">
             <Image src={"/images/email_icon.png"} width={50} height={50} alt="Email Icon" />
-            <h1><a href="mailto:contactmired@gmail.com" className="hover:text-customGreen active:text-customGreen">Email: contactmired@gmail.com</a></h1>
+            <h1><a href="mailto:contactmired@gmail.com" className="hover:text-customGreen active:text-customGreen">Email: contact@mired.io</a></h1>
           </div>
         </div>
 
