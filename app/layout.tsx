@@ -8,6 +8,7 @@ import ClashDisplay from "@/lib/fonts/ClashDisplay";
 import { cn } from "@/lib/utils";
 import mired_banner  from "../public/images/mired_banner.png"
 import LoadingProgress from "@/components/common/LoadingProgress";
+import { Suspense } from 'react';
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--monrope" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--montserrat" });
@@ -87,7 +88,9 @@ export default function RootLayout({
           orbitron.variable
         )}
       >
-        <LoadingProgress />
+        <Suspense fallback={null}>
+          <LoadingProgress />
+        </Suspense>
         <div className="text-black">
           <header>
             <Header />
