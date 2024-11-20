@@ -15,7 +15,7 @@ export default function LoadingProgress() {
 
   return (
     <LoadingBar
-      color="#f11946"
+      color="#3B82F6"
       progress={progress}
       onLoaderFinished={() => setProgress(0)}
       height={3}
