@@ -83,15 +83,19 @@ const Header = () => {
           >
             {Links.map((link, index) => (
               <li
-                className={cn(
-                  "relative text-black hover:bg-[#D7E9F8] transition-colors duration-200 px-4 py-1 rounded-sm",
-                  pathName === link.href
-                    ? "text-black uppercase font-medium bg-[#D7E9F8]"
-                    : "text-black font-medium uppercase"
-                )}
                 key={index}
               >
-                <AnimatedLink href={link.href}>{link.label}</AnimatedLink>
+                <AnimatedLink 
+                  href={link.href}
+                  className={cn(
+                    "relative text-black hover:bg-[#D7E9F8] transition-colors duration-200 px-4 py-1 rounded-sm block",
+                    pathName === link.href
+                      ? "text-black uppercase font-medium bg-[#D7E9F8]"
+                      : "text-black font-medium uppercase"
+                  )}
+                >
+                  {link.label}
+                </AnimatedLink>
               </li>
             ))}
           </ul>

@@ -3,11 +3,13 @@ import useAnimatedRouter from "@/hooks/useAnimatedRouter";
 import Link from "next/link";
 import React from "react";
 
-type Props = {
+interface Props {
+  children: string;
   href: string;
-  children: React.ReactNode;
-};
-export default function AnimatedLink({ href, children }: Props) {
+  className?: string;
+}
+
+export default function AnimatedLink({ children, href, className }: Props) {
   const { animatedRoute } = useAnimatedRouter();
   return (
     <Link
@@ -16,6 +18,7 @@ export default function AnimatedLink({ href, children }: Props) {
         animatedRoute(href);
       }}
       passHref
+      className={className}
     >
       {children}
     </Link>
