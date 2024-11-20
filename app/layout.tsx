@@ -11,10 +11,63 @@ const manrope = Manrope({ subsets: ["latin"], variable: "--monrope" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--montserrat" });
 const poppins = Montserrat({ subsets: ["latin"], variable: "--poppins" });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--orbitron" });
+
+const seoContent = {
+  title: "Build Digital Solutions That Scale",
+  description: "The #1 growth studio for digital innovators - Custom Software & AI Solutions",
+  keywords: "Custom Software, AI Solutions, Digital Solutions, Software Development, Digital Innovation",
+}
+
 export const metadata: Metadata = {
-  title: "Mired",
-  description: "The #1 growth studio for digital innovators",
-};
+  metadataBase: new URL('https://mired.io'),
+  title: {
+    default: seoContent.title,
+    template: `%s | Mired.io`,
+  },
+  description: seoContent.description,
+  keywords: seoContent.keywords,
+  
+  openGraph: {
+    type: 'website',
+    siteName: 'Mired.io',
+    title: seoContent.title,
+    description: seoContent.description,
+    url: 'https://mired.io',
+    images: [
+      {
+        url: 'https://mired.io/og-image.jpg', // Make sure this image exists in your public folder
+        width: 1200,
+        height: 630,
+        alt: seoContent.title,
+      },
+    ],
+  },
+  
+  twitter: {
+    card: 'summary_large_image',
+    title: seoContent.title,
+    description: seoContent.description,
+    images: ['https://mired.io/og-image.jpg'],
+  },
+  
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
+}
 
 export default function RootLayout({
   children,

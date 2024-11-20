@@ -1,4 +1,4 @@
-import { Metadata } from "next";
+import { Metadata, ResolvingMetadata } from 'next'
 import BookingConsultation from "@/components/common/BookingConsultation";
 import ConsultationBookung from "@/components/common/ConsultationBookung";
 import Faqs from "@/components/common/Faqs";
@@ -9,51 +9,105 @@ import Testimonials from "@/components/home/Testimonials";
 import Trust from "@/components/home/Trust";
 import DigitalSoluations from "@/components/home/digitalSoluations/DigitalSoluations";
 
+type Props = {
+  params: { id: string }
+  searchParams: { [key: string]: string | string[] | undefined }
+}
+
 const seoContent = {
   title: "Build Digital Solutions That Scale",
   description: "Custom Software & AI Solutions - The #1 growth studio for digital innovators",
   keywords: "Custom Software, AI Solutions, Digital Solutions, Software Development, Digital Innovation",
-};
+}
 
-export const metadata: Metadata = {
-  metadataBase: new URL('https://mired.io'),
-  title: {
-    default: seoContent.title,
-    template: `%s | Mired.io`,
-  },
+// JSON-LD for structured data
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: 'Mired.io',
   description: seoContent.description,
-  keywords: seoContent.keywords,
-  openGraph: {
-    title: seoContent.title,
+  url: 'https://mired.io',
+  logo: 'https://mired.io/logo.png', // Add your logo URL
+  contactPoint: {
+    '@type': 'ContactPoint',
+    telephone: '', // Add your contact number if available
+    contactType: 'customer service',
+  },
+}
+
+export async function generateMetadata(
+  { params, searchParams }: Props,
+  parent: ResolvingMetadata
+): Promise<Metadata> {
+  // optionally access and extend parent metadata
+  const previousImages = (await parent).openGraph?.images || []
+
+  return {
+    metadataBase: new URL('https://mired.io'),
+    title: {
+      default: seoContent.title,
+      template: `%s | Mired.io`,
+    },
     description: seoContent.description,
-    type: 'website',
-    url: 'https://mired.io',
-    siteName: 'Mired.io',
-    images: [
-      {
-        url: 'https://mired.io/og-image.jpg',
-        width: 1200,
-        height: 630,
-        alt: seoContent.title,
+    keywords: seoContent.keywords,
+    
+    // Open Graph
+    openGraph: {
+      title: seoContent.title,
+      description: seoContent.description,
+      url: 'https://mired.io',
+      siteName: 'Mired.io',
+      type: 'website',
+      locale: 'en_US',
+      images: [
+        {
+          url: 'https://mired.io/og-image.jpg',
+          width: 1200,
+          height: 630,
+          alt: seoContent.title,
+        },
+        ...previousImages,
+      ],
+    },
+    
+    // Twitter
+    twitter: {
+      card: 'summary_large_image',
+      title: seoContent.title,
+      description: seoContent.description,
+      site: '@mired_io',
+      creator: '@mired_io',
+      images: ['https://mired.io/og-image.jpg'],
+    },
+    
+    // Robots
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
       },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: seoContent.title,
-    description: seoContent.description,
-    site: '@mired_io',
-    images: ['https://mired.io/og-image.jpg'],
-  },
-  robots: {
-    index: true,
-    follow: true,
-  },
-};
+    },
+    
+    // Verification
+    verification: {
+      google: 'your-google-verification-code', // Add your Google verification code
+    },
+  }
+}
 
 export default function Home() {
   return (
     <main>
+      {/* Add JSON-LD Script */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       <HeroArea />
       <div className="py-5">
         <Sponsars />
