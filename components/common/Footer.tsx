@@ -34,7 +34,7 @@ const Footer = () => {
             <Image src={"/logo.png"} alt="Mired" width={114} height={25} />
           </Link>
           <Link
-            href="/contact-us"
+            href="/contact"
             className="w-1/2 lg:w-1/3 hidden md:flex justify-end"
           >
             <Button variant={"secondary"}>CONTACT US</Button>
