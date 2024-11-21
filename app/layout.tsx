@@ -95,7 +95,7 @@ export default function RootLayout({
           <header>
             <Header />
           </header>
-          <main className="min-h-screen ">{children}</main>
+          <main className="min-h-screen mt-20">{children}</main>
           <footer>
             <Footer />
           </footer>

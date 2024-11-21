@@ -88,7 +88,7 @@ const TestimonialCard = () => {
             </span> */}
           </motion.p>
         </div>
-        <div className="flex pt-6 xl:pt-0 sm:pt-8 xl:absolute bottom-10   w-full  items-start justify-between">
+        <div className="flex flex-col sm:flex-row pt-6 xl:pt-0 sm:pt-8 xl:absolute bottom-10 w-full items-center sm:items-start gap-6 sm:gap-0 sm:justify-between">
           <motion.div
             key={currentSlide}
             initial={{ opacity: 0, y: 20 }}
