@@ -21,7 +21,7 @@ const Footer = () => {
         <div className="flex justify-between items-center w-full ">
           <ul className="w-full lg:w-1/3 flex justify-between gap-3 md:gap-6 items-center ">
             <li className=" font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
-              <Link href={"/terms"}>terms of use</Link>
+              <Link href={"/terms"}>Terms of Use</Link>
             </li>
             <li className="font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
               <Link href={"/privacy-policy"}> Privacy policy</Link>
