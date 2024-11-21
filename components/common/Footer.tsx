@@ -21,14 +21,15 @@ const Footer = () => {
         <div className="flex justify-between items-center w-full ">
           <ul className="w-full lg:w-1/3 flex justify-between gap-3 md:gap-6 items-center ">
             <li className=" font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
-              <Link href={"/"}>terms of use</Link>
+              <Link href={"/terms"}>terms of use</Link>
             </li>
             <li className="font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
-              <Link href={"/"}> Privacy policy</Link>
+              <Link href={"/privacy-policy"}> Privacy policy</Link>
             </li>
-            <li className="font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
+          {/*  <li className="font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
               <Link href={"/"}>Pricing Plans</Link>
             </li>
+            */}
           </ul>
           <Link href={"/"} className=" w-1/3 hidden lg:flex justify-center">
             <Image src={"/logo.png"} alt="Mired" width={114} height={25} />
