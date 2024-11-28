@@ -1,29 +1,33 @@
 import { Button } from "@/components/ui/button";
-import CustomButton from "@/components/ui/custom-button";
 import Image from "next/image";
 import Link from "next/link";
 
 const MarketingHeroArea = () => {
   return (
     <div className="border-b-[3px] overflow-hidden  relative  z-40 border-black  py-8">
-      <div className="max-w-[1000px] relative z-40 space-y-6 container mx-auto text-center">
+      <div className="max-w-[1000px] relative z-40 space-y-6 container mx-auto text-center mt-24">
         <div className="flex  justify-center">
-          <Link href="/services">
-            <Button
-              className=" uppercase text-base font-poppins"
-              variant={"outline"}
-            >
-              services
-            </Button>
-          </Link>
+        <span className="inline-block text-blue-500 bg-blue-100 border border-blue-500 px-4 py-1.5 rounded-md text-sm font-medium">
+            About Us
+          </span>
         </div>
         <h2 className=" heading-1 xl:leading-[60px]">
-          Brand Development <br className=" hidden lg:block" /> & Digital
-          Marketing
+          We're A <br className=" hidden lg:block" /> Digital Growth Studio
         </h2>
-        <div className=" pt-5">
-        <Link href="/contact">
-          <CustomButton>CONTACT US</CustomButton>
+        <p className="text-xl font-medium ">
+          We build the infrastructure that turns digital presence into lasting
+          value. Whether you're a business, creator, or personal brand, we help
+          you transform your audience into sustainable revenue.{" "}
+          <br className="hidden xl:block" />
+        </p>
+        <div className="pt-5">
+          <Link
+            href="/contact"
+            className="rounded-10 outline-none focus:outline-none text-sm sm:text-base font-bold font-manrope relative py-2 px-10 h-14 inline-flex items-center justify-center gap-4 bg-skin-blue-800 hover:bg-skin-blue-800/95 text-white transition-colors ease-in-out duration-300
+            before:absolute before:w-full before:h-full before:bg-skin-pink-300 before:-z-10 before:-top-0 before:-left-0 before:rounded-10 before:transition-all before:ease-out before:duration-300 hover:before:-top-1 hover:before:-left-1
+            after:absolute after:w-full after:h-full after:bg-skin-yellow-600 after:-z-10 after:top-0 after:left-0 after:rounded-10 after:transition-all after:ease-out after:duration-300 hover:after:top-1.5 hover:after:left-1.5"
+          >
+            Contact Us
           </Link>
         </div>
 

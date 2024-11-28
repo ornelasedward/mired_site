@@ -91,6 +91,7 @@
 @layer components {
   .heading-1 {
     @apply font-clash_display text-2xl sm:text-5xl lg:text-6xl font-bold 2xl:text-heading-1 uppercase;
+    text-transform: none;
   }
   .heading-2 {
     @apply font-clash_display text-xl sm:text-2xl lg:text-3xl font-bold 2xl:text-heading-2 uppercase;

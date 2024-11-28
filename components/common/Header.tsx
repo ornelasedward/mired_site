@@ -100,8 +100,13 @@ const Header = () => {
             ))}
           </ul>
           <div className="hidden xl:block">
-            <Link href="/contact">
-              <Button className="px-6 py-2 bg-[#420FB0]">CONTACT US</Button>
+            <Link href="/contact" className="relative inline-block">
+              <Button className="px-6 py-2 bg-[#420FB0] relative overflow-hidden transition-colors duration-300 hover:bg-skin-blue-800/95 group w-[140px]">
+                <span className="absolute left-1/2 -translate-x-1/2 transition-transform duration-300 group-hover:-translate-x-[60%]">CONTACT US</span>
+                <span className="absolute right-4 transform translate-x-[-10px] opacity-0 transition-all duration-300 group-hover:translate-x-0 group-hover:opacity-100">
+                  →
+                </span>
+              </Button>
             </Link>
           </div>
           <div

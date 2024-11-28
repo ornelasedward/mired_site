@@ -6,71 +6,69 @@ const EnsureYourBrand = () => {
   return (
     <div className={` py-16 container`}>
       <div className="py-10  px-4 rounded-2xl  md:px-7 border-2 border-black">
-        <h4 className="mb-12 font-clash_display font-semibold uppercase text-[22px] md:text-[27px] lg:text-[38px]  text-center leading-tight">
-          how we ensure your brand stands out
-        </h4>
-        <div className="grid grid-cols-1  lg:grid-cols-2 gap-10 lg:gap-20">
+        <h2 className="heading-1 normal-case text-5xl md:text-4xl lg:text-5xl text-center">
+          Our Approach
+        </h2>
+        <div className="grid grid-cols-1 mt-10 lg:grid-cols-2 gap-10 lg:gap-20">
           <div className=" space-y-3">
             <h5 className="text-[15px] font-montserrat font-bold text-[#F7BE08]">
-              DISCOVER
+              STEP 1
             </h5>
             <div>
               <h3 className=" leading-[1]">
-                BRAND <br className=" hidden lg:block" /> ANALYSIS
+                DISCOVER <br className=" hidden lg:block" />
               </h3>
             </div>
             <p className=" text-xs font-normal font-montserrat lg:text-xl">
-              We start by getting to the heart of your brand. What is your
-              story? Who needs to hear it? Through analytics and market
-              insights, we explore the landscape to locate where your brand can
-              stand out.
+              Your brand is unique. We start by understanding your voice, your
+              audience, and your goals. Because generic solutions won&apos;t cut
+              it in today&apos;s digital landscape.
             </p>
           </div>
           <div className=" space-y-3">
             <h5 className="text-[15px] font-montserrat font-bold text-[#92C2EB]">
-              DEFINE
+              STEP 2
             </h5>
             <div>
               <h3 className=" leading-[1]">
-                Brand Identity <br className=" hidden lg:block" /> Creation
+                DEFINE <br className=" hidden lg:block" /> 
               </h3>
             </div>
             <p className=" text-xs font-normal font-montserrat lg:text-xl">
-              Your brand&apos;s identity is its signature. We work with you to
-              create a distinct brand identity that resonates with your values
-              and appeals to your audience, ensuring consistency across all
-              platforms.
+              We map out the digital infrastructure you need to monetize your
+              influence and protect your brand&apos;s future. From custom
+              platforms to AI tools that scale your impact.
             </p>
           </div>
           <div className=" space-y-3">
             <h5 className="text-[15px] font-montserrat font-bold text-[#FF92B2]">
-              DEVELOP
+              STEP 3
             </h5>
             <div>
               <h3 className=" leading-[1]">
-                Digital Marketing <br className=" hidden lg:block" /> Strategy
+                DEVELOP <br className=" hidden lg:block" /> 
               </h3>
             </div>
             <p className=" text-xs font-normal font-montserrat lg:text-xl">
-              Effective marketing doesn&apos;t shout; it engages. We develop a
-              strategy that speaks to your audience where they are, using SEO,
-              targeted social media campaigns, and content that tells your
-              brand&apos;s story.
+              Working as an extension of your team, we build solutions that
+              feel authentic to your brand while creating multiple revenue
+              streams. Think custom software, automated systems, and content
+              engines.
             </p>
           </div>
           <div className=" space-y-3">
             <h5 className="text-[15px] font-montserrat font-bold text-[#FF92B2]">
-              DEPLOY
+              STEP 4
             </h5>
             <div>
               <h3 className=" leading-[1]">
-                engagement & <br className=" hidden lg:block" /> conversion
+                DEPLOY <br className=" hidden lg:block" /> 
               </h3>
             </div>
             <p className=" text-xs font-normal font-montserrat lg:text-xl">
-              Turning strategy into action, we roll out marketing campaigns
-              designed to engage and convert. We monitor, analyze, and adjust to
-              make sure your brand doesn&apos;t just speak, it&apos;s heard.
+              Launch, analyze, optimize. We ensure your digital ecosystem not
+              only reaches more people but converts them into loyal, paying
+              customers.
             </p>
           </div>
         </div>

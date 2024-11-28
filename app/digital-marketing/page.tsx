@@ -13,11 +13,11 @@ const page = () => {
       <EnsureYourBrand />
       <WeFocus />
       <BookingConsultation />
+      <Sponsars />
       <Faqs />
       <div className=" pt-5">
-        <Sponsars />
       </div>
-      <LetsTalk />
+      {/* <LetsTalk /> */}
     </div>
   );
 };

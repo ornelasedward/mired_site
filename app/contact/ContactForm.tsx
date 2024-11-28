@@ -65,48 +65,65 @@ const ContactForm: React.FC = () => {
         <div className="items-center md:flex m-auto justify-center gap-12 mt-8">
           <div className="flex items-center gap-2 md:mb-0 mb-4">
             <Image src={"/images/phone_icon.png"} width={50} height={50} alt="Phone Icon" />
-            <h1><a href="tel:+14696197722" className="hover:text-customGreen active:text-customGreen">Phone: (469) 619-7722</a></h1>
+            <h1><a href="tel:+14696197722" className="relative group">
+              <span className="relative z-10">(469) 619-7722</span>
+              <span className="absolute inset-x-0 bottom-0 h-[40%] bg-customGreen scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </a></h1>
           </div>
           <div className="flex items-center gap-2">
             <Image src={"/images/email_icon.png"} width={50} height={50} alt="Email Icon" />
-            <h1><a href="mailto:contactmired@gmail.com" className="hover:text-customGreen active:text-customGreen">Email: contact@mired.io</a></h1>
+            <h1><a href="mailto:contactmired@gmail.com" className="relative group">
+              <span className="relative z-10">contact@mired.io</span>
+              <span className="absolute inset-x-0 bottom-0 h-[40%] bg-customGreen scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"></span>
+            </a></h1>
           </div>
         </div>
 
         <form className="grid grid-cols-1 gap-4 mt-8 max-w-4xl m-auto" onSubmit={handleSubmit}>
-          <Input
-            type="text"
-            name="name"
-            placeholder="Name"
-            className="rounded-none sm:px-6 h-12"
-          />
-          <Input
-            type="phone"
-            name="phone"
-            placeholder="Phone Number"
-            className="rounded-none sm:px-6 h-12"
-          />
-          <Input
-            type="email"
-            name="email"
-            placeholder="Email address"
-            className="rounded-none sm:px-6 h-12"
-          />
-          <Input
-            type="text"
-            name="website"
-            placeholder="What's your website? (optional)"
-            className="rounded-none sm:px-6 h-12"
-          />
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Input
+              type="text"
+              name="name"
+              placeholder="Name"
+              className="rounded sm:px-6 h-12 text-lg"
+            />
+            <Input
+              type="phone"
+              name="phone"
+              placeholder="Phone Number"
+              className="rounded sm:px-6 h-12 text-lg"
+            />
+          </div>
+          <div className="grid sm:grid-cols-2 gap-4">
+            <Input
+              type="email"
+              name="email"
+              placeholder="Email address"
+              className="rounded sm:px-6 h-12 text-lg"
+            />
+            <Input
+              type="text"
+              name="website"
+              placeholder="What's your website? (optional)"
+              className="rounded sm:px-6 h-12 text-lg"
+            />
+          </div>
           <Textarea
             name="message"
             placeholder="What would you like us to know?"
             cols={30}
             rows={8}
-            className="px-6 py-4"
+            className="rounded px-6 py-4 text-lg"
           />
           <div className="flex justify-center mt-12">
-            <CustomButton type="submit">Submit Your Consultation</CustomButton>
+            <button 
+              type="submit"
+              className="w-fit rounded-10 outline-none focus:outline-none text-sm sm:text-base font-bold font-manrope relative py-2 px-10 h-14 inline-flex items-center justify-center gap-4 bg-skin-blue-800 hover:bg-skin-blue-800/95 text-white transition-colors ease-in-out duration-300
+              before:absolute before:w-full before:h-full before:bg-skin-pink-300 before:-z-10 before:-top-0 before:-left-0 before:rounded-10 before:transition-all before:ease-out before:duration-300 hover:before:-top-1 hover:before:-left-1
+              after:absolute after:w-full after:h-full after:bg-skin-yellow-600 after:-z-10 after:top-0 after:left-0 after:rounded-10 after:transition-all after:ease-out after:duration-300 hover:after:top-1.5 hover:after:left-1.5"
+            >
+              Submit Your Consultation
+            </button>
           </div>
         </form>
 
