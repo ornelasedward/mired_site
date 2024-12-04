@@ -25,7 +25,7 @@ const seoContent = {
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Mired.io',
+  name: 'Mired - The #1 growth studio for digital innovators',
   description: seoContent.description,
   url: 'https://mired.io',
   logo: 'https://mired.io/logo.png', // Add your logo URL

@@ -26,14 +26,14 @@ export const metadata: Metadata = {
   metadataBase: new URL('https://mired.io'),
   title: {
     default: seoContent.title,
-    template: `%s | Mired.io`,
+    template: `%s | Mired`,
   },
   description: seoContent.description,
   keywords: seoContent.keywords,
   
   openGraph: {
     type: 'website',
-    siteName: 'Mired.io',
+    siteName: 'Mired - The #1 growth studio for digital innovators',
     title: seoContent.title,
     description: seoContent.description,
     url: 'https://mired.io',
