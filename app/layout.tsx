@@ -8,6 +8,7 @@ import ClashDisplay from "@/lib/fonts/ClashDisplay";
 import { cn } from "@/lib/utils";
 import mired_banner  from "../public/images/mired_banner.png"
 import LoadingProgress from "@/components/common/LoadingProgress";
+import ElevenLabsWidget from "@/components/ElevenLabsWidget";
 import { Suspense } from 'react';
 
 const manrope = Manrope({ subsets: ["latin"], variable: "--monrope" });
@@ -95,7 +96,9 @@ export default function RootLayout({
           <header>
             <Header />
           </header>
-          <main className="min-h-screen mt-20">{children}</main>
+          <main className="min-h-screen mt-20">{children}
+          <ElevenLabsWidget agentId="Ggs3QejwT0HjbzQxwmZ6" />
+          </main>
           <footer>
             <Footer />
           </footer>
