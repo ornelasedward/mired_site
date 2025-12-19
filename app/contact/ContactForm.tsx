@@ -15,16 +15,20 @@ interface FormData {
 
 const ContactForm: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
+  const [formLoadTime] = useState(() => Date.now().toString());
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-    const formData: FormData = {
+    const honeypot = (form.elements.namedItem('_honeypot') as HTMLInputElement).value;
+    const formData = {
       name: (form.elements.namedItem('name') as HTMLInputElement).value,
       email: (form.elements.namedItem('email') as HTMLInputElement).value,
       website: (form.elements.namedItem('website') as HTMLInputElement).value,
       phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
       message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+      _honeypot: honeypot,
+      _timestamp: formLoadTime,
     };
 
     try {
@@ -74,6 +78,14 @@ const ContactForm: React.FC = () => {
         </div>
 
         <form className="grid grid-cols-1 gap-4 mt-8 max-w-4xl m-auto" onSubmit={handleSubmit}>
+          {/* Honeypot field - hidden from users, bots will fill it */}
+          <input
+            type="text"
+            name="_honeypot"
+            style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
+            tabIndex={-1}
+            autoComplete="off"
+          />
           <Input
             type="text"
             name="name"
