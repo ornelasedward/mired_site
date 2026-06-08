@@ -38,7 +38,7 @@ const ServicesHero = () => {
           {/* <div className="py-20 px-4">
           <ul className="text-4xl max-w-[300px] lg:max-w-full">
             <li>
-            <h1>Phone: (469)619-7722</h1>
+            <h1>Phone: (575) 513-6238</h1>
             </li>
             <li>
             <h1>email: contactmired@gmail.com</h1>

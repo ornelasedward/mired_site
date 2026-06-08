@@ -69,7 +69,7 @@ const ContactForm: React.FC = () => {
         <div className="items-center md:flex m-auto justify-center gap-12 mt-8">
           <div className="flex items-center gap-2 md:mb-0 mb-4">
             <Image src={"/images/phone_icon.png"} width={50} height={50} alt="Phone Icon" />
-            <h1><a href="tel:+14696197722" className="hover:text-customGreen active:text-customGreen">Phone: (469) 619-7722</a></h1>
+            <h1><a href="tel:+15755136238" className="hover:text-customGreen active:text-customGreen">Phone: (575) 513-6238</a></h1>
           </div>
           <div className="flex items-center gap-2">
             <Image src={"/images/email_icon.png"} width={50} height={50} alt="Email Icon" />
