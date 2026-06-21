@@ -372,8 +372,8 @@ export default function PublicInvoice() {
           <div className="px-6 sm:px-8 pb-8">
             <div className="rounded-lg bg-amber-50 border border-amber-200 p-4 text-sm text-amber-900">
               Online payment isn't ready for this invoice yet. Please contact us at
-              <a href="mailto:hello@mired.io" className="underline ml-1">
-                hello@mired.io
+              <a href="mailto:contact@mired.io" className="underline ml-1">
+                contact@mired.io
               </a>
               .
             </div>
@@ -479,7 +479,7 @@ export default function PublicInvoice() {
         {/* Footer */}
         <div className="px-6 sm:px-8 py-4 border-t text-xs text-gray-500 flex flex-col sm:flex-row sm:justify-between gap-2">
           <span>Mired · (575) 513-6238 · mired.io</span>
-          <span>Questions? hello@mired.io</span>
+          <span>Questions? contact@mired.io</span>
         </div>
       </div>
     </div>

@@ -41,7 +41,7 @@ const ServicesHero = () => {
             <h1>Phone: (575) 513-6238</h1>
             </li>
             <li>
-            <h1>email: contactmired@gmail.com</h1>
+            <h1>email: contact@mired.io</h1>
             </li>
           </ul>
           
