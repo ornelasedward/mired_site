@@ -2,52 +2,80 @@
 import CustomButton from "@/components/ui/custom-button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import { isSupabaseConfigured, supabase } from "@/integrations/supabase/client";
 import Image from "next/image";
 import React, { useState } from "react";
-
-interface FormData {
-  name: string;
-  email: string;
-  phone: string;
-  website: string;
-  message: string;
-}
+import { toast } from "sonner";
 
 const ContactForm: React.FC = () => {
   const [showModal, setShowModal] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [formLoadTime] = useState(() => Date.now().toString());
+  const useSupabase = isSupabaseConfigured;
 
   const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     const form = event.currentTarget;
-    const honeypot = (form.elements.namedItem('_honeypot') as HTMLInputElement).value;
-    const formData = {
-      name: (form.elements.namedItem('name') as HTMLInputElement).value,
-      email: (form.elements.namedItem('email') as HTMLInputElement).value,
-      website: (form.elements.namedItem('website') as HTMLInputElement).value,
-      phone: (form.elements.namedItem('phone') as HTMLInputElement).value,
-      message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
-      _honeypot: honeypot,
-      _timestamp: formLoadTime,
-    };
+    const honeypot = (form.elements.namedItem("_honeypot") as HTMLInputElement).value;
+    const name = (form.elements.namedItem("name") as HTMLInputElement).value.trim();
+    const email = (form.elements.namedItem("email") as HTMLInputElement).value.trim();
+    const website = (form.elements.namedItem("website") as HTMLInputElement).value.trim();
+    const phone = (form.elements.namedItem("phone") as HTMLInputElement).value.trim();
+    const message = (form.elements.namedItem("message") as HTMLTextAreaElement).value.trim();
 
+    if (honeypot) {
+      setShowModal(true);
+      form.reset();
+      return;
+    }
+
+    if (Date.now() - parseInt(formLoadTime, 10) < 3000) {
+      setShowModal(true);
+      form.reset();
+      return;
+    }
+
+    if (!name || !email || !message) {
+      toast.error("Name, email, and message are required.");
+      return;
+    }
+
+    setSubmitting(true);
     try {
-      const response = await fetch('/api/sendEmail', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (response.ok) {
-        setShowModal(true);
-        form.reset();
+      if (useSupabase) {
+        const { data: result, error } = await supabase.functions.invoke("send-quote-request", {
+          body: { name, email, phone: phone || null, website: website || null, message },
+        });
+        if (error || !result?.success) {
+          throw new Error(error?.message || result?.error || "Submission failed");
+        }
       } else {
-        console.error('Error sending email:', await response.text());
+        const response = await fetch("/api/sendEmail", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            name,
+            email,
+            website,
+            phone,
+            message,
+            _honeypot: honeypot,
+            _timestamp: formLoadTime,
+          }),
+        });
+        if (!response.ok) {
+          throw new Error(await response.text());
+        }
       }
+
+      setShowModal(true);
+      form.reset();
     } catch (error) {
-      console.error('Error sending email:', error);
+      const msg = error instanceof Error ? error.message : "Something went wrong";
+      toast.error(`Couldn't send your message: ${msg}`);
+      console.error("Contact form error:", error);
+    } finally {
+      setSubmitting(false);
     }
   };
 
@@ -73,16 +101,15 @@ const ContactForm: React.FC = () => {
           </div>
           <div className="flex items-center gap-2">
             <Image src={"/images/email_icon.png"} width={50} height={50} alt="Email Icon" />
-            <h1><a href="mailto:contactmired@gmail.com" className="hover:text-customGreen active:text-customGreen">Email: contactmired@gmail.com</a></h1>
+            <h1><a href="mailto:contact@mired.io" className="hover:text-customGreen active:text-customGreen">Email: contact@mired.io</a></h1>
           </div>
         </div>
 
         <form className="grid grid-cols-1 gap-4 mt-8 max-w-4xl m-auto" onSubmit={handleSubmit}>
-          {/* Honeypot field - hidden from users, bots will fill it */}
           <input
             type="text"
             name="_honeypot"
-            style={{ position: 'absolute', left: '-9999px', opacity: 0, height: 0, width: 0 }}
+            style={{ position: "absolute", left: "-9999px", opacity: 0, height: 0, width: 0 }}
             tabIndex={-1}
             autoComplete="off"
           />
@@ -90,10 +117,11 @@ const ContactForm: React.FC = () => {
             type="text"
             name="name"
             placeholder="Name"
+            required
             className="rounded-none sm:px-6 h-12"
           />
           <Input
-            type="phone"
+            type="tel"
             name="phone"
             placeholder="Phone Number"
             className="rounded-none sm:px-6 h-12"
@@ -102,6 +130,7 @@ const ContactForm: React.FC = () => {
             type="email"
             name="email"
             placeholder="Email address"
+            required
             className="rounded-none sm:px-6 h-12"
           />
           <Input
@@ -113,12 +142,15 @@ const ContactForm: React.FC = () => {
           <Textarea
             name="message"
             placeholder="What would you like us to know?"
+            required
             cols={30}
             rows={8}
             className="px-6 py-4"
           />
           <div className="flex justify-center mt-12">
-            <CustomButton type="submit">Submit Your Consultation</CustomButton>
+            <CustomButton type="submit" disabled={submitting}>
+              {submitting ? "Sending…" : "Submit Your Consultation"}
+            </CustomButton>
           </div>
         </form>
 

@@ -40,3 +40,6 @@ next-env.d.ts
 
 # pnpm store
 .pnpm-store
+
+# supabase local link cache
+supabase/.temp

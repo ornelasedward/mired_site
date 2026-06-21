@@ -1,14 +1,14 @@
-import Header from "@/components/common/Header";
 import type { Metadata, Viewport } from "next";
 import { Manrope, Montserrat, Orbitron, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-import Footer from "@/components/common/Footer";
 import ClashDisplay from "@/lib/fonts/ClashDisplay";
 import { cn } from "@/lib/utils";
 import mired_banner  from "../public/images/mired_banner.png"
 import LoadingProgress from "@/components/common/LoadingProgress";
 import ElevenLabsWidget from "@/components/ElevenLabsWidget";
+import SiteChrome from "@/components/SiteChrome";
+import Providers from "@/components/Providers";
 import { Suspense } from 'react';
 
 // Set to true to show the ElevenLabs voice agent widget
@@ -103,19 +103,14 @@ export default function RootLayout({
         <Suspense fallback={null}>
           <LoadingProgress />
         </Suspense>
-        <div className="text-black">
-          <header>
-            <Header />
-          </header>
-          <main className="min-h-screen mt-20">{children}
-          {SHOW_ELEVENLABS_AGENT && (
-            <ElevenLabsWidget agentId="Ggs3QejwT0HjbzQxwmZ6" />
-          )}
-          </main>
-          <footer>
-            <Footer />
-          </footer>
-        </div>
+        <Providers>
+          <SiteChrome>
+            {children}
+            {SHOW_ELEVENLABS_AGENT && (
+              <ElevenLabsWidget agentId="Ggs3QejwT0HjbzQxwmZ6" />
+            )}
+          </SiteChrome>
+        </Providers>
       </body>
     </html>
   );

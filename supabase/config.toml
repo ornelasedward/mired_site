@@ -1,0 +1,19 @@
+# Resend inbound webhook — Resend cannot send a Supabase JWT, so disable verification.
+# Authenticity is enforced via Svix signature verification inside the function
+# (RESEND_WEBHOOK_SECRET).
+[functions.receive-email]
+verify_jwt = false
+
+# Public hosted-invoice page calls this anonymously (with the anon apikey only).
+# Token authorization happens inside the function via public_token.
+[functions.public-invoice]
+verify_jwt = false
+
+# Stripe cannot send a Supabase JWT. Authenticity is enforced via
+# STRIPE_WEBHOOK_SECRET signature verification inside the function.
+[functions.stripe-webhook]
+verify_jwt = false
+
+# Cron-triggered. Uses CRON_SECRET shared secret instead of a Supabase JWT.
+[functions.invoice-reminders]
+verify_jwt = false
