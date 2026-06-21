@@ -11,14 +11,20 @@ import AnimatedLink from "../AnimationLink";
 import { Button } from "../ui/button";
 import { LEADS } from "@/lib/site";
 
-const NAV_LINKS = [
+type NavLink = {
+  label: string;
+  href: string;
+  matchPrefix?: string;
+};
+
+const NAV_LINKS: NavLink[] = [
   { label: "AI Solutions", href: "/ai-solutions" },
   { label: "Services", href: "/services" },
   { label: "Readiness", href: "/ai-readiness", matchPrefix: "/ai-readiness" },
   { label: "Work", href: "/case-studies", matchPrefix: "/case-studies" },
   { label: "About", href: "/about" },
   { label: "FAQ", href: "/faq" },
-] as const;
+];
 
 function isActive(pathName: string, href: string, matchPrefix?: string) {
   if (pathName === href) return true;
