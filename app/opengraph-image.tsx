@@ -20,28 +20,17 @@ export const contentType = 'image/png'
 export default async function Image() {
   return new ImageResponse(
     (
-      <div
+      <img
+        src={mired_banner.src}
+        alt="Mired.io Banner"
+        width={1200}
+        height={630}
         style={{
-          background: 'linear-gradient(to right, #0f172a, #1e293b)',
           width: '100%',
           height: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
-          justifyContent: 'center',
-          padding: '40px',
+          objectFit: 'cover',
         }}
-      >
-        <img
-          src={mired_banner.src}
-          alt="Mired.io Banner"
-          width="100%"
-          height="auto"
-          style={{
-            objectFit: 'contain',
-          }}
-        />
-      </div>
+      />
     ),
     {
       ...size,

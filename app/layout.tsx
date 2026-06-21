@@ -61,7 +61,7 @@ export const metadata: Metadata = {
     description: seoContent.description,
     site: '@MiredWeb',
     creator: '@MiredWeb',
-    images: ['/images/mired_banner.svg'],
+    images: ['/images/mired_banner.png'],
   },
   
   robots: {
