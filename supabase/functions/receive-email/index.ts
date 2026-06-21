@@ -16,6 +16,67 @@ const corsHeaders = {
 };
 
 const RESEND_API_URL = "https://api.resend.com/emails";
+const FROM_ADDRESS = "Mired <contact@mired.io>";
+const FORWARD_TO =
+  Deno.env.get("INBOUND_FORWARD_EMAIL") ??
+  Deno.env.get("NOTIFY_TO_EMAIL") ??
+  "contactmired@gmail.com";
+
+const escapeHtml = (s: string) =>
+  s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+
+async function forwardInboundNotification(args: {
+  apiKey: string;
+  from: string;
+  to: string[];
+  subject: string | null;
+  textBody: string | null;
+  siteUrl: string;
+}): Promise<void> {
+  const preview = (args.textBody ?? "").trim().slice(0, 500) || "(no text body)";
+  const adminUrl = `${args.siteUrl.replace(/\/$/, "")}/admin/inbox`;
+  const html = `
+    <div style="font-family:Arial,sans-serif;color:#222;font-size:14px;line-height:1.5;max-width:560px;">
+      <p><strong>New email to contact@mired.io</strong></p>
+      <p><strong>From:</strong> ${escapeHtml(args.from)}</p>
+      <p><strong>To:</strong> ${escapeHtml(args.to.join(", ") || "contact@mired.io")}</p>
+      <p><strong>Subject:</strong> ${escapeHtml(args.subject ?? "(no subject)")}</p>
+      <pre style="white-space:pre-wrap;background:#f5f5f5;padding:12px;border-radius:6px;font-size:13px;">${escapeHtml(preview)}</pre>
+      <p><a href="${adminUrl}">Open admin inbox</a> to read and reply.</p>
+    </div>`;
+  const text = [
+    "New email to contact@mired.io",
+    `From: ${args.from}`,
+    `To: ${args.to.join(", ") || "contact@mired.io"}`,
+    `Subject: ${args.subject ?? "(no subject)"}`,
+    "",
+    preview,
+    "",
+    `Open admin inbox: ${adminUrl}`,
+  ].join("\n");
+
+  const res = await fetch(RESEND_API_URL, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${args.apiKey}`,
+    },
+    body: JSON.stringify({
+      from: FROM_ADDRESS,
+      to: [FORWARD_TO],
+      reply_to: args.from,
+      subject: `[Mired inbox] ${args.subject ?? "(no subject)"}`,
+      html,
+      text,
+    }),
+  });
+  if (!res.ok) {
+    console.error("Inbound forward notify failed:", res.status, await res.text());
+  }
+}
 
 interface ResendInboundEvent {
   type: string;
@@ -142,6 +203,21 @@ Deno.serve(async (req) => {
     if (dbError) {
       console.error("DB insert error:", dbError);
       throw new Error("Failed to save inbound email");
+    }
+
+    // Optional copy to Gmail (or NOTIFY_TO_EMAIL) so you get a phone/desktop alert.
+    try {
+      const siteUrl = Deno.env.get("PUBLIC_SITE_URL") ?? "https://mired.io";
+      await forwardInboundNotification({
+        apiKey: RESEND_API_KEY,
+        from: detail?.from ?? meta.from,
+        to: detail?.to ?? meta.to ?? [],
+        subject: detail?.subject ?? meta.subject ?? null,
+        textBody: detail?.text ?? null,
+        siteUrl,
+      });
+    } catch (err) {
+      console.error("Inbound forward notify error:", err);
     }
 
     return new Response(JSON.stringify({ ok: true, email_id: meta.email_id }), {

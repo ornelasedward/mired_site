@@ -37,6 +37,9 @@ const Footer = () => {
             <li className="font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
               <Link href={"/privacy-policy"}> Privacy policy</Link>
             </li>
+            <li className="font-poppins font-medium text-xs sm:text-base text-skin-slate-800">
+              <Link href="/admin">Admin</Link>
+            </li>
           {/*  <li className="font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
               <Link href={"/"}>Pricing Plans</Link>
             </li>
