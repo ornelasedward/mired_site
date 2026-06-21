@@ -28,7 +28,7 @@ const AboutHero = () => {
             and we bring that same rigor to every engagement today.
           </p>
           <div className="mt-8">
-            <Link href="/contact">
+            <Link href="/contact#book">
               <CustomButton>Book a consultation</CustomButton>
             </Link>
           </div>

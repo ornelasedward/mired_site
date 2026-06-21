@@ -210,3 +210,13 @@
   width: 100%;
   height: auto;
 }
+
+/* Calendly inline embed — iframe height is set by Calendly after init */
+.calendly-inline-widget {
+  position: relative;
+}
+
+.calendly-inline-widget iframe {
+  width: 100% !important;
+  min-height: 700px;
+}

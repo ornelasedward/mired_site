@@ -24,7 +24,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: 'https://mired.io/contact',
       lastModified: new Date(),
       changeFrequency: 'monthly',
-      priority: 0.8,
+      priority: 0.9,
+    },
+    {
+      url: 'https://mired.io/ai-readiness',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.9,
+    },
+    {
+      url: 'https://mired.io/lp/ai-crm-integration',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: 'https://mired.io/lp/custom-internal-tools',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.85,
+    },
+    {
+      url: 'https://mired.io/lp/ai-readiness',
+      lastModified: new Date(),
+      changeFrequency: 'monthly',
+      priority: 0.85,
     },
     {
       url: 'https://mired.io/integrate',

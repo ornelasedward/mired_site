@@ -32,6 +32,9 @@ const Footer = () => {
               <Link href={"/about"}>About</Link>
             </li>
             <li className=" font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
+              <Link href="/ai-readiness">AI Readiness</Link>
+            </li>
+            <li className=" font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
               <Link href={"/terms"}>Terms of Use</Link>
             </li>
             <li className="font-poppins font-medium text-xs sm:text-base  text-skin-slate-800">
@@ -49,7 +52,7 @@ const Footer = () => {
             <Image src={"/logo.png"} alt="Mired" width={114} height={25} />
           </Link>
           <Link
-            href="/contact"
+            href="/contact#book"
             className="w-1/2 lg:w-1/3 hidden md:flex justify-end"
           >
             <Button variant={"secondary"}>CONTACT US</Button>

@@ -18,7 +18,7 @@ const ServicesHeroArea = () => {
           growth-stage client work. Pick where you are; we handle the rest.
         </p>
         <div className="mt-8">
-          <Link href="/contact">
+          <Link href="/contact#book">
             <CustomButton>Book a consultation</CustomButton>
           </Link>
         </div>

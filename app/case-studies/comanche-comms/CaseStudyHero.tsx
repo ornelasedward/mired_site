@@ -33,7 +33,7 @@ const CaseStudyHero = () => {
               that let Comanche Comms sell duty-grade gear online.
             </p>
             <div className="flex flex-wrap gap-4 pt-2">
-              <Link href="/contact">
+              <Link href="/contact#book">
                 <CustomButton>Start a project</CustomButton>
               </Link>
               <a

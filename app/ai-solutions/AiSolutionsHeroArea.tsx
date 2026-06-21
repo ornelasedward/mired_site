@@ -25,7 +25,7 @@ const AiSolutionsHeroArea = () => {
           custom agents, and workflow automation built to ship.
         </p>
         <div className="pt-5">
-          <Link href="/contact">
+          <Link href="/contact#book">
             <CustomButton>Book an AI Readiness Call</CustomButton>
           </Link>
         </div>

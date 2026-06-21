@@ -2,6 +2,7 @@ import { cn } from "@/lib/utils";
 import Image from "next/image";
 import CustomButton from "../ui/custom-button";
 import Link from "next/link";
+import { LEADS } from "@/lib/site";
 
 const ConsultationBookung = ({
   className,
@@ -43,7 +44,7 @@ const ConsultationBookung = ({
             </p>
           </div>
           <div className="flex justify-center sm:justify-start">
-            <Link href="/contact">
+            <Link href={LEADS.contactBookPath}>
               <CustomButton className="group relative flex items-center justify-center">
                 <span className="transition-transform duration-300 group-hover:-translate-x-2">
                   Book an AI Readiness Call

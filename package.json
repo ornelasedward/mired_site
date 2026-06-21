@@ -13,7 +13,7 @@
     "lint": "eslint .",
     "sb": "supabase",
     "sb:push": "supabase db push",
-    "sb:deploy": "supabase functions deploy receive-email --no-verify-jwt && supabase functions deploy list-inbound-emails && supabase functions deploy send-admin-reply && supabase functions deploy send-admin-email && supabase functions deploy download-attachment && supabase functions deploy send-quote-request && supabase functions deploy create-invoice && supabase functions deploy send-invoice && supabase functions deploy list-invoices && supabase functions deploy public-invoice --no-verify-jwt && supabase functions deploy stripe-webhook --no-verify-jwt && supabase functions deploy invoice-reminders --no-verify-jwt"
+    "sb:deploy": "supabase functions deploy receive-email --no-verify-jwt && supabase functions deploy list-inbound-emails && supabase functions deploy send-admin-reply && supabase functions deploy send-admin-email && supabase functions deploy download-attachment && supabase functions deploy send-quote-request && supabase functions deploy submit-ai-readiness && supabase functions deploy public-ai-readiness --no-verify-jwt && supabase functions deploy process-nurture-emails --no-verify-jwt && supabase functions deploy calendly-webhook --no-verify-jwt && supabase functions deploy create-invoice && supabase functions deploy send-invoice && supabase functions deploy list-invoices && supabase functions deploy public-invoice --no-verify-jwt && supabase functions deploy stripe-webhook --no-verify-jwt && supabase functions deploy invoice-reminders --no-verify-jwt"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",

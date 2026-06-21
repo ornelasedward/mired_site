@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import CustomButton from "../ui/custom-button";
+import { LEADS } from "@/lib/site";
 
 const LiveDemo = () => {
   return (
@@ -37,7 +38,7 @@ const LiveDemo = () => {
             </p>
           </div>
           <div className="flex justify-center sm:justify-start">
-            <Link href="/contact">
+            <Link href={LEADS.contactBookPath}>
               <CustomButton className="group relative flex items-center justify-center">
                 <span className="transition-transform duration-300 group-hover:-translate-x-2">
                   Build something like this

@@ -75,7 +75,7 @@ const ServiceOfferingLayout = ({
               <p className="text-base sm:text-lg font-manrope text-black/70">
                 {intro}
               </p>
-              <Link href="/contact">
+              <Link href="/contact#book">
                 <CustomButton>Book a consultation</CustomButton>
               </Link>
             </div>

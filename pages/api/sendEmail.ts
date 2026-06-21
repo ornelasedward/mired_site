@@ -45,7 +45,7 @@ function containsSuspiciousPatterns(text: string): boolean {
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method === 'POST') {
-    const { name, email, phone, website, message, _honeypot, _timestamp } = req.body;
+    const { name, email, company_size, challenge, source, _honeypot, _timestamp } = req.body;
 
     // Honeypot check - if this hidden field is filled, it's a bot
     if (_honeypot) {
@@ -68,8 +68,8 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     // Validate required fields
-    if (!name || !email || !message) {
-      return res.status(400).json({ error: 'Name, email, and message are required' });
+    if (!name || !email || !company_size) {
+      return res.status(400).json({ error: 'Name, email, and company size are required' });
     }
 
     // Validate email format
@@ -78,30 +78,26 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     }
 
     // Check for suspicious patterns in name and message
-    if (containsSuspiciousPatterns(name) || containsSuspiciousPatterns(message)) {
+    if (containsSuspiciousPatterns(name) || (challenge && containsSuspiciousPatterns(challenge))) {
       // Silently reject spam
       return res.status(200).json({ message: 'Email sent successfully' });
     }
 
-    // Validate phone format (if provided) - should contain mostly digits
-    if (phone) {
-      const digitsOnly = phone.replace(/\D/g, '');
-      if (digitsOnly.length < 7 || digitsOnly.length > 15) {
-        return res.status(400).json({ error: 'Please provide a valid phone number' });
-      }
-    }
+    // Validate phone format removed — phone no longer collected on short form
 
     try {
+      const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL ?? "https://calendly.com/mired/ai-readiness-call";
       await resend.emails.send({
         from: 'onboarding@resend.dev',
         to: 'contactmired@gmail.com',
-        subject: 'New Contact Form Submission',
+        subject: `New Contact Form Submission (${source ?? "contact_form"})`,
         html: `
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>Email:</strong> ${email}</p>
-          <p><strong>Phone:</strong> ${phone}</p>
-          <p><strong>Website:</strong> ${website}</p>
-          <p><strong>Message:</strong> ${message}</p>
+          <p><strong>Company size:</strong> ${company_size}</p>
+          <p><strong>Challenge:</strong> ${challenge ?? "—"}</p>
+          <p><strong>Source:</strong> ${source ?? "contact_form"}</p>
+          <p><a href="${calendlyUrl}">Calendly</a></p>
         `,
       });
 

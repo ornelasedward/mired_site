@@ -99,7 +99,7 @@ const AiWeFocus = () => {
 
               {item.showCta && (
                 <div className="mt-16 md:mt-20 flex justify-center">
-                  <Link href="/contact">
+                  <Link href="/contact#book">
                     <CustomButton>Book an AI Readiness Call</CustomButton>
                   </Link>
                 </div>

@@ -129,6 +129,19 @@ export default function Home() {
       <Testimonials />
       {SHOW_TRUST_SECTION && <Trust />}
       <Faqs />
+      <section className="border-t-2 border-black">
+        <div className="container py-8 text-center">
+          <p className="font-manrope text-black/70 mb-4">
+            Not ready to talk? Take our free 5-minute assessment first.
+          </p>
+          <a
+            href="/ai-readiness"
+            className="font-manrope font-semibold text-skin-blue-800 underline hover:text-black"
+          >
+            Get your AI readiness score →
+          </a>
+        </div>
+      </section>
       <BookingConsultation />
     </main>
   );

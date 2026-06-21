@@ -3,6 +3,7 @@ import Image from "next/image";
 import { FC } from "react";
 import CustomButton from "../ui/custom-button";
 import Link from "next/link";
+import { LEADS } from "@/lib/site";
 
 interface Props {
   className?: string;
@@ -42,8 +43,8 @@ const LetsTalk: FC<Props> = ({ className }) => {
           </p>
 
           <div className="mt-10 lg:mt-16">
-            <Link href="/contact">
-              <CustomButton>Let&apos;s talk</CustomButton>
+            <Link href={LEADS.contactBookPath}>
+              <CustomButton>Book Free AI Call</CustomButton>
             </Link>
           </div>
         </div>

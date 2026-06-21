@@ -1,18 +1,11 @@
-import Faqs from "@/components/common/Faqs";
-import LetsTalk from "@/components/common/LetsTalk";
-import ServicesHero from "@/components/common/ServicesHero";
-import Sponsars from "@/components/common/Sponsars";
 import ContactForm from "./ContactForm";
+import Faqs from "@/components/common/Faqs";
 
 const Contact = () => {
   return (
-    <div className=" relative z-50">
-      <ServicesHero />
-      <div className=" py-5">
-        <Sponsars />
-      </div>
+    <div className="relative z-50">
+      <ContactForm />
       <Faqs />
-      {/* <LetsTalk className="" /> */}
     </div>
   );
 };
