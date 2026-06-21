@@ -75,7 +75,7 @@
     @apply bg-background text-foreground;
   }
   p {
-    @apply text-sm sm:text-base font-manrope  font-normal;
+    @apply text-sm sm:text-base font-manrope font-normal;
   }
   h2 {
     @apply font-clash_display text-2xl sm:text-5xl lg:text-6xl font-bold 2xl:text-heading-1 uppercase;
@@ -84,7 +84,7 @@
     @apply font-clash_display text-xl sm:text-2xl lg:text-3xl font-bold 2xl:text-heading-2 uppercase;
   }
   h4 {
-    @apply font-clash_display text-lg sm:text-xl lg:text-2xl font-bold  uppercase;
+    @apply font-clash_display text-lg sm:text-xl lg:text-2xl font-bold uppercase;
   }
 }
 
