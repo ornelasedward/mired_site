@@ -1,63 +1,28 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import Link from "next/link";
+import CustomButton from "@/components/ui/custom-button";
 
 const ServicesHeroArea = () => {
   return (
-    <div
-      className=" bg-s-bg bg-pink-50    bg-no-repeat bg-center w-full flex  flex-col justify-center items-center relative overflow-hidden min-h-[460px] xl:min-h-[520px]"
-      style={{
-        backgroundSize: "100% 100%",
-      }}
-    >
-      <div className=" container h-full z-20 relative ">
-        <div className="max-w-[1030px] relative z-40 space-y-6 xl:space-y-5 mx-auto text-center">
-          <h2 className="heading-1">services</h2>
-          <p className="">
-            We optimize your online presence, turning it into a revenue
-            powerhouse that effectively markets and sells your digital{" "}
-            <br className=" xl:block hidden" /> offerings. With our all-in-one
-            solutions your website does more than exist—it excels.
-          </p>
-          <div className="flex gap-6 justify-center items-center">
-            <Button
-              variant={"secondary"}
-              className="font-poppins font-semibold rounded-none  hover:bg-transparent hover:text-black px-6 hover:border-skin-blue-800  border h-10 uppercase"
-            >
-              Home
-            </Button>
-            <Button
-              variant={"outline"}
-              className=" font-poppins px-6 font-semibold rounded-none h-10 uppercase "
-            >
-              SERVICES
-            </Button>
-          </div>
-        </div>
-        <div className="  xl:flex hidden  absolute left-0 right-0 top-[30%] items-center justify-between">
-          <Image src={"/images/design.svg"} width={80} height={80} alt="" />
-          <Image src={"/images/design2.svg"} width={80} height={80} alt="" />
+    <div className="bg-skin-lavender w-full border-b-[3px] border-black">
+      <div className="container py-16 sm:py-20 text-center max-w-3xl mx-auto">
+        <p className="text-sm font-manrope font-semibold uppercase tracking-wider text-skin-blue-800 mb-4">
+          How we help
+        </p>
+        <h1 className="heading-1 normal-case text-4xl sm:text-5xl mb-6">
+          Integrate · Build · Grow
+        </h1>
+        <p className="text-lg sm:text-xl font-manrope text-black/80 leading-relaxed">
+          The same three pillars on our homepage — AI wired into your stack,
+          custom software that ships, and go-to-market systems that scale.
+          We&apos;ve reached millions of end users through enterprise and
+          growth-stage client work. Pick where you are; we handle the rest.
+        </p>
+        <div className="mt-8">
+          <Link href="/contact">
+            <CustomButton>Book a consultation</CustomButton>
+          </Link>
         </div>
       </div>
-      <div className="  z-20 mx-auto max-w-[1000px] xl:flex hidden  absolute left-0 right-0  bottom-10 items-center justify-between">
-        <Image src={"/images/marketing.svg"} width={80} height={80} alt="" />
-        <Image src={"/images/code.svg"} width={80} height={80} alt="" />
-      </div>
-      <Image
-        className=" absolute w-[80%] lg:w-auto left-0 bottom-0"
-        src={"/images/3.svg"}
-        quality={80}
-        width={674}
-        height={674}
-        alt="bubp"
-      />
-      <Image
-        className=" absolute w-[80%] lg:w-auto right-0 top-0"
-        src={"/images/4.svg"}
-        quality={80}
-        width={674}
-        height={674}
-        alt="bubp"
-      />
     </div>
   );
 };

@@ -1,4 +1,3 @@
-import BookingConsultation from "@/components/common/BookingConsultation";
 import Faqs from "@/components/common/Faqs";
 import LetsTalk from "@/components/common/LetsTalk";
 import Sponsars from "@/components/common/Sponsars";
@@ -9,13 +8,12 @@ import WebDesignHeroArea from "./WebDesignHeroArea";
 
 const page = () => {
   return (
-    <div className=" relative  bg-skin-pink-50">
+    <div className="relative">
       <WebDesignHeroArea />
       <DesignDevelopment />
       <OurProcess />
       <WeFocusOfWeb />
 
-      <BookingConsultation />
       <Faqs />
       <div className=" pt-5">
         <Sponsars />

@@ -5,7 +5,7 @@ import ContactForm from "../../app/contact/ContactForm";
 const ServicesHero = () => {
   return (
     <div
-      className=" bg-s-bg bg-pink-50    bg-no-repeat bg-center w-full flex  flex-col justify-center items-center relative overflow-hidden min-h-[460px] xl:min-h-[520px]"
+      className="bg-white w-full flex flex-col justify-center items-center relative overflow-hidden min-h-[460px] xl:min-h-[520px]"
       style={{
         backgroundSize: "100% 100%",
       }}

@@ -1,14 +1,18 @@
 import { Metadata, ResolvingMetadata } from 'next'
 import BookingConsultation from "@/components/common/BookingConsultation";
+import CompanyReachStats from "@/components/common/CompanyReachStats";
 import ConsultationBookung from "@/components/common/ConsultationBookung";
 import Faqs from "@/components/common/Faqs";
-import LetsTalk from "@/components/common/LetsTalk";
-import Sponsars from "@/components/common/Sponsars";
+import AiProcess from "@/components/home/AiProcess";
 import HeroArea from "@/components/home/HeroArea";
 import Testimonials from "@/components/home/Testimonials";
 import Trust from "@/components/home/Trust";
+import WhatWeIntegrate from "@/components/home/WhatWeIntegrate";
 import DigitalSoluations from "@/components/home/digitalSoluations/DigitalSoluations";
 import mired_banner  from "../public/images/mired_banner.png"
+
+// Set to true to restore the "AI integration that ships" banner section
+const SHOW_TRUST_SECTION = false;
 
 type Props = {
   params: Promise<{ id: string }>
@@ -16,16 +20,16 @@ type Props = {
 }
 
 const seoContent = {
-  title: "Build Digital Solutions That Scale",
-  description: "Custom Software & AI Solutions - The #1 growth studio for digital innovators",
-  keywords: "Custom Software, AI Solutions, Digital Solutions, Software Development, Digital Innovation",
+  title: "AI Integration & Custom Software That Ships",
+  description: "Mired integrates AI into your business systems — CRMs, ERPs, internal tools, and custom platforms. Production-grade AI, custom software, and go-to-market support.",
+  keywords: "AI Integration, Custom Software, Internal Tools, AI Agents, Workflow Automation, LLM Integration, RAG Systems",
 }
 
 // JSON-LD for structured data
 const jsonLd = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Mired - The #1 growth studio for digital innovators',
+  name: 'Mired - AI Integration & Custom Software',
   description: seoContent.description,
   url: 'https://mired.io',
   logo: 'https://mired.io/logo.png', // Add your logo URL
@@ -76,8 +80,8 @@ export async function generateMetadata(
       card: 'summary_large_image',
       title: seoContent.title,
       description: seoContent.description,
-      site: '@mired_io',
-      creator: '@mired_io',
+      site: '@MiredWeb',
+      creator: '@MiredWeb',
       images: [
         {
           url: mired_banner.src,
@@ -117,13 +121,13 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
       <HeroArea />
-      <div className="py-5">
-        <Sponsars />
-      </div>
-      <ConsultationBookung />
       <DigitalSoluations />
+      <CompanyReachStats className="bg-white border-b-2 border-black" />
+      <WhatWeIntegrate className="mired-surface-vivid" />
+      <ConsultationBookung />
+      <AiProcess />
       <Testimonials />
-      <Trust />
+      {SHOW_TRUST_SECTION && <Trust />}
       <Faqs />
       <BookingConsultation />
     </main>

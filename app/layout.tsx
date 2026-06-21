@@ -1,6 +1,6 @@
 import Header from "@/components/common/Header";
 import type { Metadata, Viewport } from "next";
-import { Manrope, Montserrat, Orbitron } from "next/font/google";
+import { Manrope, Montserrat, Orbitron, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
 import Footer from "@/components/common/Footer";
@@ -11,15 +11,23 @@ import LoadingProgress from "@/components/common/LoadingProgress";
 import ElevenLabsWidget from "@/components/ElevenLabsWidget";
 import { Suspense } from 'react';
 
+// Set to true to show the ElevenLabs voice agent widget
+const SHOW_ELEVENLABS_AGENT = false;
+
 const manrope = Manrope({ subsets: ["latin"], variable: "--monrope" });
 const montserrat = Montserrat({ subsets: ["latin"], variable: "--montserrat" });
 const poppins = Montserrat({ subsets: ["latin"], variable: "--poppins" });
 const orbitron = Orbitron({ subsets: ["latin"], variable: "--orbitron" });
+const plusJakartaSans = Plus_Jakarta_Sans({
+  subsets: ["latin"],
+  variable: "--hero-font",
+  weight: ["500", "600", "700", "800"],
+});
 
 const seoContent = {
-  title: "Build Digital Solutions That Scale",
-  description: "The #1 growth studio for digital innovators - Custom Software & AI Solutions",
-  keywords: "Custom Software, AI Solutions, Digital Solutions, Software Development, Digital Innovation",
+  title: "AI Integration & Custom Software That Ships",
+  description: "Mired integrates AI into your business systems — CRMs, ERPs, internal tools, and custom platforms. Production-grade AI, custom software, and go-to-market support.",
+  keywords: "AI Integration, Custom Software, Internal Tools, AI Agents, Workflow Automation, LLM Integration, RAG Systems",
 }
 
 export const metadata: Metadata = {
@@ -33,7 +41,7 @@ export const metadata: Metadata = {
   
   openGraph: {
     type: 'website',
-    siteName: 'Mired - The #1 growth studio for digital innovators',
+    siteName: 'Mired - AI Integration & Custom Software',
     title: seoContent.title,
     description: seoContent.description,
     url: 'https://mired.io',
@@ -51,6 +59,8 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: seoContent.title,
     description: seoContent.description,
+    site: '@MiredWeb',
+    creator: '@MiredWeb',
     images: ['/images/mired_banner.svg'],
   },
   
@@ -86,7 +96,8 @@ export default function RootLayout({
           montserrat.variable,
           poppins.variable,
           ClashDisplay.variable,
-          orbitron.variable
+          orbitron.variable,
+          plusJakartaSans.variable
         )}
       >
         <Suspense fallback={null}>
@@ -97,7 +108,9 @@ export default function RootLayout({
             <Header />
           </header>
           <main className="min-h-screen mt-20">{children}
-          <ElevenLabsWidget agentId="Ggs3QejwT0HjbzQxwmZ6" />
+          {SHOW_ELEVENLABS_AGENT && (
+            <ElevenLabsWidget agentId="Ggs3QejwT0HjbzQxwmZ6" />
+          )}
           </main>
           <footer>
             <Footer />

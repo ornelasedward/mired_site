@@ -3,53 +3,54 @@ import Image from "next/image";
 import { FC } from "react";
 import CustomButton from "../ui/custom-button";
 import Link from "next/link";
+
 interface Props {
   className?: string;
 }
+
+const edwardPhoto = (
+  <div className="rounded-full border-2 border-black overflow-hidden w-48 h-48 sm:w-56 sm:h-56 lg:w-64 lg:h-64 xl:w-72 xl:h-72 shrink-0">
+    <Image
+      src="/images/edward.png"
+      alt="Edward, co-founder of Mired"
+      width={288}
+      height={288}
+      className="w-full h-full object-cover"
+      quality={80}
+    />
+  </div>
+);
+
 const LetsTalk: FC<Props> = ({ className }) => {
   return (
     <div
       className={cn(
-        className,
-        " relative overflow-hidden z-50 bg-skin-pink-200 pt-12 lg:pt-0"
+        "relative overflow-hidden z-50 pt-12 lg:pt-0",
+        className ?? "bg-white"
       )}
     >
-      <div className="flex container min-h-[100px] lg:min-h-[800px] flex-col justify-between lg:flex-row gap-0 lg:gap-20 items-center">
-        <div className="w-full lg:w-3/5">
-          <h2 className=" heading-1">
-            Turn Your Website into a Cash Flow Machine
+      <div className="flex container py-12 lg:py-20 flex-col lg:flex-row gap-8 lg:gap-16 xl:gap-20 items-center">
+        <div className="w-full lg:w-3/5 relative z-10">
+          <h2 className=" heading-1 normal-case">
+            Talk directly with the people who build it
           </h2>
-          <p className="text-black mt-3">
-            Lets discuss your goals, challenges, and create a strategy that
-            propels your business forward. Do not miss out on this opportunity
-            to take your digital presence to the next level. 
+          <p className="text-black mt-3 text-lg sm:text-xl">
+            Mired is Edward and Miranda — a husband-and-wife team that
+            integrates AI into your systems and ships the software around it. No
+            project managers, no handoffs. When you reach out, you&apos;re
+            talking to us.
           </p>
 
           <div className="mt-10 lg:mt-16">
             <Link href="/contact">
-            <CustomButton>Let&apos;s talk</CustomButton>
+              <CustomButton>Let&apos;s talk</CustomButton>
             </Link>
           </div>
         </div>
 
-        <div className="w-full lg:hidden">
-          <Image
-            src="/images/hansome-guy.png"
-            alt="Handsome guy"
-            width={634}
-            height={800}
-            className="w-full "
-          />
+        <div className="w-full lg:w-auto flex justify-center lg:justify-end shrink-0">
+          {edwardPhoto}
         </div>
-      </div>
-      <div className=" hidden lg:flex absolute bottom-0 right-0  justify-end">
-        <Image
-          src="/images/hansome-guy.png"
-          alt="Handsome guy"
-          width={634}
-          height={800}
-          className="w-full left-0 max-w-[40vw] xl:max-w-[42vw] 2xl:max-w-[65vw]"
-        />
       </div>
     </div>
   );

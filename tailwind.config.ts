@@ -20,6 +20,12 @@ const config = {
     backgroundImage: {
       "home-bg": "url('/images/home-bg.png')",
       "s-bg": "url('/images/contact_bg.png')",
+      "mired-accent":
+        "linear-gradient(135deg, #420FB0 0%, #FF6B9D 35%, #FFB347 65%, #55F5A3 100%)",
+      "mired-shadow-primary":
+        "linear-gradient(135deg, #420FB0 0%, #FF6B9D 45%, #FFB347 100%)",
+      "mired-shadow-secondary":
+        "linear-gradient(135deg, #F7BE08 0%, #FFB347 50%, #55F5A3 100%)",
     },
     extend: {
       colors: {
@@ -66,6 +72,9 @@ const config = {
           "yellow-200": "#F5EFD9",
           "pink-50": "#F4F2F6",
           "slate-800": "#080F22",
+          magenta: "#FF6B9D",
+          peach: "#FFB347",
+          lavender: "#E4DAFF",
         },
       },
       fontFamily: {
@@ -74,6 +83,7 @@ const config = {
         montserrat: "var(--montserrat)",
         clash_display: "var(--clash-display)",
         orbitron: "var(--orbitron)",
+        hero: "var(--hero-font), sans-serif",
       },
 
       borderRadius: {

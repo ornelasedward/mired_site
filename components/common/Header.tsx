@@ -25,16 +25,20 @@ const Header = () => {
       href: "/",
     },
     {
-      label: "About Us ",
-      href: "/digital-marketing",
+      label: "AI Solutions",
+      href: "/ai-solutions",
     },
     {
       label: "Services",
       href: "/services",
     },
     {
-      label: "Projects",
-      href: "/web-design-&-development",
+      label: "Case Studies",
+      href: "/case-studies",
+    },
+    {
+      label: "About",
+      href: "/about",
     },
     {
       label: "FAQS",
@@ -56,9 +60,8 @@ const Header = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  });
+  }, []);
 
-  console.log(header);
   return (
     <header
       className={cn(
@@ -89,7 +92,9 @@ const Header = () => {
                   href={link.href}
                   className={cn(
                     "relative text-black hover:bg-[#D7E9F8] transition-colors duration-200 px-4 py-1 rounded-sm block",
-                    pathName === link.href
+                    pathName === link.href ||
+                      (link.href === "/case-studies" &&
+                        pathName?.startsWith("/case-studies"))
                       ? "text-black uppercase font-medium bg-[#D7E9F8]"
                       : "text-black font-medium uppercase"
                   )}
@@ -99,7 +104,13 @@ const Header = () => {
               </li>
             ))}
           </ul>
-          <div className="hidden xl:block">
+          <div className="hidden xl:flex items-center gap-4">
+            <a
+              href="tel:+15755136238"
+              className="font-manrope text-sm font-semibold text-black hover:text-skin-blue-800 transition-colors whitespace-nowrap"
+            >
+              (575) 513-6238
+            </a>
             <Link href="/contact">
               <Button className="px-6 py-2 bg-[#420FB0]">CONTACT US</Button>
             </Link>
@@ -129,7 +140,9 @@ const Header = () => {
                 onClick={() => setNav(false)}
                 className={cn(
                   "relative xl:hidden text-base hover:bg-[#D7E9F8] transition-colors duration-200 px-4 py-1 rounded-sm w-full text-center",
-                  pathName === link.href
+                  pathName === link.href ||
+                    (link.href === "/case-studies" &&
+                      pathName?.startsWith("/case-studies"))
                     ? "text-black font-medium bg-[#D7E9F8]"
                     : "text-black font-medium"
                 )}
@@ -138,6 +151,14 @@ const Header = () => {
                 <Link href={link.href}>{link.label}</Link>
               </li>
             ))}
+            <li>
+              <a
+                href="tel:+15755136238"
+                className="font-manrope text-base font-semibold text-black hover:text-skin-blue-800 transition-colors"
+              >
+                (575) 513-6238
+              </a>
+            </li>
             <li>
               <Link href="/contact">
                 <Button className="px-6 py-2 bg-[#420FB0]">CONTACT US</Button>

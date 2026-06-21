@@ -2,41 +2,55 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
+import Sponsars from "@/components/common/Sponsars";
+import HeroAiLogos from "@/components/home/HeroAiLogos";
+
+// Set to true to restore animated floating icons in the hero
+const SHOW_HERO_FLOATING_ICONS = false;
 
 const HeroArea = () => {
   return (
     <div
-      className={`  bg-[#161616] bg-home-bg h-[calc(80vh-80px)] sm:h-[calc(80vh-90px)]  flex items-center justify-center relative overflow-hidden mt-20 md:mt-24`}
+      className="bg-[#161616] bg-home-bg relative overflow-hidden mt-20 md:mt-24 border-b-2 border-black"
       style={{
         backgroundSize: "100% 100%",
       }}
     >
+      <div className="min-h-[calc(72vh-80px)] sm:min-h-[calc(72vh-90px)] flex items-center justify-center relative pb-4">
       <div className="container relative z-50 text-center mx-auto max-w-[75rem] space-y-12">
         <div className="space-y-6">
-          <span className="inline-block text-blue-500 bg-blue-100 border border-blue-500 px-4 py-1.5 rounded-md text-sm font-medium">
-            Custom Software & AI Solutions
+          <span className="inline-block font-hero text-blue-500 bg-blue-100 border border-blue-500 px-4 py-1.5 rounded-md text-sm font-semibold tracking-tight">
+            AI Integration & Custom Software
           </span>
-          <h2 className="text-5xl sm:text-8xl font-bold normal-case">
-            Build Digital <br /> Solutions That Scale
-            <span className="inline-block w-8" /> <br />
+          <HeroAiLogos />
+          <h2 className="font-hero text-5xl sm:text-6xl lg:text-8xl font-extrabold normal-case leading-[1.08] tracking-tight text-black">
+            Put{" "}
+            <span className="text-ai-highlight px-1 sm:px-1.5">AI</span>{" "}
+            <span className="text-black">Inside</span>
+            <br />
+            The Tools Your Team{" "}
+            <span className="text-skin-blue-800">Already Uses</span>
           </h2>
-          <p className="text-2xl font-medium ">
-            The #1 growth studio for digital innovators{" "}
+          <p className="font-hero text-xl sm:text-2xl font-medium tracking-tight text-skin-slate-800 max-w-4xl mx-auto">
+            Production-grade AI integrations, custom internal tools, and the
+            digital layer to launch them — built to ship, not to demo.{" "}
             <br className="hidden xl:block" />
           </p>
         </div>
         <Link
           href="/contact"
           className="rounded-10 outline-none focus:outline-none text-sm sm:text-base font-bold font-manrope relative py-2 px-10 h-14 inline-flex items-center justify-center gap-4 bg-skin-blue-800 hover:bg-skin-blue-800/95 text-white transition-colors ease-in-out duration-300
-          before:absolute before:w-full before:h-full before:bg-skin-pink-300 before:-z-10 before:-top-0 before:-left-0 before:rounded-10 before:transition-all before:ease-out before:duration-300 hover:before:-top-1 hover:before:-left-1
-          after:absolute after:w-full after:h-full after:bg-skin-yellow-600 after:-z-10 after:top-0 after:left-0 after:rounded-10 after:transition-all after:ease-out after:duration-300 hover:after:top-1.5 hover:after:left-1.5"
+          before:absolute before:w-full before:h-full before:bg-skin-yellow-600 before:-z-10 before:-top-0 before:-left-0 before:rounded-10 before:transition-all before:ease-out before:duration-300 hover:before:-top-1 hover:before:-left-1
+          after:absolute after:w-full after:h-full after:bg-customGreen after:-z-10 after:top-0 after:left-0 after:rounded-10 after:transition-all after:ease-out after:duration-300 hover:after:top-1.5 hover:after:left-1.5"
         >
-          Start your Project
+          Book an AI Readiness Call
           <div className="h-8 w-[1px] bg-white/30"></div>
-          Book a Consultation
+          Let&apos;s Talk
         </Link>
       </div>
 
+      {SHOW_HERO_FLOATING_ICONS && (
+        <>
       <motion.div
         className="absolute top-[80%] z-10 md:right-[22.85%] right-[5%]"
         animate={{
@@ -117,6 +131,11 @@ const HeroArea = () => {
           height={80}
         />
       </motion.div>
+        </>
+      )}
+      </div>
+
+      <Sponsars embedded useHeroFont />
     </div>
   );
 };

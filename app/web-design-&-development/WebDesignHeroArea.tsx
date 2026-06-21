@@ -1,11 +1,10 @@
 import { Button } from "@/components/ui/button";
 import CustomButton from "@/components/ui/custom-button";
-import Image from "next/image";
 import Link from "next/link";
 
 const WebDesignHeroArea = () => {
   return (
-    <div className="border-b-[3px] overflow-hidden  relative  z-40 border-black  py-8">
+    <div className="border-b-[3px] overflow-hidden relative z-40 border-black py-8 bg-skin-lavender">
       <div className="max-w-[1000px] relative z-40 space-y-6 container mx-auto text-center">
         <div className="flex  justify-center">
           <Link href="/services">
@@ -35,20 +34,6 @@ const WebDesignHeroArea = () => {
           }}
         ></div>
       </div>
-      <Image
-        className=" absolute z-10 right-0 top-0"
-        src={"/images/g5.svg"}
-        alt="g5"
-        width={647}
-        height={1000}
-      />
-      <Image
-        className=" absolute z-10 left-0 bottom-0"
-        src={"/images/g6.svg"}
-        alt="g5"
-        width={647}
-        height={1000}
-      />
     </div>
   );
 };

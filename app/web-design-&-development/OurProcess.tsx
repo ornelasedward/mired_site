@@ -46,7 +46,7 @@ const OurProcess = () => {
     }
   };
   return (
-    <div className=" bg-skin-pink-50 border-t border-black overflow-hidden relative  py-10 xl:py-20">
+    <div className="border-t border-black overflow-hidden relative py-10 xl:py-20 bg-skin-yellow-200">
       <div className=" container">
         <div>
           <div className="max-w-[650px]">

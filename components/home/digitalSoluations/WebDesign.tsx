@@ -1,21 +1,24 @@
-import Image from "next/image";
 import Link from "next/link";
+import ServiceSectionHeader from "./ServiceSectionHeader";
+import { BuildVisual } from "./ServiceVisuals";
 
 const WebDesign = () => {
   return (
-    <div className="bg-skin-pink-200 py-16 border-y-[2px] border-black/100">
-      <div className="flex container flex-col-reverse lg:flex-row justify-between gap-12 items-center">
-        <div className="w-full space-y-6 lg:max-w-[850px]">
-          <h3 className="heading-2">BUILD</h3>
+    <div className="bg-white py-16 border-y-[2px] border-black/100">
+      <div className="flex container flex-col-reverse lg:flex-row-reverse justify-between gap-12 items-center">
+        <div className="w-full space-y-4 lg:max-w-[850px]">
+          <ServiceSectionHeader
+            label="Build"
+            subtitle="Custom software and internal tools"
+          />
           <p className="text-2xl">
-            We turn ideas into digital solutions. From napkin sketches into
-            full-stack applications to scaling existing platforms - we deliver
-            the complete tech stack for serious growth. Custom software that
-            drives real results. That&apos;s it.
+            Dashboards, APIs, admin panels, and full-stack applications that
+            power your operations. We build the connective tissue between your
+            team and the AI layer.
           </p>
           <div>
             <Link
-              href="/web-design-&-development"
+              href="/build"
               className="group inline-flex gap-x-2 items-center font-semibold text-black"
             >
               <p className="uppercase font-orbitron font-semibold text-sm">
@@ -38,15 +41,8 @@ const WebDesign = () => {
           </div>
         </div>
 
-        <div className="w-full max-w-[340px] lg:w-1/3 flex justify-center lg:justify-end">
-                <Image
-            src="/images/course.svg"
-            alt="Web design & Development"
-            width={340}
-            height={340}
-            className=" w-full object-cover"
-            quality={80}
-          />
+        <div className="w-full max-w-[340px] lg:w-1/3 flex justify-center lg:justify-start">
+          <BuildVisual />
         </div>
       </div>
     </div>

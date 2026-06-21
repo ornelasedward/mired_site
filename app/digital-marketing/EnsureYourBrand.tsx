@@ -43,7 +43,7 @@ const EnsureYourBrand = () => {
             </p>
           </div>
           <div className=" space-y-3">
-            <h5 className="text-[15px] font-montserrat font-bold text-[#FF92B2]">
+            <h5 className="text-[15px] font-montserrat font-bold text-mired-gradient">
               DEVELOP
             </h5>
             <div>
@@ -59,7 +59,7 @@ const EnsureYourBrand = () => {
             </p>
           </div>
           <div className=" space-y-3">
-            <h5 className="text-[15px] font-montserrat font-bold text-[#FF92B2]">
+            <h5 className="text-[15px] font-montserrat font-bold text-mired-gradient">
               DEPLOY
             </h5>
             <div>

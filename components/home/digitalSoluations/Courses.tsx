@@ -1,20 +1,24 @@
-import Image from "next/image";
 import Link from "next/link";
+import ServiceSectionHeader from "./ServiceSectionHeader";
+import { IntegrateVisual } from "./ServiceVisuals";
 
 const Courses = () => {
   return (
-    <div className=" bg-skin-pink-200 py-20 border-b-[2px] border-black">
+    <div className="bg-skin-pink-200 py-20 border-b-[2px] border-black">
       <div className="flex container flex-col-reverse lg:flex-row justify-between gap-8 items-center">
-        <div className="w-full space-y-2  lg:max-w-[850px]">
-          <h3 className="heading-2">INNOVATE</h3>
+        <div className="w-full space-y-4 lg:max-w-[850px]">
+          <ServiceSectionHeader
+            label="Integrate"
+            subtitle="We wire AI into the systems you already run"
+          />
           <p className="text-2xl">
-            We implement custom AI solutions that matter - from RAG systems to
-            smart automations. Skip the buzzwords, get the results. Our AI
-            integrations help digital innovators work smarter and scale faster.
+            CRMs, ERPs, Slack, internal dashboards, and custom platforms. LLM
+            pipelines, RAG systems, voice agents, and workflow automation that
+            your team actually uses every day.
           </p>
           <div>
             <Link
-              href="/services"
+              href="/integrate"
               className="group inline-flex gap-x-2 items-center font-semibold text-black"
             >
               <p className="uppercase font-orbitron font-semibold text-sm">
@@ -38,14 +42,7 @@ const Courses = () => {
         </div>
 
         <div className="w-full max-w-[340px] lg:w-1/3 flex justify-center lg:justify-end">
-                   <Image
-            src="/images/web_design.svg"
-            alt="Web design & Development"
-            width={340}
-            height={340}
-            className=" w-full object-cover"
-            quality={80}
-          />
+          <IntegrateVisual />
         </div>
       </div>
     </div>
