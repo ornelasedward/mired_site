@@ -36,7 +36,7 @@ const Sponsars = ({
     <div
       className={cn(
         embedded
-          ? "bg-transparent relative z-50 -mt-6 sm:-mt-10 py-2 sm:py-3"
+          ? "bg-transparent relative z-50 shrink-0 mt-4 sm:mt-6 pb-4 sm:pb-6 pt-2 sm:pt-3"
           : hideBorder
             ? "bg-white py-4 sm:py-5"
             : "border-b-2 border-black bg-white py-4 sm:py-5"

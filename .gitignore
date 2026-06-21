@@ -37,3 +37,6 @@ next-env.d.ts
 
 # history
 .history
+
+# pnpm store
+.pnpm-store
