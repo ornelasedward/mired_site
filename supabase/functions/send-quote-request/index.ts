@@ -1,5 +1,6 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.4";
 import { z } from "https://esm.sh/zod@3.23.8";
+import { emailFooterHtml } from "../_shared/brand.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -94,7 +95,7 @@ Deno.serve(async (req) => {
         <h2 style="color:#111;">Thanks, ${firstName}</h2>
         <p>We received your message and will reach out within <strong>24–48 business hours</strong>.</p>
         <p>If you'd like to talk sooner, call us at <strong>(575) 513-6238</strong>.</p>
-        <p style="margin-top:24px;">— The Mired team</p>
+        ${emailFooterHtml}
       </div>
     `;
 

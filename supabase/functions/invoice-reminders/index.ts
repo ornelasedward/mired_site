@@ -12,6 +12,7 @@
 //   +7 days past issued_at -> reminder #3 (final)
 
 import { corsHeaders, serviceClient, siteOrigin } from "../_shared/admin.ts";
+import { emailFooterHtml, emailFooterText } from "../_shared/brand.ts";
 import { sendSignReminder } from "../_shared/email.ts";
 
 const json = (b: unknown, s = 200) =>
@@ -124,9 +125,9 @@ Deno.serve(async (req) => {
                 View &amp; pay invoice
               </a>
             </p>
-            <p style="color:#666;font-size:13px;">— Mired</p>
+            ${emailFooterHtml}
           </div>`,
-          text: `Reminder: your Mired invoice for ${totalStr} is awaiting payment.\nView & pay: ${publicUrl}`,
+          text: `Reminder: your Mired invoice for ${totalStr} is awaiting payment.\nView & pay: ${publicUrl}\n\n${emailFooterText}`,
         }),
       });
       if (r.ok) {

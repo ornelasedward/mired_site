@@ -12,24 +12,14 @@ const corsHeaders = {
   "Access-Control-Allow-Methods": "POST, OPTIONS",
 };
 
+import { emailSignatureHtml, emailSignatureText } from "../_shared/brand.ts";
+
 const RESEND_API_URL = "https://api.resend.com/emails";
 const FROM_ADDRESS = "Mired <contact@mired.io>";
 const REPLY_TO_ADDRESS = "contact@mired.io";
 
-// Signature appended to every outbound email. Helps deliverability (looks like
-// a real business email) and keeps branding consistent.
-const SIGNATURE_TEXT = `--
-Mired · AI Integration & Custom Software
-(575) 513-6238 · https://mired.io
-Austin, TX & all of Central Texas`;
-
-const SIGNATURE_HTML = `
-<p style="margin-top:24px;color:#666;font-size:13px;line-height:1.5;border-top:1px solid #eee;padding-top:12px;">
-  <strong style="color:#222;">Mired</strong> · AI Integration & Custom Software<br/>
-  <a href="tel:+15122705164" style="color:#666;text-decoration:none;">(575) 513-6238</a> ·
-  <a href="https://mired.io" style="color:#666;text-decoration:none;">mired.io</a><br/>
-  Austin, TX &amp; all of Central Texas
-</p>`;
+const SIGNATURE_TEXT = emailSignatureText;
+const SIGNATURE_HTML = emailSignatureHtml;
 
 const json = (body: unknown, status = 200) =>
   new Response(JSON.stringify(body), {

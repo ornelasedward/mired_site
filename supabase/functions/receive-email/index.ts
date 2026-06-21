@@ -8,6 +8,7 @@
 
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.4";
 import { Webhook } from "https://esm.sh/svix@1.24.0";
+import { BRAND, emailFooterHtml, emailFooterText } from "../_shared/brand.ts";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin": "*",
@@ -16,7 +17,7 @@ const corsHeaders = {
 };
 
 const RESEND_API_URL = "https://api.resend.com/emails";
-const FROM_ADDRESS = "Mired <contact@mired.io>";
+const FROM_ADDRESS = `Mired <${BRAND.email}>`;
 const FORWARD_TO =
   Deno.env.get("INBOUND_FORWARD_EMAIL") ??
   Deno.env.get("NOTIFY_TO_EMAIL") ??
@@ -38,24 +39,28 @@ async function forwardInboundNotification(args: {
 }): Promise<void> {
   const preview = (args.textBody ?? "").trim().slice(0, 500) || "(no text body)";
   const adminUrl = `${args.siteUrl.replace(/\/$/, "")}/admin/inbox`;
+  const subject = args.subject?.trim()
+    ? `New message: ${args.subject.trim()}`
+    : "New message for Mired";
   const html = `
     <div style="font-family:Arial,sans-serif;color:#222;font-size:14px;line-height:1.5;max-width:560px;">
-      <p><strong>New email to contact@mired.io</strong></p>
+      <p>You received a new email at contact@mired.io.</p>
       <p><strong>From:</strong> ${escapeHtml(args.from)}</p>
-      <p><strong>To:</strong> ${escapeHtml(args.to.join(", ") || "contact@mired.io")}</p>
       <p><strong>Subject:</strong> ${escapeHtml(args.subject ?? "(no subject)")}</p>
-      <pre style="white-space:pre-wrap;background:#f5f5f5;padding:12px;border-radius:6px;font-size:13px;">${escapeHtml(preview)}</pre>
-      <p><a href="${adminUrl}">Open admin inbox</a> to read and reply.</p>
+      <p style="white-space:pre-wrap;">${escapeHtml(preview)}</p>
+      <p><a href="${adminUrl}">View in admin inbox</a></p>
+      ${emailFooterHtml}
     </div>`;
   const text = [
-    "New email to contact@mired.io",
+    "You received a new email at contact@mired.io.",
     `From: ${args.from}`,
-    `To: ${args.to.join(", ") || "contact@mired.io"}`,
     `Subject: ${args.subject ?? "(no subject)"}`,
     "",
     preview,
     "",
-    `Open admin inbox: ${adminUrl}`,
+    `View in admin inbox: ${adminUrl}`,
+    "",
+    emailFooterText,
   ].join("\n");
 
   const res = await fetch(RESEND_API_URL, {
@@ -67,8 +72,8 @@ async function forwardInboundNotification(args: {
     body: JSON.stringify({
       from: FROM_ADDRESS,
       to: [FORWARD_TO],
-      reply_to: args.from,
-      subject: `[Mired inbox] ${args.subject ?? "(no subject)"}`,
+      reply_to: BRAND.email,
+      subject,
       html,
       text,
     }),

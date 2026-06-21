@@ -9,6 +9,7 @@
 // and logs an invoice_events row per channel.
 
 import { corsHeaders, json, requireAdmin, siteOrigin } from "../_shared/admin.ts";
+import { emailFooterHtml, emailFooterText } from "../_shared/brand.ts";
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const QUO_API_URL = "https://api.openphone.com/v1/messages";
@@ -149,11 +150,7 @@ Deno.serve(async (req) => {
             </a>
           </p>
           <p style="font-size:12px;color:#888;">If the button doesn't work, copy this link:<br/>${publicUrl}</p>
-          <p style="margin-top:24px;color:#666;font-size:13px;line-height:1.5;border-top:1px solid #eee;padding-top:12px;">
-            <strong style="color:#222;">Mired</strong> · AI Integration & Custom Software<br/>
-            (575) 513-6238 · mired.io<br/>
-            Austin, TX &amp; all of Central Texas
-          </p>
+          ${emailFooterHtml}
         </div>`;
 
       const text = [
@@ -164,7 +161,7 @@ Deno.serve(async (req) => {
         `Total: ${totalStr}${dueStr ? `, due ${dueStr}` : ""}`,
         `View & pay: ${publicUrl}`,
         "",
-        "— Mired",
+        emailFooterText,
       ]
         .filter(Boolean)
         .join("\n");

@@ -4,9 +4,15 @@
 //
 // Each helper returns { ok, id?, error? } and never throws.
 
+import {
+  BRAND,
+  emailFooterHtml,
+  emailFooterText,
+} from "./brand.ts";
+
 const RESEND_API_URL = "https://api.resend.com/emails";
-const FROM_EMAIL = "Mired <contact@mired.io>";
-const REPLY_TO = "contact@mired.io";
+const FROM_EMAIL = `Mired <${BRAND.email}>`;
+const REPLY_TO = BRAND.email;
 
 // deno-lint-ignore no-explicit-any
 type Json = any;
@@ -63,13 +69,6 @@ async function sendViaResend(opts: {
   return { ok: true, id: (j as Json)?.id };
 }
 
-const FOOTER_HTML = `
-  <p style="margin-top:32px;color:#666;font-size:13px;line-height:1.5;border-top:1px solid #eee;padding-top:12px;">
-    <strong style="color:#222;">Mired</strong> &middot; AI Integration & Custom Software<br/>
-    (575) 513-6238 &middot; mired.io<br/>
-    Austin, TX &amp; all of Central Texas
-  </p>`;
-
 /**
  * Full receipt sent once the invoice is fully complete (paid + signed if a
  * document was attached, or just paid if not). This is the customer's "save
@@ -109,7 +108,7 @@ export async function sendPaymentConfirmation(args: {
   const html = `
     <div style="font-family:Arial,sans-serif;color:#222;font-size:14px;line-height:1.5;max-width:560px;margin:0 auto;">
       <p>Hi ${escapeHtml(invoice.customer_name)},</p>
-      <p>Thank you! Your payment has been received and your booking with Mired is confirmed${eventLabel ? `<strong>${eventLabel}</strong>` : ""}.</p>
+      <p>Thank you! Your payment has been received and your project with Mired is confirmed${eventLabel ? `<strong>${eventLabel}</strong>` : ""}.</p>
 
       <div style="margin:20px 0;padding:16px 20px;background:#ecfdf5;border-left:4px solid #10b981;border-radius:6px;">
         <div style="font-size:13px;color:#065f46;text-transform:uppercase;letter-spacing:0.04em;">Paid</div>
@@ -150,13 +149,13 @@ export async function sendPaymentConfirmation(args: {
         <a href="${publicUrl}" style="color:#0f172a;text-decoration:underline;">${publicUrl}</a>
       </p>
 
-      <p style="color:#444;">If you have any questions about your booking, just reply to this email — we'd love to help.</p>
-      ${FOOTER_HTML}
+      <p style="color:#444;">Questions about your project? Just reply to this email — we'd love to help.</p>
+      ${emailFooterHtml}
     </div>`;
 
   const text = [
     `Hi ${invoice.customer_name},`,
-    `Thank you! Your payment has been received and your Mired booking${eventLabel} is confirmed.`,
+    `Thank you! Your payment has been received and your Mired project${eventLabel} is confirmed.`,
     "",
     `Paid: ${total} on ${fmtDate(invoice.paid_at)}`,
     "",
@@ -175,7 +174,7 @@ export async function sendPaymentConfirmation(args: {
     `Invoice copy: ${publicUrl}`,
     "",
     "Questions? Reply to this email.",
-    "— Mired",
+    emailFooterText,
   ]
     .filter(Boolean)
     .join("\n");
@@ -207,14 +206,14 @@ export async function sendSignReminder(args: {
     reminderIndex === 0
       ? `Thanks for your payment! We've received <strong>${total}</strong>${eventLabel ? ` for ${escapeHtml(invoice.email_subject!.trim())}` : ""}.`
       : reminderIndex === 1
-      ? `Just a quick reminder — we still need your signature on the service agreement to finalize your booking.`
-      : `Final reminder: please sign your service agreement so we can confirm your booking.`;
+      ? `Just a quick reminder — we still need your signature on the service agreement to finalize your project.`
+      : `Final reminder: please sign your service agreement so we can move forward.`;
 
   const html = `
     <div style="font-family:Arial,sans-serif;color:#222;font-size:14px;line-height:1.5;max-width:560px;margin:0 auto;">
       <p>Hi ${escapeHtml(invoice.customer_name)},</p>
       <p>${opening}</p>
-      <p>To finalize your booking, we just need your signature on the
+      <p>To move forward, we just need your signature on the
       <strong>${escapeHtml(document.title)}</strong>. It only takes a few seconds — sign right on the page from your phone or computer.</p>
 
       <p style="margin:24px 0;text-align:center;">
@@ -226,17 +225,17 @@ export async function sendSignReminder(args: {
       </p>
       <p style="font-size:12px;color:#888;">If the button doesn't work, copy this link:<br/>${publicUrl}</p>
       <p style="color:#444;">Questions? Just reply to this email.</p>
-      ${FOOTER_HTML}
+      ${emailFooterHtml}
     </div>`;
 
   const text = [
     `Hi ${invoice.customer_name},`,
     opening.replace(/<[^>]+>/g, ""),
     "",
-    `To finalize your booking, please sign your ${document.title}:`,
+    `Please sign your ${document.title} to complete your agreement:`,
     publicUrl,
     "",
-    "— Mired",
+    emailFooterText,
   ].join("\n");
 
   const subject =
