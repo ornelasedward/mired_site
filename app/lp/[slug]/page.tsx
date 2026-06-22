@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import LandingPageHero from "@/components/leads/LandingPageHero";
 import { getLandingPage, getAllLandingSlugs } from "@/lib/landing-pages";
 import { getCalendlyUrl, LEADS } from "@/lib/site";
-import Link from "next/link";
+import { LANDING_STACK_LOGOS } from "@/lib/landing-logos";
 
 interface Props {
   params: Promise<{ slug: string }>;
@@ -31,6 +31,7 @@ export default async function LandingPage({ params }: Props) {
   if (!page) notFound();
 
   const isAssessment = slug === "ai-readiness";
+  const stackLogos = LANDING_STACK_LOGOS[slug];
 
   return (
     <LandingPageHero
@@ -42,6 +43,13 @@ export default async function LandingPage({ params }: Props) {
       ctaHref={isAssessment ? LEADS.aiReadinessPath : LEADS.contactBookPath}
       showCalendly={!isAssessment}
       calendlyUrl={getCalendlyUrl()}
+      problem={page.problem}
+      useCases={page.useCases}
+      process={page.process}
+      whoItsFor={page.whoItsFor}
+      caseStudy={page.caseStudy}
+      stackLogos={stackLogos}
+      showCompaniesMarquee={Boolean(stackLogos)}
     />
   );
 }
