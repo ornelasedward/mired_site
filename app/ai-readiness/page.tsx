@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import AiReadinessQuiz from "@/components/ai-readiness/AiReadinessQuiz";
+import { getCalendlyUrl } from "@/lib/site";
 import Link from "next/link";
 
 export const metadata: Metadata = {
@@ -11,25 +12,17 @@ export const metadata: Metadata = {
 export default function AiReadinessPage() {
   return (
     <div>
-      <section className="bg-skin-lavender border-b-2 border-black py-12 sm:py-16">
-        <div className="container max-w-3xl mx-auto text-center space-y-4">
-          <p className="text-sm font-manrope font-semibold uppercase tracking-wider text-skin-blue-800">
-            Free · 5 minutes · Instant results
-          </p>
-          <h1 className="heading-1 normal-case text-3xl sm:text-4xl md:text-5xl">
-            Is your organization AI ready?
-          </h1>
-          <p className="font-manrope text-lg text-black/80 max-w-2xl mx-auto">
-            Answer 12 targeted questions across your stack, use cases, team, and
-            timeline. Get a personalized score and roadmap — then book a free call
-            to walk through it with us.
-          </p>
-        </div>
-      </section>
-
-      <section className="py-12 sm:py-16">
+      <section className="bg-skin-lavender border-b-2 border-black py-8 sm:py-10">
         <div className="container max-w-3xl mx-auto">
-          <AiReadinessQuiz />
+          <div className="text-center space-y-3 mb-6 sm:mb-8">
+            <p className="text-sm font-manrope font-semibold uppercase tracking-wider text-skin-blue-800">
+              Free · 5 minutes · Instant results
+            </p>
+            <h1 className="heading-1 normal-case text-3xl sm:text-4xl md:text-5xl">
+              Is your organization AI ready?
+            </h1>
+          </div>
+          <AiReadinessQuiz calendlyUrl={getCalendlyUrl()} />
         </div>
       </section>
 

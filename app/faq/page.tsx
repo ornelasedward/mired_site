@@ -1,13 +1,12 @@
 import Faqs from "@/components/common/Faqs";
-import ServicesHero from "@/components/common/ServicesHero";
+import BookCallSection from "@/components/leads/BookCallSection";
+import { getCalendlyUrl } from "@/lib/site";
 
 const FaqPage = () => {
   return (
     <div className="relative z-50">
       <Faqs />
-      <div className="border-t-2 border-black">
-        <ServicesHero />
-      </div>
+      <BookCallSection id="book" calendlyUrl={getCalendlyUrl()} />
     </div>
   );
 };

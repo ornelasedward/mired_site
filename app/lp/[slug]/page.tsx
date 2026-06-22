@@ -2,7 +2,7 @@ import { Metadata } from "next";
 import { notFound } from "next/navigation";
 import LandingPageHero from "@/components/leads/LandingPageHero";
 import { getLandingPage, getAllLandingSlugs } from "@/lib/landing-pages";
-import { LEADS } from "@/lib/site";
+import { getCalendlyUrl, LEADS } from "@/lib/site";
 import Link from "next/link";
 
 interface Props {
@@ -41,6 +41,7 @@ export default async function LandingPage({ params }: Props) {
       ctaLabel={page.ctaLabel}
       ctaHref={isAssessment ? LEADS.aiReadinessPath : LEADS.contactBookPath}
       showCalendly={!isAssessment}
+      calendlyUrl={getCalendlyUrl()}
     />
   );
 }

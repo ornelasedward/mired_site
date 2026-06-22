@@ -2,7 +2,7 @@
 import CustomButton from "@/components/ui/custom-button";
 import { Input } from "@/components/ui/input";
 import { isSupabaseConfigured, supabase } from "@/integrations/supabase/client";
-import { COMPANY_SIZE_OPTIONS, LEADS, SITE } from "@/lib/site";
+import { COMPANY_SIZE_OPTIONS, SITE } from "@/lib/site";
 import React, { useState } from "react";
 import { toast } from "sonner";
 import {
@@ -12,9 +12,6 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import BookCallSection from "@/components/leads/BookCallSection";
-import Link from "next/link";
-
 interface ContactFormProps {
   source?: string;
 }
@@ -96,29 +93,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ source = "contact_form" }) =>
 
   return (
     <div className="relative z-50">
-      <section className="bg-skin-yellow-200 border-b-2 border-black py-8">
-        <div className="container max-w-3xl mx-auto text-center space-y-4">
-          <p className="text-sm font-manrope font-semibold uppercase tracking-wider text-skin-blue-800">
-            Free · 5 minutes · Instant score
-          </p>
-          <h2 className="heading-1 normal-case text-2xl sm:text-3xl">
-            Not ready to book? Start with the assessment.
-          </h2>
-          <p className="font-manrope text-black/80">
-            Answer 12 questions, get your AI readiness score and personalized
-            roadmap — then book a call to walk through it.
-          </p>
-          <Link
-            href={LEADS.aiReadinessPath}
-            className="inline-block font-manrope font-bold text-skin-blue-800 underline underline-offset-4 hover:text-black text-lg"
-          >
-            Take the free AI readiness assessment →
-          </Link>
-        </div>
-      </section>
-      <BookCallSection id="book" />
-
-      <div className="py-16 sm:py-20 bg-skin-lavender border-b-2 border-black">
+      <div id="message" className="py-16 sm:py-20 bg-skin-lavender border-b-2 border-black scroll-mt-24">
         <div className="container max-w-xl mx-auto">
           <div className="text-center mb-8 space-y-3">
             <h2 className="heading-1 normal-case text-2xl sm:text-3xl">

@@ -1,5 +1,6 @@
 import { cn } from "@/lib/utils";
 import CalendlyEmbed from "./CalendlyEmbed";
+import ContactFormFallback from "./ContactFormFallback";
 import Link from "next/link";
 import { LEADS } from "@/lib/site";
 
@@ -8,6 +9,8 @@ interface BookCallSectionProps {
   className?: string;
   variant?: "default" | "compact" | "dark";
   showSubtext?: boolean;
+  showContactFallback?: boolean;
+  calendlyUrl: string;
 }
 
 const variantStyles = {
@@ -21,6 +24,8 @@ export default function BookCallSection({
   className,
   variant = "default",
   showSubtext = true,
+  showContactFallback = true,
+  calendlyUrl,
 }: BookCallSectionProps) {
   const isDark = variant === "dark";
 
@@ -73,8 +78,9 @@ export default function BookCallSection({
           </p>
         </div>
         <div className="max-w-4xl mx-auto rounded-lg border-2 border-black bg-white">
-          <CalendlyEmbed height={700} />
+          <CalendlyEmbed url={calendlyUrl} height={700} />
         </div>
+        {showContactFallback && <ContactFormFallback variant={isDark ? "dark" : "default"} />}
       </div>
     </section>
   );

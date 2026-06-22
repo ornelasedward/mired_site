@@ -29,7 +29,7 @@ const tierColors: Record<string, string> = {
   advanced: "bg-customGreen/30",
 };
 
-export default function AiReadinessQuiz() {
+export default function AiReadinessQuiz({ calendlyUrl }: { calendlyUrl: string }) {
   const [step, setStep] = useState<Step>("quiz");
   const [questionIndex, setQuestionIndex] = useState(0);
   const [answers, setAnswers] = useState<ReadinessAnswers>({});
@@ -257,7 +257,7 @@ export default function AiReadinessQuiz() {
               </p>
             </div>
             <div className="max-w-4xl mx-auto border-2 border-black rounded-lg overflow-visible">
-              <CalendlyEmbed height={700} />
+              <CalendlyEmbed url={calendlyUrl} height={700} />
             </div>
           </div>
 

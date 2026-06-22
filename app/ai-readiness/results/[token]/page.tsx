@@ -3,6 +3,7 @@ import Link from "next/link";
 import { DIMENSION_LABELS } from "@/lib/ai-readiness/questions";
 import type { ReadinessDimension } from "@/lib/ai-readiness/types";
 import CalendlyEmbed from "@/components/leads/CalendlyEmbed";
+import { getCalendlyUrl } from "@/lib/site";
 import { SUPABASE_ANON_KEY, SUPABASE_URL } from "@/lib/supabaseEnv";
 
 interface Props {
@@ -128,7 +129,7 @@ export default async function AiReadinessResultsPage({ params }: Props) {
             </h2>
           </div>
           <div className="border-2 border-black rounded-lg overflow-visible">
-            <CalendlyEmbed height={700} />
+            <CalendlyEmbed url={getCalendlyUrl()} height={700} />
           </div>
         </div>
       </section>

@@ -13,6 +13,7 @@ interface LandingPageHeroProps {
   ctaLabel: string;
   ctaHref?: string;
   showCalendly?: boolean;
+  calendlyUrl: string;
 }
 
 export default function LandingPageHero({
@@ -23,6 +24,7 @@ export default function LandingPageHero({
   ctaLabel,
   ctaHref,
   showCalendly = true,
+  calendlyUrl,
 }: LandingPageHeroProps) {
   const href = ctaHref ?? LEADS.contactBookPath;
 
@@ -96,7 +98,7 @@ export default function LandingPageHero({
               </p>
             </div>
             <div className="border-2 border-black rounded-lg overflow-visible">
-              <CalendlyEmbed height={700} />
+              <CalendlyEmbed url={calendlyUrl} height={700} />
             </div>
           </div>
         </section>

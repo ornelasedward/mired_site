@@ -7,11 +7,18 @@ export const SITE = {
   url: "https://mired.io",
 };
 
+const DEFAULT_CALENDLY_URL = "https://calendly.com/mired";
+
+/** Read at request time on the server — do not rely on this in client bundles. */
+export function getCalendlyUrl(): string {
+  const url = process.env.NEXT_PUBLIC_CALENDLY_URL?.trim();
+  return url || DEFAULT_CALENDLY_URL;
+}
+
 export const LEADS = {
-  calendlyUrl:
-    process.env.NEXT_PUBLIC_CALENDLY_URL ??
-    "https://calendly.com/mired",
+  calendlyUrl: getCalendlyUrl(),
   contactBookPath: "/contact#book",
+  contactMessagePath: "/contact#message",
   aiReadinessPath: "/ai-readiness",
 };
 
