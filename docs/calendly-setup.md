@@ -14,12 +14,14 @@
 
 ## 1. Embed (booking widget)
 
-1. Create an event type in Calendly (e.g. **AI Readiness Call**, 15 min).
-2. Copy the public link.
-3. Add to `.env.local`:
+1. In Calendly, open your scheduling page or a specific event type.
+2. Copy the public link. Either works:
+   - **Profile page** (all events): `https://calendly.com/mired`
+   - **Single event**: `https://calendly.com/mired/your-event-slug` — slug must match an event you actually created in Calendly.
+3. Add to `.env.local` (and Vercel env vars for production):
 
 ```bash
-NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/your-username/ai-readiness-call
+NEXT_PUBLIC_CALENDLY_URL=https://calendly.com/your-username
 ```
 
 4. Restart dev server → test `/contact#book`.

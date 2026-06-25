@@ -18,7 +18,7 @@ export async function pushToCrm(payload: CrmLeadPayload): Promise<void> {
 
   const calendlyUrl =
     Deno.env.get("CALENDLY_URL") ??
-    "https://calendly.com/mired/ai-readiness-call";
+    "https://calendly.com/mired";
 
   const body = {
     ...payload,

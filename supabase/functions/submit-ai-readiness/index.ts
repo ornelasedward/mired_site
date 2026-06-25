@@ -26,7 +26,7 @@ const FROM_ADDRESS = "Mired <contact@mired.io>";
 const REPLY_TO_ADDRESS = "contact@mired.io";
 const SITE_URL = Deno.env.get("SITE_URL") ?? "https://mired.io";
 const CALENDLY_URL =
-  Deno.env.get("CALENDLY_URL") ?? "https://calendly.com/mired/ai-readiness-call";
+  Deno.env.get("CALENDLY_URL") ?? "https://calendly.com/mired";
 
 const resultSchema = z.object({
   overallScore: z.number(),

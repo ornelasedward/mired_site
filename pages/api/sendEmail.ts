@@ -86,7 +86,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     // Validate phone format removed — phone no longer collected on short form
 
     try {
-      const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL ?? "https://calendly.com/mired/ai-readiness-call";
+      const calendlyUrl = process.env.NEXT_PUBLIC_CALENDLY_URL ?? "https://calendly.com/mired";
       await resend.emails.send({
         from: 'onboarding@resend.dev',
         to: 'contactmired@gmail.com',

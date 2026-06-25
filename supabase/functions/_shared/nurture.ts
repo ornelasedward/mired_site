@@ -41,7 +41,7 @@ export function nurtureEmailContent(
 ): { subject: string; html: string } | null {
   const firstName = name.split(" ")[0] || "there";
   const calendlyUrl =
-    Deno.env.get("CALENDLY_URL") ?? "https://calendly.com/mired/ai-readiness-call";
+    Deno.env.get("CALENDLY_URL") ?? "https://calendly.com/mired";
   const siteUrl = Deno.env.get("SITE_URL") ?? "https://mired.io";
 
   const bookCta = `<p style="margin:24px 0;"><a href="${calendlyUrl}" style="display:inline-block;background:#420FB0;color:#fff;padding:12px 24px;text-decoration:none;font-weight:bold;border-radius:6px;">Book a free 15-min call</a></p>`;

@@ -15,7 +15,7 @@ const NOTIFY_TO = Deno.env.get("NOTIFY_TO_EMAIL") ?? "contact@mired.io";
 const FROM_ADDRESS = "Mired <contact@mired.io>";
 const REPLY_TO_ADDRESS = "contact@mired.io";
 const CALENDLY_URL =
-  Deno.env.get("CALENDLY_URL") ?? "https://calendly.com/mired/ai-readiness-call";
+  Deno.env.get("CALENDLY_URL") ?? "https://calendly.com/mired";
 
 const schema = z.object({
   name: z.string().trim().min(1).max(100),
