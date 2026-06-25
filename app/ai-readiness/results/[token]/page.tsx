@@ -83,9 +83,13 @@ export default async function AiReadinessResultsPage({ params }: Props) {
         <div className="grid sm:grid-cols-2 gap-4 mb-12">
           {data.dimension_scores.map((dim) => (
             <div key={dim.dimension} className="border-2 border-black p-5 space-y-3">
-              <div className="flex justify-between items-center">
-                <h2 className="font-hero font-bold">{DIMENSION_LABELS[dim.dimension]}</h2>
-                <span className="font-manrope font-semibold">{dim.percentage}%</span>
+              <div className="flex justify-between items-start gap-3">
+                <p className="font-manrope text-sm sm:text-base font-semibold leading-snug normal-case min-w-0">
+                  {DIMENSION_LABELS[dim.dimension]}
+                </p>
+                <span className="font-manrope font-semibold text-sm sm:text-base shrink-0 tabular-nums">
+                  {dim.percentage}%
+                </span>
               </div>
               <div className="w-full bg-black/10 h-2 rounded-full overflow-hidden">
                 <div

@@ -267,9 +267,13 @@ export default function AiReadinessQuiz({ calendlyUrl }: { calendlyUrl: string }
           <div className="grid sm:grid-cols-2 gap-4 max-w-3xl mx-auto">
             {result.dimensionScores.map((dim) => (
               <div key={dim.dimension} className="border-2 border-black p-5 space-y-3">
-                <div className="flex justify-between items-center">
-                  <h3 className="font-hero font-bold">{dim.label}</h3>
-                  <span className="font-manrope font-semibold">{dim.percentage}%</span>
+                <div className="flex justify-between items-start gap-3">
+                  <p className="font-manrope text-sm sm:text-base font-semibold leading-snug normal-case min-w-0">
+                    {dim.label}
+                  </p>
+                  <span className="font-manrope font-semibold text-sm sm:text-base shrink-0 tabular-nums">
+                    {dim.percentage}%
+                  </span>
                 </div>
                 <div className="w-full bg-black/10 h-2 rounded-full overflow-hidden">
                   <div
