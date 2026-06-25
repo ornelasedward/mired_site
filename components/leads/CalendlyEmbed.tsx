@@ -8,7 +8,11 @@ const SLOW_RETRY_MS = 2500;
 const FAST_RETRY_LIMIT = 20;
 const LOAD_TIMEOUT_MS = 12000;
 
-function embedUrl(base: string, hostname: string): string {
+function embedUrl(
+  base: string,
+  hostname: string,
+  prefill?: { name?: string; email?: string },
+): string {
   try {
     const url = new URL(base.startsWith("http") ? base : `https://${base}`);
     url.searchParams.set("hide_gdpr_banner", "1");
@@ -17,6 +21,8 @@ function embedUrl(base: string, hostname: string): string {
     url.searchParams.set("primary_color", "420FB0");
     url.searchParams.set("embed_type", "Inline");
     url.searchParams.set("embed_domain", hostname);
+    if (prefill?.name) url.searchParams.set("name", prefill.name);
+    if (prefill?.email) url.searchParams.set("email", prefill.email);
     return url.toString();
   } catch {
     console.error("Invalid Calendly URL:", base);
@@ -29,12 +35,14 @@ interface CalendlyEmbedProps {
   url: string;
   height?: number;
   className?: string;
+  prefill?: { name?: string; email?: string };
 }
 
 export default function CalendlyEmbed({
   url,
   height = 700,
   className,
+  prefill,
 }: CalendlyEmbedProps) {
   const pathname = usePathname();
   const containerRef = useRef<HTMLDivElement>(null);
@@ -51,8 +59,8 @@ export default function CalendlyEmbed({
 
   const buildSrc = useCallback(() => {
     if (typeof window === "undefined") return null;
-    return embedUrl(url, window.location.hostname);
-  }, [url]);
+    return embedUrl(url, window.location.hostname, prefill);
+  }, [url, prefill]);
 
   const clearTimers = useCallback(() => {
     if (retryTimer.current) window.clearTimeout(retryTimer.current);
@@ -137,7 +145,7 @@ export default function CalendlyEmbed({
       window.removeEventListener("pageshow", onPageShow);
       document.removeEventListener("visibilitychange", onVisibilityChange);
     };
-  }, [url, pathname, refreshIframe, armLoadTimeout, clearTimers]);
+  }, [url, pathname, prefill?.name, prefill?.email, refreshIframe, armLoadTimeout, clearTimers]);
 
   const handleLoad = () => {
     loadedRef.current = true;

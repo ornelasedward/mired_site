@@ -20,7 +20,7 @@ import CalendlyEmbed from "@/components/leads/CalendlyEmbed";
 import Link from "next/link";
 import { toast } from "sonner";
 
-type Step = "quiz" | "email" | "results";
+type Step = "quiz" | "email" | "schedule" | "results";
 
 const tierColors: Record<string, string> = {
   exploring: "bg-skin-yellow-200",
@@ -78,7 +78,7 @@ export default function AiReadinessQuiz({ calendlyUrl }: { calendlyUrl: string }
         }
         setShareToken(data.share_token ?? null);
       }
-      setStep("results");
+      setStep("schedule");
     } catch (err) {
       const msg = err instanceof Error ? err.message : "Something went wrong";
       toast.error(`Couldn't save your results: ${msg}`);
@@ -201,6 +201,50 @@ export default function AiReadinessQuiz({ calendlyUrl }: { calendlyUrl: string }
         </div>
       )}
 
+      {step === "schedule" && result && (
+        <div className="space-y-8 max-w-4xl mx-auto">
+          <div className="text-center space-y-4">
+            <p className="text-sm font-manrope uppercase tracking-wider text-skin-blue-800">
+              One last step
+            </p>
+            <h2 className="heading-1 normal-case text-2xl sm:text-3xl md:text-4xl">
+              Book your roadmap review with Catelyn
+            </h2>
+            <p className="font-manrope text-black/70 max-w-xl mx-auto">
+              Your full report is ready. Pick a time for a free 15-minute call with
+              Catelyn Lee — she&apos;ll walk through your score, answer questions,
+              and tell you honestly if we&apos;re the right fit.
+            </p>
+            <div
+              className={`inline-block text-4xl font-hero font-extrabold px-6 py-3 border-2 border-black ${tierColors[result.tier]}`}
+            >
+              {result.overallScore}/100
+            </div>
+          </div>
+
+          <div className="border-2 border-black rounded-lg overflow-visible">
+            <CalendlyEmbed
+              url={calendlyUrl}
+              height={700}
+              prefill={{
+                name: emailForm.name.trim(),
+                email: emailForm.email.trim(),
+              }}
+            />
+          </div>
+
+          <div className="text-center">
+            <button
+              type="button"
+              onClick={() => setStep("results")}
+              className="font-manrope text-sm text-black/60 hover:text-black underline"
+            >
+              Skip for now — view my full report →
+            </button>
+          </div>
+        </div>
+      )}
+
       {step === "results" && result && (
         <div className="space-y-12">
           <div className="text-center space-y-4">
@@ -249,15 +293,22 @@ export default function AiReadinessQuiz({ calendlyUrl }: { calendlyUrl: string }
           <div id="book" className="scroll-mt-24 space-y-6">
             <div className="text-center space-y-3">
               <h3 className="heading-1 normal-case text-2xl sm:text-3xl">
-                Walk through your roadmap with us
+                Book with Catelyn Lee
               </h3>
               <p className="font-manrope text-black/70 max-w-xl mx-auto">
-                Book a free 15-minute call — we&apos;ll review your score, answer
-                questions, and tell you honestly if we&apos;re the right fit.
+                Haven&apos;t scheduled yet? Pick a time for your free 15-minute
+                roadmap review.
               </p>
             </div>
             <div className="max-w-4xl mx-auto border-2 border-black rounded-lg overflow-visible">
-              <CalendlyEmbed url={calendlyUrl} height={700} />
+              <CalendlyEmbed
+                url={calendlyUrl}
+                height={700}
+                prefill={{
+                  name: emailForm.name.trim(),
+                  email: emailForm.email.trim(),
+                }}
+              />
             </div>
           </div>
 

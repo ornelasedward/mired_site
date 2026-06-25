@@ -1,7 +1,9 @@
 import { createClient } from "https://esm.sh/@supabase/supabase-js@2.49.4";
 import { z } from "https://esm.sh/zod@3.23.8";
 import { emailFooterHtml } from "../_shared/brand.ts";
+import { leadEmbed, postToDiscord } from "../_shared/discord.ts";
 import { pushToCrm } from "../_shared/leads.ts";
+import { generateMeetingPrep } from "../_shared/meeting-prep.ts";
 import { queueNurtureSequence } from "../_shared/nurture.ts";
 
 const corsHeaders = {
@@ -12,6 +14,14 @@ const corsHeaders = {
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const NOTIFY_TO = Deno.env.get("NOTIFY_TO_EMAIL") ?? "contact@mired.io";
+const GMAIL_FORWARD =
+  Deno.env.get("INBOUND_FORWARD_EMAIL") ?? "contactmired@gmail.com";
+
+function notifyRecipients(leadEmail: string): string[] {
+  const recipients = new Set([NOTIFY_TO, GMAIL_FORWARD].filter(Boolean));
+  recipients.delete(leadEmail);
+  return [...recipients];
+}
 const FROM_ADDRESS = "Mired <contact@mired.io>";
 const REPLY_TO_ADDRESS = "contact@mired.io";
 const SITE_URL = Deno.env.get("SITE_URL") ?? "https://mired.io";
@@ -134,6 +144,21 @@ Deno.serve(async (req) => {
       }),
     });
 
+    const meetingPrep = await generateMeetingPrep({
+      name,
+      email,
+      company_size,
+      overall_score: result.overallScore,
+      tier_label: result.tierLabel,
+      summary: result.summary,
+      top_opportunities: result.topOpportunities,
+      dimension_scores: result.dimensionScores.map((d) => ({
+        label: d.label,
+        percentage: d.percentage,
+      })),
+      share_url: shareUrl,
+    });
+
     await fetch(RESEND_API_URL, {
       method: "POST",
       headers: {
@@ -142,7 +167,7 @@ Deno.serve(async (req) => {
       },
       body: JSON.stringify({
         from: FROM_ADDRESS,
-        to: [NOTIFY_TO],
+        to: notifyRecipients(email),
         reply_to: email,
         subject: `AI Readiness lead — ${name} (${result.overallScore}/100)`,
         html: `
@@ -152,9 +177,27 @@ Deno.serve(async (req) => {
           <p><strong>Company size:</strong> ${escape(company_size)}</p>
           <p><strong>Score:</strong> ${result.overallScore}/100 (${escape(result.tierLabel)})</p>
           <p><a href="${shareUrl}">View results</a></p>
+          <h3>Meeting prep for Catelyn</h3>
+          <pre style="white-space:pre-wrap;font-family:Arial,sans-serif;">${escape(meetingPrep)}</pre>
         `,
       }),
     });
+
+    await postToDiscord(
+      `📋 **New AI readiness lead** — ${name} (${result.overallScore}/100)`,
+      leadEmbed(
+        "AI Readiness Assessment",
+        [
+          { name: "Name", value: name, inline: true },
+          { name: "Email", value: email, inline: true },
+          { name: "Company size", value: company_size, inline: true },
+          { name: "Score", value: `${result.overallScore}/100 — ${result.tierLabel}`, inline: false },
+          { name: "Report", value: shareUrl, inline: false },
+          { name: "Book with Catelyn", value: CALENDLY_URL, inline: false },
+        ],
+        meetingPrep,
+      ),
+    );
 
     await queueNurtureSequence(supabase, {
       email,

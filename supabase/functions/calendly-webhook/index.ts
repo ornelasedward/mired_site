@@ -7,7 +7,9 @@
 // Set CALENDLY_WEBHOOK_SIGNING_KEY from your Calendly OAuth app (Webhook signing key).
 
 import { corsHeaders, serviceClient } from "../_shared/admin.ts";
+import { leadEmbed, postToDiscord } from "../_shared/discord.ts";
 import { pushToCrm } from "../_shared/leads.ts";
+import { generateMeetingPrep } from "../_shared/meeting-prep.ts";
 
 const json = (b: unknown, s = 200) =>
   new Response(JSON.stringify(b), {
@@ -17,6 +19,14 @@ const json = (b: unknown, s = 200) =>
 
 const RESEND_API_URL = "https://api.resend.com/emails";
 const NOTIFY_TO = Deno.env.get("NOTIFY_TO_EMAIL") ?? "contact@mired.io";
+const GMAIL_FORWARD =
+  Deno.env.get("INBOUND_FORWARD_EMAIL") ?? "contactmired@gmail.com";
+
+function notifyRecipients(leadEmail: string): string[] {
+  const recipients = new Set([NOTIFY_TO, GMAIL_FORWARD].filter(Boolean));
+  recipients.delete(leadEmail);
+  return [...recipients];
+}
 const FROM_ADDRESS = "Mired <contact@mired.io>";
 
 const escape = (s: string) =>
@@ -147,19 +157,54 @@ Deno.serve(async (req) => {
       .eq("email", email)
       .eq("status", "pending");
 
+    const when = startTime
+      ? new Date(startTime).toLocaleString("en-US", {
+        weekday: "short",
+        month: "short",
+        day: "numeric",
+        hour: "numeric",
+        minute: "2-digit",
+        timeZoneName: "short",
+      })
+      : "TBD";
+
+    const { data: assessment } = await supabase
+      .from("ai_readiness_assessments")
+      .select(
+        "overall_score, tier_label, summary, top_opportunities, dimension_scores, company_size, share_token",
+      )
+      .eq("email", email)
+      .order("created_at", { ascending: false })
+      .limit(1)
+      .maybeSingle();
+
+    const siteUrl = Deno.env.get("SITE_URL") ?? "https://mired.io";
+    const shareUrl = assessment?.share_token
+      ? `${siteUrl}/ai-readiness/results/${assessment.share_token}`
+      : undefined;
+
+    const meetingPrep = assessment
+      ? await generateMeetingPrep({
+        name: name || email.split("@")[0],
+        email,
+        company_size: assessment.company_size ?? "—",
+        overall_score: assessment.overall_score,
+        tier_label: assessment.tier_label,
+        summary: assessment.summary,
+        top_opportunities: assessment.top_opportunities ?? [],
+        dimension_scores: (assessment.dimension_scores ?? []).map(
+          (d: { label: string; percentage: number }) => ({
+            label: d.label,
+            percentage: d.percentage,
+          }),
+        ),
+        share_url: shareUrl,
+        scheduled_at: when,
+      })
+      : `• Confirm meeting time: ${when}\n• Ask what prompted them to book and what success looks like in 90 days.`;
+
     const RESEND_API_KEY = Deno.env.get("RESEND_API_KEY");
     if (RESEND_API_KEY) {
-      const when = startTime
-        ? new Date(startTime).toLocaleString("en-US", {
-          weekday: "short",
-          month: "short",
-          day: "numeric",
-          hour: "numeric",
-          minute: "2-digit",
-          timeZoneName: "short",
-        })
-        : "TBD";
-
       await fetch(RESEND_API_URL, {
         method: "POST",
         headers: {
@@ -168,7 +213,7 @@ Deno.serve(async (req) => {
         },
         body: JSON.stringify({
           from: FROM_ADDRESS,
-          to: [NOTIFY_TO],
+          to: notifyRecipients(email),
           reply_to: email,
           subject: `New booking — ${name || email} (${eventName})`,
           html: `
@@ -177,10 +222,34 @@ Deno.serve(async (req) => {
             <p><strong>Email:</strong> ${escape(email)}</p>
             <p><strong>Event:</strong> ${escape(eventName)}</p>
             <p><strong>When:</strong> ${escape(when)}</p>
+            ${shareUrl ? `<p><a href="${shareUrl}">AI readiness report</a></p>` : ""}
+            <h3>Meeting prep for Catelyn</h3>
+            <pre style="white-space:pre-wrap;font-family:Arial,sans-serif;">${escape(meetingPrep)}</pre>
           `,
         }),
       });
     }
+
+    await postToDiscord(
+      `📅 **Calendly booking** — ${name || email} @ ${when}`,
+      leadEmbed(
+        eventName,
+        [
+          { name: "Name", value: name || "—", inline: true },
+          { name: "Email", value: email, inline: true },
+          { name: "When", value: when, inline: false },
+          ...(shareUrl ? [{ name: "Report", value: shareUrl, inline: false }] : []),
+          ...(assessment
+            ? [{
+              name: "Score",
+              value: `${assessment.overall_score}/100 — ${assessment.tier_label}`,
+              inline: false,
+            }]
+            : []),
+        ],
+        meetingPrep,
+      ),
+    );
 
     await pushToCrm({
       source: "calendly_booking",
